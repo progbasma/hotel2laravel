@@ -1,0 +1,165 @@
+/* ======================
+   Responsive css
+   ====================== */
+/* Desktop :1200px. */
+@media (max-width: 1200px) {
+}
+
+/* Desktop :1199px. */
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+    ul.top-list-1 {
+        display: none;
+    }
+    .tp-mega-full {
+        display: none;
+    }
+    .icon-bars-card {
+        display: block;
+    }
+    .home_1 .search-card {
+        position: relative;
+        bottom: 0px;
+        padding: 80px 0;
+    }
+	.about-section {
+		padding: 20px 0px 60px 0px;
+	}
+	.footer-widget-card {
+		padding: 40px 20px 0px 20px;
+	}
+	.payment-method {
+		float: left;
+	}	
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+    ul.top-list-1 {
+        display: none;
+    }
+    .tp-mega-full {
+        display: none;
+    }
+    .icon-bars-card {
+        display: block;
+    }
+	.hero-screen {
+		padding: 80px 0px 80px 0px;
+	}
+	.hero-screen .hero-content h1 {
+		font-size: 45px;
+	}	
+    .home_1 .search-card {
+        position: relative;
+        bottom: 0px;
+        padding: 80px 0;
+    }
+	.about-section {
+		padding: 20px 0px 60px 0px;
+	}
+	.footer-widget-card {
+		padding: 40px 20px 0px 20px;
+	}
+	.breadcrumb-section .breadcrumb-card h2 {
+		font-size: 30px;
+	}
+	.sidebar .widget-card .widget-body ul.gallery-card li {
+		width: 100%;
+	}
+	.home_1 .search-card .search-card-inner .search-btn {
+		margin-top: 0px;
+	}
+	.payment-method {
+		float: left;
+	}
+	.newsletter-card .newsletter-form .newsletter-btn {
+		padding: 8px 10px;
+	}
+	.newsletter-card .newsletter-form input.form-control {
+		padding: 10px 110px 10px 10px;
+	}
+	.modal_newsletter_card .modal-body .newsletter-card {
+		padding: 0px 0px;
+	}
+	.cookie_consent_card.left {
+		left: 0px;
+	}
+	.cookie_consent_card.right {
+		right: 0px;
+	}
+	.cookie_consent_card {
+		max-width: 100%;
+		bottom: 10px;
+	}
+	.newsletter-card {
+		padding: 30px;
+	}	
+}
+
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    ul.top-list-1 {
+        display: none;
+    }
+    .tp-mega-full {
+        display: none;
+    }
+    .icon-bars-card {
+        display: block;
+    }
+	.hero-screen {
+		padding: 80px 0px 80px 0px;
+	}	
+	.hero-screen .hero-content h1 {
+		font-size: 45px;
+	}
+    .home_1 .search-card {
+        position: relative;
+        bottom: 0px;
+        padding: 80px 0;
+    }
+	.about-section {
+		padding: 20px 0px 60px 0px;
+	}
+	.footer-widget-card {
+		padding: 40px 20px 0px 20px;
+	}
+	.breadcrumb-section .breadcrumb-card h2 {
+		font-size: 30px;
+	}
+	.sidebar .widget-card .widget-body ul.gallery-card li {
+		width: 100%;
+	}
+	.home_1 .search-card .search-card-inner .search-btn {
+		margin-top: 0px;
+	}
+	.payment-method {
+		float: left;
+	}
+	.newsletter-card .newsletter-form .newsletter-btn {
+		padding: 8px 10px;
+	}
+	.newsletter-card .newsletter-form input.form-control {
+		padding: 10px 110px 10px 10px;
+	}
+	.modal_newsletter_card .modal-body .newsletter-card {
+		padding: 0px 0px;
+	}
+	.cookie_consent_card.left {
+		left: 0px;
+	}
+	.cookie_consent_card.right {
+		right: 0px;
+	}
+	.cookie_consent_card {
+		max-width: 100%;
+		bottom: 10px;
+	}
+	.newsletter-card {
+		padding: 30px;
+	}
+}

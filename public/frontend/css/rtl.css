@@ -1,0 +1,250 @@
+body.rtl {
+    font-family: var(--arabic-font-family);
+}
+body.rtl h1,
+body.rtl h2,
+body.rtl h3,
+body.rtl h4,
+body.rtl h5,
+body.rtl h6 {
+    font-family: var(--arabic-font-family);
+}
+body.rtl p {
+    font-family: var(--arabic-font-family);
+}
+
+body.rtl ul.top-list-1 {
+    float: right;
+}
+body.rtl ul.top-list-1 li {
+    float: right;
+    padding: 7px 0px 7px 15px;
+}
+body.rtl ul.top-list-1 li i {
+    margin-right: 0;
+    margin-left: 5px;
+}
+body.rtl .top-header ul.top-list {
+    float: left;
+}
+body.rtl .top-header ul.top-list li {
+    float: right;
+}
+body.rtl .top-header ul.top-list li a i {
+    margin-right: 0;
+    margin-left: 5px;
+}
+
+body.rtl .header .logo {
+    float: right;
+}
+body.rtl .tp-menu ul li {
+    float: right;
+}
+body.rtl .tp-menu ul li ul.submenu {
+    left: auto;
+    right: 0;
+}
+body.rtl .tp-menu ul li .mega-menu {
+    left: auto;
+    right: 0;
+}
+body.rtl .tp-menu ul li .mega-menu ul li.mega-title::before {
+    left: auto;
+    right: 0;
+}
+body.rtl .tp-menu ul li .mega-menu ul {
+    float: right;
+}
+body.rtl .tp-menu ul > li > a.tp-updown::before {
+    left: 0px;
+    right: auto;
+}
+body.rtl .tp-menu ul li a {
+    font-family: var(--arabic-font-family);
+}
+body.rtl .tp-menu ul li .mega-menu ul li a {
+    font-family: var(--arabic-font-family);
+}
+body.rtl .tp-menu ul li .mega-menu ul li.mega-title {
+    font-family: var(--arabic-font-family);
+}
+body.rtl .icon-bars-card {
+    float: left;
+}
+body.rtl .mobile-menu li > a {
+    font-family: var(--arabic-font-family);
+}
+body.rtl .mobile-menu li.has-children-menu .menu-expand {
+    left: 20px;
+    right: auto;
+}
+body.rtl .mobile-menu li > a {
+    padding: 10px 20px 10px 10px;
+    font-family: var(--arabic-font-family);
+}
+body.rtl .about-card {
+    padding-left: 0;
+    padding-right: 24px;
+}
+body.rtl .search-card .form-control, 
+body.rtl .search-card .form-group input, 
+body.rtl .search-card input, 
+body.rtl .search-card input.form-control, 
+body.rtl .search-card .form-select {
+	padding: 10px 10px;
+}
+body.rtl .item-card .pric-card .new-price {
+	float: right;
+	margin-right: 0;
+	margin-left: 7px;
+}
+body.rtl .item-card .pric-card .old-price {
+	float: right;
+	margin-right: 0;
+	margin-left: 7px;
+}
+body.rtl .item-card .pric-card .per-day-night {
+	float: right;
+}
+body.rtl .item-card a.btn.theme-btn.book-now-btn {
+	border-radius: 15px 0px 0px 0px;
+	float: right;
+}
+body.rtl .item-card ul.item-meta {
+	float: left;
+}
+body.rtl .item-card ul.item-meta li {
+	float: right;
+	margin-right: 0;
+	margin-left: 7px;
+}
+body.rtl .rating-wrap .stars-outer {
+	margin-right: 0;
+	margin-left: 5px;
+}
+body.rtl .rating-wrap .stars-inner {
+	left: auto;
+	right: 0;
+}
+body.rtl .blog-card .blog-content .blog-meta-card .blog-date i, 
+body.rtl .blog-card .blog-content .blog-meta-card .blog-meta i, 
+body.rtl .blog-card .blog-content .blog-meta-card .blog-comment i {
+	margin-right: 0;
+	margin-left: 6px;
+}
+body.rtl .footer-widget ul.widget-contact li .contact-card .contact-icon {
+	float: right;
+	margin-right: 0;
+	margin-left: 20px;
+}
+body.rtl .footer-widget ul.widget-contact li .contact-card .contact-desc {
+	float: right;
+}
+body.rtl .payment-method {
+	float: left;
+}
+body.rtl .testimonial-card .client .img-card {
+	float: right;
+}
+body.rtl .testimonial-card .client .client-info {
+	float: right;
+	padding: 0px 15px 0px 0px;
+}
+body.rtl .room-book-card .room-book-img {
+	float: right;
+}
+body.rtl .room-book-card .room-book-content {
+	float: right;
+	padding-left: 0;
+	padding-right: 15px;
+}
+body.rtl .room-book-card .room-book-content ul.room-meta li {
+	float: right;
+	padding: 0px 0px 0px 10px;
+	border-left: 1px solid var(--color-gray-400);
+	border-right: none;
+}
+body.rtl .room-book-card .room-book-content ul.room-meta li:last-child {
+	border-right: none;
+	padding: 0px 10px 0px 0px;
+	border-left: none;
+}
+body.rtl .checkboxlist input[type="checkbox"], 
+body.rtl .checkboxlist input[type="radio"] {
+	margin: -3px 0px 0px 5px;
+}
+body.rtl .r_extra strong {
+	float: right;
+}
+body.rtl .r_extra .instock, 
+body.rtl .r_extra .stockout {
+	float: right;
+	margin-left: 0;
+	margin-right: 5px;
+}
+body.rtl .total-price-card span.title {
+	float: right;
+}
+body.rtl .total-price-card span.price {
+	float: left;
+}
+body.rtl .widget-body strong {
+	float: right;
+	margin-left: 5px;
+}
+body.rtl .blog-details-card .blog-content .blog-meta-card .blog-date i, 
+body.rtl .blog-details-card .blog-content .blog-meta-card .blog-meta i, 
+body.rtl .blog-details-card .blog-content .blog-meta-card .blog-comment i {
+	margin-right: 0px;
+	margin-left: 6px;
+}
+body.rtl .room-details-card ul.item-meta li {
+	float: right;
+	margin-right: 0px;
+	margin-left: 10px;
+}
+body.rtl .sidebar .widget-card .widget-body ul.gallery-card li {
+	float: right;
+}
+body.rtl .room-details-card ul.details-list li i {
+	margin-right: 0;
+	margin-left: 5px;
+}
+body.rtl .sidebar-nav ul li a i.bi {
+	margin-right: auto;
+	margin-left: 5px;
+}
+body.rtl .contact-info .info .icon {
+	float: right;
+	margin-right: 0;
+	margin-left: 15px;
+}
+body.rtl .contact-info .info .desc {
+	float: right;
+}
+body.rtl .latest_blog_card .blog_img {
+	float: right;
+}
+body.rtl .latest_blog_card .blog_content {
+	padding: 0px 10px 0px 0px;
+}
+
+/* ======================
+   Responsive css
+   ====================== */
+/* Desktop :1199px. */
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+}
+
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+}

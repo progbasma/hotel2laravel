@@ -6,10 +6,7 @@
 <!-- main Section -->
 <div class="main-body">
 	<div class="container-fluid">
-		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
-		@include('backend.partials.vipc')
-		@else
+
 		<div class="row mt-25">
 			<div class="col-lg-12">
 				<div class="card">
@@ -51,7 +48,7 @@
 										<input type="text" name="checkout_date" id="checkout_date" class="form-control parsley-validated" data-required="true" placeholder="yyyy-mm-dd">
 										<span class="text-danger error-text checkout_date_error"></span>
 									</div>
-								</div>	
+								</div>
 								<div class="col-lg-3">
 									<div class="form-group">
 										<label for="room">{{ __('Room') }}<span class="red">*</span></label>
@@ -61,7 +58,7 @@
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="divider_heading">{{ __('Customer Information') }}</div>
 							<div class="row">
 								<div class="col-lg-3">
@@ -77,7 +74,7 @@
 										<input type="email" name="email" id="email" class="form-control parsley-validated" data-required="true">
 										<span class="text-danger error-text email_error"></span>
 									</div>
-								</div>	
+								</div>
 								<div class="col-lg-3">
 									<div class="form-group">
 										<label for="phone">{{ __('Phone') }}<span class="red">*</span></label>
@@ -111,7 +108,7 @@
 										<label for="zip_code">{{ __('Zip Code') }}</label>
 										<input type="text" name="zip_code" id="zip_code" class="form-control">
 									</div>
-								</div>	
+								</div>
 								<div class="col-lg-3">
 									<div class="form-group">
 										<label for="city">{{ __('City') }}</label>
@@ -138,7 +135,7 @@
 								<div class="col-lg-12">
 									<div class="checkboxlist">
 										<label class="checkbox-title">
-											<input id="new_account" name="new_account" type="checkbox">{{ __('Register an account with above information?') }} 
+											<input id="new_account" name="new_account" type="checkbox">{{ __('Register an account with above information?') }}
 										</label>
 									</div>
 								</div>
@@ -170,10 +167,7 @@
 				</div>
 			</div>
 		</div>
-		@endif
-	</div>
-</div>
-<!-- /main Section -->
+
 @endsection
 
 @push('scripts')

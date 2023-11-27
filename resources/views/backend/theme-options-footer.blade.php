@@ -6,10 +6,7 @@
 <!-- main Section -->
 <div class="main-body">
 	<div class="container-fluid">
-		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
-		@include('backend.partials.vipc')
-		@else
+
 		<div class="row mt-25">
 			<div class="col-lg-12">
 				<div class="card">
@@ -51,7 +48,7 @@
 									</div>
 								</div>
 
-								<div class="row">	
+								<div class="row">
 									<div class="col-md-4">
 										<div class="form-group">
 											<label for="is_publish_about">{{ __('Status') }}</label>
@@ -66,8 +63,8 @@
 									</div>
 									<div class="col-md-8"></div>
 								</div>
-							
-							
+
+
 								<div class="divider_heading">{{ __('Contact Us') }}</div>
 								<div class="row">
 									<div class="col-lg-12">
@@ -94,7 +91,7 @@
 									</div>
 								</div>
 
-								<div class="row">	
+								<div class="row">
 									<div class="col-md-4">
 										<div class="form-group">
 											<label for="is_publish_contact">{{ __('Status') }}</label>
@@ -109,7 +106,7 @@
 									</div>
 									<div class="col-md-8"></div>
 								</div>
-								
+
 								<div class="divider_heading">{{ __('Copyright') }}</div>
 								<div class="row">
 									<div class="col-lg-12">
@@ -119,7 +116,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="row">	
+								<div class="row">
 									<div class="col-md-4">
 										<div class="form-group">
 											<label for="is_publish_copyright">{{ __('Status') }}</label>
@@ -134,7 +131,7 @@
 									</div>
 									<div class="col-md-8"></div>
 								</div>
-								
+
 								<div class="divider_heading">{{ __('Payment Gateway Icon') }}</div>
 								<div class="row">
 									<div class="col-md-12">
@@ -153,7 +150,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="row">	
+								<div class="row">
 									<div class="col-md-4">
 										<div class="form-group">
 											<label for="is_publish_payment">{{ __('Status') }}</label>
@@ -179,8 +176,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		@endif
+	  </div>
 	</div>
 </div>
 <!-- /main Section -->

@@ -6,10 +6,7 @@
 <!-- main Section -->
 <div class="main-body">
 	<div class="container-fluid">
-		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
-		@include('backend.partials.vipc')
-		@else
+
 		<div class="row mt-25">
 			<div class="col-lg-12">
 				<div class="card">
@@ -34,7 +31,7 @@
 												<span class="input-group-addon"><i></i></span>
 											</div>
 										</div>
-										
+
 										<div class="form-group">
 											<label>{{ __('Light Color') }}<span class="red">*</span></label>
 											<div id="light_color_picker" class="input-group tw-picker">
@@ -42,7 +39,7 @@
 												<span class="input-group-addon"><i></i></span>
 											</div>
 										</div>
-										
+
 										<div class="form-group">
 											<label>{{ __('Blue Color') }}<span class="red">*</span></label>
 											<div id="blue_color_picker" class="input-group tw-picker">
@@ -58,7 +55,7 @@
 												<span class="input-group-addon"><i></i></span>
 											</div>
 										</div>
-										
+
 										<div class="form-group">
 											<label>{{ __('Dark Gray Color') }}<span class="red">*</span></label>
 											<div id="dark_gray_color_picker" class="input-group tw-picker">
@@ -66,7 +63,7 @@
 												<span class="input-group-addon"><i></i></span>
 											</div>
 										</div>
-										
+
 										<div class="form-group">
 											<label>{{ __('Gray 400 Color') }}<span class="red">*</span></label>
 											<div id="gray400_color_picker" class="input-group tw-picker">
@@ -74,7 +71,7 @@
 												<span class="input-group-addon"><i></i></span>
 											</div>
 										</div>
-										
+
 										<div class="form-group">
 											<label>{{ __('Gray 500 Color') }}<span class="red">*</span></label>
 											<div id="gray500_color_picker" class="input-group tw-picker">
@@ -82,7 +79,7 @@
 												<span class="input-group-addon"><i></i></span>
 											</div>
 										</div>
-										
+
 										<div class="form-group">
 											<label>{{ __('Black Color') }}<span class="red">*</span></label>
 											<div id="black_color_picker" class="input-group tw-picker">
@@ -90,7 +87,7 @@
 												<span class="input-group-addon"><i></i></span>
 											</div>
 										</div>
-										
+
 										<div class="form-group">
 											<label>{{ __('White Color') }}<span class="red">*</span></label>
 											<div id="white_color_picker" class="input-group tw-picker">
@@ -98,7 +95,7 @@
 												<span class="input-group-addon"><i></i></span>
 											</div>
 										</div>
-										
+
 										<div class="form-group">
 											<label>{{ __('Backend Theme color') }}<span class="red">*</span></label>
 											<div id="backend_theme_color_picker" class="input-group tw-picker">
@@ -106,11 +103,11 @@
 												<span class="input-group-addon"><i></i></span>
 											</div>
 										</div>
-										
+
 									</div>
 									<div class="col-lg-4"></div>
 								</div>
-								
+
 								<div class="row tabs-footer mt-15">
 									<div class="col-lg-12">
 										<a id="submit-form" href="javascript:void(0);" class="btn blue-btn">{{ __('Save') }}</a>
@@ -123,10 +120,7 @@
 				</div>
 			</div>
 		</div>
-		@endif
-	</div>
-</div>
-<!-- /main Section -->
+
 @endsection
 
 @push('scripts')

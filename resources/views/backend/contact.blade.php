@@ -6,10 +6,7 @@
 <!-- main Section -->
 <div class="main-body">
 	<div class="container-fluid">
-		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
-		@include('backend.partials.vipc')
-		@else
+
 		<div class="row mt-25">
 			<div class="col-lg-12">
 				<div class="card">
@@ -75,7 +72,7 @@
 						</div>
 					</div>
 					<!--/Data grid/-->
-					
+
 					<!--Data Entry Form-->
 					<div id="form-panel" class="card-body dnone">
 						<form novalidate="" data-validate="parsley" id="DataEntry_formId">
@@ -170,9 +167,9 @@
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="divider_heading">{{ __('Contact Form') }}</div>
-							
+
 							<div id="FormElementId"></div>
 
 							<div class="row">
@@ -182,7 +179,7 @@
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="row mt-25" id="mailSubjectHideShow">
 								<div class="col-md-3">
 									<div class="form-group">
@@ -193,7 +190,7 @@
 								</div>
 								<div class="col-md-9"></div>
 							</div>
-							
+
 							<div class="row">
 								<div class="col-md-12">
 									<p class="mt-15 mb0"><strong>{{ __('Google reCAPTCHA') }}</strong> (If you are not yet added Google reCAPTCHA key. <strong><a href="{{ route('backend.google-recaptcha') }}">Click Here</a></strong>)</p>
@@ -217,10 +214,7 @@
 				</div>
 			</div>
 		</div>
-		@endif
-	</div>
-</div>
-<!-- /main Section -->
+
 
 <div class="modal page-builder-modal" id="element_forms_modal">
 	<div class="modal-dialog modal-dialog-centered" role="document">

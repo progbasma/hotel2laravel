@@ -14,9 +14,9 @@ class SettingsController extends Controller
 
     //General page load
     public function getGeneralPageLoad(){
-		
+
 		$timezonelist = DB::table('timezones')->orderBy('timezone_name', 'asc')->get();
-		
+
 		$datalist = Tp_option::where('option_name', 'general_settings')->get();
 		$id = '';
 		$option_value = '';
@@ -52,7 +52,7 @@ class SettingsController extends Controller
 	//Save data for general Setting
     public function GeneralSettingUpdate(Request $request){
 		$res = array();
-		
+
 		$id = $request->input('RecordId');
 		$company = $request->input('company');
 		$email = $request->input('email');
@@ -87,37 +87,37 @@ class SettingsController extends Controller
 			$res['msg'] = $errors->first('company');
 			return response()->json($res);
 		}
-		
+
 		if($errors->has('email')){
 			$res['msgType'] = 'error';
 			$res['msg'] = $errors->first('email');
 			return response()->json($res);
 		}
-		
+
 		if($errors->has('phone')){
 			$res['msgType'] = 'error';
 			$res['msg'] = $errors->first('phone');
 			return response()->json($res);
 		}
-		
+
 		if($errors->has('site_name')){
 			$res['msgType'] = 'error';
 			$res['msg'] = $errors->first('site_name');
 			return response()->json($res);
 		}
-		
+
 		if($errors->has('site_title')){
 			$res['msgType'] = 'error';
 			$res['msg'] = $errors->first('site_title');
 			return response()->json($res);
 		}
-		
+
 		if($errors->has('address')){
 			$res['msgType'] = 'error';
 			$res['msg'] = $errors->first('address');
 			return response()->json($res);
 		}
-		
+
 		$option_value = array(
 			'company' => $company,
 			'email' => $email,
@@ -132,13 +132,13 @@ class SettingsController extends Controller
 			'option_name' => 'general_settings',
 			'option_value' => json_encode($option_value)
 		);
-		
+
 		$gData = Tp_option::where('option_name', 'general_settings')->get();
 		$id = '';
 		foreach ($gData as $row){
 			$id = $row['id'];
 		}
-		
+
 		if($id == ''){
 			$response = Tp_option::create($data);
 			if($response){
@@ -161,7 +161,7 @@ class SettingsController extends Controller
 
 		return response()->json($res);
     }
-	
+
     //Google Recaptcha page load
     public function loadGoogleRecaptchaPage(){
 		$datalist = Tp_option::where('option_name', 'google_recaptcha')->get();
@@ -182,26 +182,26 @@ class SettingsController extends Controller
 			$data['secretkey'] = '';
 			$data['is_recaptcha'] = '';
 		}
-		
+
 		$datalist = $data;
-		
+
 		return view('backend.google-recaptcha', compact('datalist'));
     }
-	
+
 	//Save data for Google Recaptcha
     public function GoogleRecaptchaUpdate(Request $request){
 		$res = array();
-		
+
 		$sitekey = $request->input('sitekey');
 		$secretkey = $request->input('secretkey');
 		$g_recaptcha = $request->input('recaptcha');
-		
+
 		if ($g_recaptcha == 'true' || $g_recaptcha == 'on') {
 			$recaptcha = 1;
 		}else {
 			$recaptcha = 0;
 		}
-		
+
 		$validator_array = array(
 			'sitekey' => $request->input('sitekey'),
 			'secretkey' => $request->input('secretkey')
@@ -230,7 +230,7 @@ class SettingsController extends Controller
 			'secretkey' => $secretkey,
 			'is_recaptcha' => $recaptcha
 		);
-		
+
 		$data = array(
 			'option_name' => 'google_recaptcha',
 			'option_value' => json_encode($option_value)
@@ -241,7 +241,7 @@ class SettingsController extends Controller
 		foreach ($gData as $row){
 			$id = $row['id'];
 		}
-		
+
 		if($id == ''){
 			$response = Tp_option::create($data);
 			if($response){
@@ -264,7 +264,7 @@ class SettingsController extends Controller
 
 		return response()->json($res);
     }
-	
+
     //Google Map page load
     public function loadGoogleMapPage(){
 		$datalist = Tp_option::where('option_name', 'google_map')->get();
@@ -283,25 +283,25 @@ class SettingsController extends Controller
 			$data['googlemap_apikey'] = '';
 			$data['is_googlemap'] = '';
 		}
-		
+
 		$datalist = $data;
-		
+
 		return view('backend.google-map', compact('datalist'));
     }
-	
+
 	//Save data for Google Map
     public function GoogleMapUpdate(Request $request){
 		$res = array();
-		
+
 		$googlemap_apikey = $request->input('googlemap_apikey');
 		$isGooglemap = $request->input('is_googlemap');
-		
+
 		if ($isGooglemap == 'true' || $isGooglemap == 'on') {
 			$is_googlemap = 1;
 		}else {
 			$is_googlemap = 0;
 		}
-		
+
 		$validator_array = array(
 			'googlemap_apikey' => $request->input('googlemap_apikey')
 		);
@@ -322,7 +322,7 @@ class SettingsController extends Controller
 			'googlemap_apikey' => $googlemap_apikey,
 			'is_googlemap' => $is_googlemap
 		);
-		
+
 		$data = array(
 			'option_name' => 'google_map',
 			'option_value' => json_encode($option_value)
@@ -333,7 +333,7 @@ class SettingsController extends Controller
 		foreach ($gData as $row){
 			$id = $row['id'];
 		}
-		
+
 		if($id == ''){
 			$response = Tp_option::create($data);
 			if($response){
@@ -356,10 +356,10 @@ class SettingsController extends Controller
 
 		return response()->json($res);
     }
-	
+
     //load Theme Register page
     public function loadThemeRegisterPage(){
-		
+
 		$results = Tp_option::where('option_name', 'pcode')->get();
 		$id = '';
 		$option_value = '';
@@ -374,44 +374,18 @@ class SettingsController extends Controller
 		}else{
 			$data['verified'] = 0;
 		}
-		
+
 		$datalist = $data;
 
         return view('backend.theme-register', compact('datalist'));
     }
-	
-    //get ajax Pcode Data
-	public function getPcodeData(Request $request){
 
-		if($request->ajax()){
-
-			$results = Tp_option::where('option_name', 'pcode')->get();
-			$id = '';
-			$option_value = '';
-			foreach ($results as $row){
-				$id = $row->id;
-				$option_value = json_decode($row->option_value);
-			}
-
-			$data = array();
-			if($id != ''){
-				$data['verified'] = $option_value->verified;
-			}else{
-				$data['verified'] = 0;
-			}
-			
-			$datalist = $data;
-
-			return view('backend.partials.purchase_code', compact('datalist'))->render();
-		}
-	}
-	
 	//Save data for Purchase Code Setting
     public function CodeVerified(Request $request){
 		$res = array();
-		
+
 		$pcode = $request->input('pcode');
-		
+
 		$validator_array = array(
 			'PurchaseCode' => $request->input('pcode')
 		);
@@ -427,21 +401,21 @@ class SettingsController extends Controller
 			$res['msg'] = $errors->first('PurchaseCode');
 			return response()->json($res);
 		}
-		
+
 		$purchase_code = htmlspecialchars($pcode);
 		$verifyRes = verifyPurchase($purchase_code);
 
 		if($verifyRes == 0){
-			Tp_option::where('option_name', 'vipc')->delete();	
+			Tp_option::where('option_name', 'vipc')->delete();
 			$op_value = array('bactive' => 0,'resetkey' => 0);
 			$vipc_data = array('option_name' => 'vipc', 'option_value' => json_encode($op_value));
 			Tp_option::create($vipc_data);
-			
+
 			$res['msgType'] = 'error';
 			$res['msg'] = __('Sorry, This is not a valid purchase code.');
 			return response()->json($res);
 		}
-		
+
 		$option_value = array(
 			'pcode' => base64_encode($pcode),
 			'verified' => 1
@@ -451,15 +425,15 @@ class SettingsController extends Controller
 			'option_name' => 'pcode',
 			'option_value' => json_encode($option_value)
 		);
-		
+
 		$res_id = Tp_option::create($data)->id;
 		if($res_id !=''){
 
-			Tp_option::where('option_name', 'vipc')->delete();	
+			Tp_option::where('option_name', 'vipc')->delete();
 			$op_value = array('bactive' => 1,'resetkey' => 5);
 			$vipc_data = array('option_name' => 'vipc', 'option_value' => json_encode($op_value));
 			Tp_option::create($vipc_data);
-			
+
 			$res['msgType'] = 'success';
 			$res['msg'] = __('Theme registered Successfully');
 		}else{
@@ -472,16 +446,16 @@ class SettingsController extends Controller
 
 	//Delete data for Pcode
 	public function deletePcode(Request $request){
-		
+
 		$res = array();
-		
-		$response = Tp_option::where('option_name', 'pcode')->delete();	
+
+		$response = Tp_option::where('option_name', 'pcode')->delete();
 		if($response){
-			Tp_option::where('option_name', 'vipc')->delete();	
+			Tp_option::where('option_name', 'vipc')->delete();
 			$op_value = array('bactive' => 0,'resetkey' => 0);
 			$vipc_data = array('option_name' => 'vipc', 'option_value' => json_encode($op_value));
 			Tp_option::create($vipc_data);
-			
+
 			$res['msgType'] = 'success';
 			$res['msg'] = __('Theme deregister Successfully');
 		}else{
@@ -494,10 +468,10 @@ class SettingsController extends Controller
 
     //load Payment Methods page
     public function loadPaymentMethodsPage(){
-		
+
 		//Stripe
 		$stripe_data = Tp_option::where('option_name', 'stripe')->get();
-		
+
 		$stripe_id = '';
 		foreach ($stripe_data as $row){
 			$stripe_id = $row->id;
@@ -517,15 +491,15 @@ class SettingsController extends Controller
 			$stripe_data_list['currency'] = '';
 			$stripe_data_list['isenable'] = '';
 		}
-		
+
 		//Paypal
 		$paypal_data = Tp_option::where('option_name', 'paypal')->get();
-		
+
 		$paypal_id = '';
 		foreach ($paypal_data as $row){
 			$paypal_id = $row->id;
 		}
-		
+
 		$paypal_data_list = array();
 		if($paypal_id != ''){
 			$paypalData = json_decode($paypal_data);
@@ -545,12 +519,12 @@ class SettingsController extends Controller
 
 		//Razorpay
 		$razorpay_data = Tp_option::where('option_name', 'razorpay')->get();
-		
+
 		$razorpay_id = '';
 		foreach ($razorpay_data as $row){
 			$razorpay_id = $row->id;
 		}
-		
+
 		$razorpay_data_list = array();
 		if($razorpay_id != ''){
 			$razorpayData = json_decode($razorpay_data);
@@ -570,12 +544,12 @@ class SettingsController extends Controller
 
 		//Mollie
 		$mollie_data = Tp_option::where('option_name', 'mollie')->get();
-		
+
 		$mollie_id = '';
 		foreach ($mollie_data as $row){
 			$mollie_id = $row->id;
 		}
-		
+
 		$mollie_data_list = array();
 		if($mollie_id != ''){
 			$mollieData = json_decode($mollie_data);
@@ -593,7 +567,7 @@ class SettingsController extends Controller
 
 		//Cash on Delivery (COD)
 		$cod_data = Tp_option::where('option_name', 'cash_on_delivery')->get();
-		
+
 		$cod_id = '';
 		foreach ($cod_data as $row){
 			$cod_id = $row->id;
@@ -609,10 +583,10 @@ class SettingsController extends Controller
 			$cod_data_list['description'] = '';
 			$cod_data_list['isenable'] = '';
 		}
-		
+
 		//Bank Transfer
 		$bank_data = Tp_option::where('option_name', 'bank_transfer')->get();
-		
+
 		$bank_id = '';
 		foreach ($bank_data as $row){
 			$bank_id = $row->id;
@@ -628,25 +602,25 @@ class SettingsController extends Controller
 			$bank_data_list['description'] = '';
 			$bank_data_list['isenable'] = '';
 		}
-		
+
         return view('backend.payment-methods', compact('stripe_data_list', 'paypal_data_list', 'razorpay_data_list', 'mollie_data_list', 'cod_data_list', 'bank_data_list'));
     }
-	
+
 	//Save data for Stripe
     public function StripeSettingsUpdate(Request $request){
 		$res = array();
-		
+
 		$stripe_key = $request->input('stripe_key');
 		$stripe_secret = $request->input('stripe_secret');
 		$currency = $request->input('currency');
 		$is_enable = $request->input('isenable');
-		
+
 		if ($is_enable == 'true' || $is_enable == 'on') {
 			$isenable = 1;
 		}else {
 			$isenable = 0;
 		}
-		
+
 		$validator_array = array(
 			'stripe_key' => $request->input('stripe_key'),
 			'stripe_secret' => $request->input('stripe_secret'),
@@ -666,7 +640,7 @@ class SettingsController extends Controller
 			$res['msg'] = $errors->first('stripe_key');
 			return response()->json($res);
 		}
-		
+
 		if($errors->has('stripe_secret')){
 			$res['msgType'] = 'error';
 			$res['msg'] = $errors->first('stripe_secret');
@@ -684,7 +658,7 @@ class SettingsController extends Controller
 			'currency' => $currency,
 			'isenable' => $isenable
 		);
-		
+
 		$data = array(
 			'option_name' => 'stripe',
 			'option_value' => json_encode($option_value)
@@ -695,7 +669,7 @@ class SettingsController extends Controller
 		foreach ($gData as $row){
 			$id = $row['id'];
 		}
-		
+
 		if($id == ''){
 			$response = Tp_option::create($data);
 			if($response){
@@ -722,25 +696,25 @@ class SettingsController extends Controller
 	//Save data for Paypal
     public function PaypalSettingsUpdate(Request $request){
 		$res = array();
-		
+
 		$paypal_client_id = $request->input('paypal_client_id');
 		$paypal_secret = $request->input('paypal_secret');
 		$paypal_currency = $request->input('paypal_currency');
 		$is_mode_paypal = $request->input('ismode_paypal');
 		$is_enable_paypal = $request->input('isenable_paypal');
-		
+
 		if ($is_enable_paypal == 'true' || $is_enable_paypal == 'on') {
 			$isenable_paypal = 1;
 		}else {
 			$isenable_paypal = 0;
 		}
-		
+
 		if ($is_mode_paypal == 'true' || $is_mode_paypal == 'on') {
 			$ismode_paypal = 1; //sandbox
 		}else {
 			$ismode_paypal = 0; //live
 		}
-		
+
 		$validator_array = array(
 			'paypal_client_id' => $request->input('paypal_client_id'),
 			'paypal_secret' => $request->input('paypal_secret'),
@@ -760,7 +734,7 @@ class SettingsController extends Controller
 			$res['msg'] = $errors->first('paypal_client_id');
 			return response()->json($res);
 		}
-		
+
 		if($errors->has('paypal_secret')){
 			$res['msgType'] = 'error';
 			$res['msg'] = $errors->first('paypal_secret');
@@ -779,7 +753,7 @@ class SettingsController extends Controller
 			'ismode_paypal' => $ismode_paypal,
 			'isenable_paypal' => $isenable_paypal
 		);
-		
+
 		$data = array(
 			'option_name' => 'paypal',
 			'option_value' => json_encode($option_value)
@@ -790,7 +764,7 @@ class SettingsController extends Controller
 		foreach ($gData as $row){
 			$id = $row['id'];
 		}
-		
+
 		if($id == ''){
 			$response = Tp_option::create($data);
 			if($response){
@@ -817,25 +791,25 @@ class SettingsController extends Controller
 	//Save data for Razorpay
     public function RazorpaySettingsUpdate(Request $request){
 		$res = array();
-		
+
 		$razorpay_key_id = $request->input('razorpay_key_id');
 		$razorpay_key_secret = $request->input('razorpay_key_secret');
 		$razorpay_currency = $request->input('razorpay_currency');
 		$is_mode_razorpay = $request->input('ismode_razorpay');
 		$is_enable_razorpay = $request->input('isenable_razorpay');
-		
+
 		if ($is_enable_razorpay == 'true' || $is_enable_razorpay == 'on') {
 			$isenable_razorpay = 1;
 		}else {
 			$isenable_razorpay = 0;
 		}
-		
+
 		if ($is_mode_razorpay == 'true' || $is_mode_razorpay == 'on') {
 			$ismode_razorpay = 1; //sandbox
 		}else {
 			$ismode_razorpay = 0; //live
 		}
-		
+
 		$validator_array = array(
 			'razorpay_key_id' => $request->input('razorpay_key_id'),
 			'razorpay_key_secret' => $request->input('razorpay_key_secret'),
@@ -855,13 +829,13 @@ class SettingsController extends Controller
 			$res['msg'] = $errors->first('razorpay_key_id');
 			return response()->json($res);
 		}
-		
+
 		if($errors->has('razorpay_key_secret')){
 			$res['msgType'] = 'error';
 			$res['msg'] = $errors->first('razorpay_key_secret');
 			return response()->json($res);
 		}
-		
+
 		if($errors->has('razorpay_currency')){
 			$res['msgType'] = 'error';
 			$res['msg'] = $errors->first('razorpay_currency');
@@ -875,7 +849,7 @@ class SettingsController extends Controller
 			'ismode_razorpay' => $ismode_razorpay,
 			'isenable_razorpay' => $isenable_razorpay
 		);
-		
+
 		$data = array(
 			'option_name' => 'razorpay',
 			'option_value' => json_encode($option_value)
@@ -886,7 +860,7 @@ class SettingsController extends Controller
 		foreach ($gData as $row){
 			$id = $row['id'];
 		}
-		
+
 		if($id == ''){
 			$response = Tp_option::create($data);
 			if($response){
@@ -909,28 +883,28 @@ class SettingsController extends Controller
 
 		return response()->json($res);
     }
-		
+
 	//Save data for Mollie
     public function MollieSettingsUpdate(Request $request){
 		$res = array();
-		
+
 		$mollie_api_key = $request->input('mollie_api_key');
 		$mollie_currency = $request->input('mollie_currency');
 		$is_mode_mollie = $request->input('ismode_mollie');
 		$is_enable_mollie = $request->input('isenable_mollie');
-		
+
 		if ($is_enable_mollie == 'true' || $is_enable_mollie == 'on') {
 			$isenable_mollie = 1;
 		}else {
 			$isenable_mollie = 0;
 		}
-		
+
 		if ($is_mode_mollie == 'true' || $is_mode_mollie == 'on') {
 			$ismode_mollie = 1; //sandbox
 		}else {
 			$ismode_mollie = 0; //live
 		}
-		
+
 		$validator_array = array(
 			'mollie_api_key' => $request->input('mollie_api_key'),
 			'mollie_currency' => $request->input('mollie_currency')
@@ -948,7 +922,7 @@ class SettingsController extends Controller
 			$res['msg'] = $errors->first('mollie_api_key');
 			return response()->json($res);
 		}
-		
+
 		if($errors->has('mollie_currency')){
 			$res['msgType'] = 'error';
 			$res['msg'] = $errors->first('mollie_currency');
@@ -961,7 +935,7 @@ class SettingsController extends Controller
 			'ismode_mollie' => $ismode_mollie,
 			'isenable_mollie' => $isenable_mollie
 		);
-		
+
 		$data = array(
 			'option_name' => 'mollie',
 			'option_value' => json_encode($option_value)
@@ -972,7 +946,7 @@ class SettingsController extends Controller
 		foreach ($gData as $row){
 			$id = $row['id'];
 		}
-		
+
 		if($id == ''){
 			$response = Tp_option::create($data);
 			if($response){
@@ -995,25 +969,25 @@ class SettingsController extends Controller
 
 		return response()->json($res);
     }
-		
+
 	//Save data for COD
     public function CODSettingsUpdate(Request $request){
 		$res = array();
-		
+
 		$description = $request->input('description');
 		$is_enable = $request->input('isenable_cod');
-		
+
 		if ($is_enable == 'true' || $is_enable == 'on') {
 			$isenable = 1;
 		}else {
 			$isenable = 0;
 		}
-		
+
 		$option_value = array(
 			'description' => $description,
 			'isenable' => $isenable
 		);
-		
+
 		$data = array(
 			'option_name' => 'cash_on_delivery',
 			'option_value' => json_encode($option_value)
@@ -1024,7 +998,7 @@ class SettingsController extends Controller
 		foreach ($gData as $row){
 			$id = $row['id'];
 		}
-		
+
 		if($id == ''){
 			$response = Tp_option::create($data);
 			if($response){
@@ -1047,25 +1021,25 @@ class SettingsController extends Controller
 
 		return response()->json($res);
     }
-	
+
 	//Save data for Bank Transfer
     public function BankSettingsUpdate(Request $request){
 		$res = array();
-		
+
 		$description = $request->input('description');
 		$is_enable = $request->input('isenable_bank');
-		
+
 		if ($is_enable == 'true' || $is_enable == 'on') {
 			$isenable = 1;
 		}else {
 			$isenable = 0;
 		}
-		
+
 		$option_value = array(
 			'description' => $description,
 			'isenable' => $isenable
 		);
-		
+
 		$data = array(
 			'option_name' => 'bank_transfer',
 			'option_value' => json_encode($option_value)
@@ -1076,7 +1050,7 @@ class SettingsController extends Controller
 		foreach ($gData as $row){
 			$id = $row['id'];
 		}
-		
+
 		if($id == ''){
 			$response = Tp_option::create($data);
 			if($response){
@@ -1099,24 +1073,24 @@ class SettingsController extends Controller
 
 		return response()->json($res);
     }
-	
+
     //load Media Settings page
     public function loadMediaSettingsPage(){
-		
+
 		$datalist = Media_setting::paginate(10);
-		
+
         return view('backend.media-settings', compact('datalist'));
     }
-	
+
 	//Get data for Media Settings Pagination
 	public function getMediaSettingsTableData(Request $request){
 
 		$search = $request->search;
-		
+
 		if($request->ajax()){
 
 			if($search != ''){
-				
+
 				$datalist = Media_setting::where(function ($query) use ($search){
 					$query->where('media_type', 'like', '%'.$search.'%')
 						->orWhere('media_width', 'like', '%'.$search.'%')
@@ -1130,25 +1104,25 @@ class SettingsController extends Controller
 			return view('backend.partials.media_settings_table', compact('datalist'))->render();
 		}
 	}
-	
+
 	//Get data for Media Settings by id
     public function getMediaSettingsById(Request $request){
 
 		$id = $request->id;
-		
+
 		$data = Media_setting::where('id', $id)->first();
 
 		return response()->json($data);
 	}
-	
+
 	//Save data for Media Settings
     public function MediaSettingsUpdate(Request $request){
 		$res = array();
-		
+
 		$id = $request->input('RecordId');
 		$media_width = $request->input('media_width');
 		$media_height = $request->input('media_height');
-		
+
 		$validator_array = array(
 			'width' => $request->input('media_width'),
 			'height' => $request->input('media_height')
@@ -1166,7 +1140,7 @@ class SettingsController extends Controller
 			$res['msg'] = $errors->first('width');
 			return response()->json($res);
 		}
-		
+
 		if($errors->has('height')){
 			$res['msgType'] = 'error';
 			$res['msg'] = $errors->first('height');
@@ -1189,10 +1163,10 @@ class SettingsController extends Controller
 
 		return response()->json($res);
     }
-	
+
     //load Mail Settings page
     public function loadMailSettingsPage(){
-		
+
 		$datalist = Tp_option::where('option_name', 'mail_settings')->get();
 		$id = '';
 		$option_value = '';
@@ -1227,35 +1201,35 @@ class SettingsController extends Controller
 			$data['smtp_username'] = '';
 			$data['smtp_password'] = '';
 		}
-		
+
 		$datalist = $data;
-		
+
         return view('backend.mail-settings', compact('datalist'));
     }
 
 	//Save data for Mail Settings
     public function saveMailSettings(Request $request){
 		$res = array();
-		
+
 		$from_name = $request->input('from_name');
 		$from_mail = $request->input('from_mail');
 		$to_name = $request->input('to_name');
 		$to_mail = $request->input('to_mail');
 		$mailer = $request->input('mailer');
-		
+
 		$smtp_host = $request->input('smtp_host');
 		$smtp_port = $request->input('smtp_port');
 		$smtp_security = $request->input('smtp_security');
 		$smtp_username = $request->input('smtp_username');
 		$smtp_password = $request->input('smtp_password');
-		
+
 		$is_mail = $request->input('ismail');
 		if ($is_mail == 'true' || $is_mail == 'on') {
 			$ismail = 1;
 		}else {
 			$ismail = 0;
 		}
-		
+
 		//Is SMTP
 		if($mailer == 'smtp'){
 			$validator_array = array(
@@ -1300,7 +1274,7 @@ class SettingsController extends Controller
 				'mailer' => 'required'
 			]);
 		}
-		
+
 		$errors = $validator->errors();
 
 		if($errors->has('from_name')){
@@ -1328,10 +1302,10 @@ class SettingsController extends Controller
 			$res['msg'] = $errors->first('mailer');
 			return response()->json($res);
 		}
-		
+
 		//IS SMTP
 		if($mailer == 'smtp'){
-			
+
 			if($errors->has('smtp_host')){
 				$res['msgType'] = 'error';
 				$res['msg'] = $errors->first('smtp_host');
@@ -1358,7 +1332,7 @@ class SettingsController extends Controller
 				return response()->json($res);
 			}
 		}
-		
+
 		$option_value = array(
 			'ismail' => $ismail,
 			'from_name' => $from_name,
@@ -1372,7 +1346,7 @@ class SettingsController extends Controller
 			'smtp_username' => $smtp_username,
 			'smtp_password' => $smtp_password
 		);
-		
+
 		$data = array(
 			'option_name' => 'mail_settings',
 			'option_value' => json_encode($option_value)
@@ -1383,7 +1357,7 @@ class SettingsController extends Controller
 		foreach ($gData as $row){
 			$id = $row['id'];
 		}
-		
+
 		if($id == ''){
 			$response = Tp_option::create($data);
 			if($response){

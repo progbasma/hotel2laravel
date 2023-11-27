@@ -6,10 +6,7 @@
 <!-- main Section -->
 <div class="main-body">
 	<div class="container-fluid">
-		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
-		@include('backend.partials.vipc')
-		@else
+
 		<div class="row mt-25">
 			<div class="col-lg-12">
 				<div class="card">
@@ -43,7 +40,7 @@
 											<input value="{{ $datalist['old_price'] }}" name="old_price" id="old_price" type="text" class="form-control">
 										</div>
 									</div>
-									
+
 									<div class="col-lg-4">
 										<div class="form-group">
 											<label for="is_discount">{{ __('Discount') }}</label>

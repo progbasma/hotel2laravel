@@ -6,10 +6,7 @@
 <!-- main Section -->
 <div class="main-body">
 	<div class="container-fluid">
-		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
-		@include('backend.partials.vipc')
-		@else
+
 		<div class="row mt-25">
 			<div class="col-lg-12">
 				<div class="card">
@@ -56,7 +53,7 @@
 							<div class="col-lg-3"></div>
 							<div class="col-lg-3"></div>
 						</div>
-						
+
 						<div class="row">
 							<div class="col-lg-4">
 								<div class="form-group bulk-box">
@@ -82,7 +79,7 @@
 						</div>
 					</div>
 					<!--/Data grid/-->
-					
+
 					<!--Data Entry Form-->
 					<div id="form-panel" class="card-body dnone">
 						<form novalidate="" data-validate="parsley" id="DataEntry_formId">
@@ -92,7 +89,7 @@
 										<label for="title">{{ __('Room Type') }}<span class="red">*</span></label>
 										<input type="text" name="title" id="title" class="form-control parsley-validated" data-required="true">
 									</div>
-								</div>	
+								</div>
 								<div class="col-lg-4">
 									<div class="form-group">
 										<label for="slug">{{ __('Slug') }}<span class="red">*</span></label>
@@ -124,10 +121,10 @@
 										@endforeach
 										</select>
 									</div>
-								</div>	
-								<div class="col-lg-9"></div>	
+								</div>
+								<div class="col-lg-9"></div>
 							</div>
-								
+
 							<input type="text" name="RecordId" id="RecordId" class="dnone">
 							<div class="row tabs-footer mt-15">
 								<div class="col-lg-12">
@@ -140,10 +137,7 @@
 				</div>
 			</div>
 		</div>
-		@endif
-	</div>
-</div>
-<!-- /main Section -->
+
 @endsection
 
 @push('scripts')

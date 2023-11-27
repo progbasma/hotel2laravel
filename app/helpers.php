@@ -39,29 +39,29 @@ function PageVariation(){
 	}
 
 	if($id != ''){
-	
+
 		$sData = json_decode($results);
 		$dataObj = json_decode($sData[0]->option_value);
-		
+
 		$data['home_variation'] = $dataObj->home_variation;
 	}else{
 		$data['home_variation'] = 'home_1';
 	}
-		
+
 	return $data;
 }
 
 //Get data for Language locale
 function glan(){
 	$lan = app()->getLocale();
-	
+
 	return $lan;
 }
 
 //Category List
 function CategoryMenuList(){
 	$lan = glan();
-	
+
 	$datalist = Category::where('lan', '=', $lan)->where('is_publish', '=', 1)->orderBy('id', 'ASC')->get();
 	$li_List = '';
 	$Path = asset('public/media');
@@ -70,23 +70,23 @@ function CategoryMenuList(){
 		$id = $row->id;
 		$slug = $row->slug;
 		$thumbnail = '<img src="'.$Path.'/'.$row->thumbnail.'" />';
-		
+
 		if($count>8){
 			$li_List .= '<li class="cat-list-hideshow"><a href="'.route('frontend.product-category', [$id, $slug]).'"><div class="cat-icon">'.$thumbnail.'</div>'.$row->name.'</a></li>';
 		}else{
 			$li_List .= '<li><a href="'.route('frontend.product-category', [$id, $slug]).'"><div class="cat-icon">'.$thumbnail.'</div>'.$row->name.'</a></li>';
 		}
-		
+
 		$count++;
 	}
-	
+
 	return $li_List;
 }
 
 //Category List for Mobile
 function CategoryListForMobile(){
 	$lan = glan();
-	
+
 	$datalist = Category::where('lan', '=', $lan)->where('is_publish', '=', 1)->orderBy('name','ASC')->get();
 	$li_List = '';
 	foreach($datalist as $row){
@@ -95,7 +95,7 @@ function CategoryListForMobile(){
 
 		$li_List .= '<li><a href="'.route('frontend.category', [$id, $slug]).'">'.$row->name.'</a></li>';
 	}
-	
+
 	return $li_List;
 }
 
@@ -104,7 +104,7 @@ function HeaderMenuList($MenuType){
 
 	$lan = glan();
 
-	$sql = "SELECT b.id, b.menu_id, b.menu_type, b.child_menu_type, b.item_id, b.item_label, b.custom_url, 
+	$sql = "SELECT b.id, b.menu_id, b.menu_type, b.child_menu_type, b.item_id, b.item_label, b.custom_url,
 	b.target_window, b.css_class, b.`column`, b.width_type, b.width, b.lan, b.sort_order
 	FROM menus a
 	INNER JOIN menu_parents b ON a.id = b.menu_id
@@ -123,10 +123,10 @@ function HeaderMenuList($MenuType){
 
 		$menu_id = $row->menu_id;
 		$menu_parent_id = $row->id;
-		
+
 		$item_id = $row->item_id;
 		$custom_url = $row->custom_url;
-		
+
 		if($row->target_window == '_blank'){
 			$target_window = ' target="_blank"';
 		}else{
@@ -135,7 +135,7 @@ function HeaderMenuList($MenuType){
 
 		//Menu list for Desktop
 		if($MenuType == 'HeaderMenuListForDesktop'){
-			
+
 			if($row->child_menu_type == 'mega_menu'){
 				$MegaDropdownMenuList = makeMegaMenu($menu_id, $menu_parent_id, $row->width_type, $row->width, $MenuType);
 				$upDownClass = ' class="tp-updown"';
@@ -146,13 +146,13 @@ function HeaderMenuList($MenuType){
 				$MegaDropdownMenuList = '';
 				$upDownClass = '';
 			}
-			
+
 			if($row->width_type == 'full_width'){
 				$full_width = 'class="tp-static"';
 			}else{
 				$full_width = '';
 			}
-			
+
 			if($row->menu_type == 'page'){
 				$MenuList .= '<li '.$full_width.'><a'.$upDownClass.$target_window.' href="'.route('frontend.page', [$item_id, $custom_url]).'">'.$row->item_label.'</a>'.$MegaDropdownMenuList.'</li>';
 
@@ -161,10 +161,10 @@ function HeaderMenuList($MenuType){
 
 			}elseif($row->menu_type == 'product'){
 				$MenuList .= '<li '.$full_width.'><a'.$upDownClass.$target_window.' href="'.route('frontend.room', [$item_id, $custom_url]).'">'.$row->item_label.'</a>'.$MegaDropdownMenuList.'</li>';
-		
+
 			}elseif($row->menu_type == 'product_category'){
 				$MenuList .= '<li '.$full_width.'><a'.$upDownClass.$target_window.' href="'.route('frontend.category', [$item_id, $custom_url]).'">'.$row->item_label.'</a>'.$MegaDropdownMenuList.'</li>';
-			
+
 			}elseif($row->menu_type == 'blog'){
 				if($item_id == 0){
 					$MenuList .= '<li '.$full_width.'><a'.$upDownClass.$target_window.' href="'.route('frontend.blog').'">'.$row->item_label.'</a>'.$MegaDropdownMenuList.'</li>';
@@ -172,10 +172,10 @@ function HeaderMenuList($MenuType){
 					$MenuList .= '<li '.$full_width.'><a'.$upDownClass.$target_window.' href="'.route('frontend.blog-category', [$item_id, $custom_url]).'">'.$row->item_label.'</a>'.$MegaDropdownMenuList.'</li>';
 				}
 			}
-			
+
 		//Menu list for Mobile
 		}else{
-			
+
 			if($row->child_menu_type == 'mega_menu'){
 				$MegaDropdownMenuList = makeMegaMenu($menu_id, $menu_parent_id, $row->width_type, $row->width, $MenuType);
 				$hasChildrenMenu = 'class="has-children-menu"';
@@ -186,7 +186,7 @@ function HeaderMenuList($MenuType){
 				$MegaDropdownMenuList = '';
 				$hasChildrenMenu = '';
 			}
-			
+
 			if($row->menu_type == 'page'){
 				$MenuList .= '<li '.$hasChildrenMenu.'><a'.$target_window.' href="'.route('frontend.page', [$item_id, $custom_url]).'">'.$row->item_label.'</a>'.$MegaDropdownMenuList.'</li>';
 
@@ -195,10 +195,10 @@ function HeaderMenuList($MenuType){
 
 			}elseif($row->menu_type == 'product'){
 				$MenuList .= '<li '.$hasChildrenMenu.'><a'.$target_window.' href="'.route('frontend.room', [$item_id, $custom_url]).'">'.$row->item_label.'</a>'.$MegaDropdownMenuList.'</li>';
-		
+
 			}elseif($row->menu_type == 'product_category'){
 				$MenuList .= '<li '.$hasChildrenMenu.'><a'.$target_window.' href="'.route('frontend.category', [$item_id, $custom_url]).'">'.$row->item_label.'</a>'.$MegaDropdownMenuList.'</li>';
-			
+
 			}elseif($row->menu_type == 'blog'){
 				if($item_id == 0){
 					$MenuList .= '<li '.$hasChildrenMenu.'><a'.$target_window.' href="'.route('frontend.blog').'">'.$row->item_label.'</a>'.$MegaDropdownMenuList.'</li>';
@@ -213,35 +213,35 @@ function HeaderMenuList($MenuType){
 }
 
 function makeMegaMenu($menu_id, $menu_parent_id, $width_type, $width, $MenuType){
-	
+
 	$sql = "SELECT a.id, a.mega_menu_title, a.is_title, a.is_image, a.image, a.sort_order, b.column, b.width_type, b.width, b.css_class
-	FROM mega_menus a 
+	FROM mega_menus a
 	INNER JOIN menu_parents b ON a.menu_parent_id = b.id
 	WHERE a.menu_id = '".$menu_id."'
 	AND a.menu_parent_id = '".$menu_parent_id."'
 	ORDER BY a.sort_order ASC;";
 	$datalist = DB::select(DB::raw($sql));
-	
+
 	$ul_List = '';
 	$title = '';
 	$imageOrMegaLiList = '';
 	$is_title_for_mobile = 0;
 	foreach($datalist as $row){
 		$mega_menu_id = $row->id;
-		
+
 		if($row->is_title == 0){
 			$is_title_for_mobile++;
 		}
-		
+
 		//Menu list for Desktop
 		if($MenuType == 'HeaderMenuListForDesktop'){
-		
+
 			if($row->is_title == 1){
 				$title = '<li class="mega-title">'.$row->mega_menu_title.'</li>';
 			}else{
 				$title = '';
 			}
-			
+
 			if($row->is_image == 1){
 				if($row->image != ''){
 					$Path = asset('public/media');
@@ -252,7 +252,7 @@ function makeMegaMenu($menu_id, $menu_parent_id, $width_type, $width, $MenuType)
 			}else{
 				$imageOrMegaLiList = mega_liList($menu_id, $menu_parent_id, $mega_menu_id, $MenuType);
 			}
-			
+
 			if($row->width_type == 'full_width'){
 				$ul_List .= '<ul class="mega-col-'.$row->column.' '.$row->css_class.'">
 							'.$title.$imageOrMegaLiList.'
@@ -262,16 +262,16 @@ function makeMegaMenu($menu_id, $menu_parent_id, $width_type, $width, $MenuType)
 							'.$title.$imageOrMegaLiList.'
 						</ul>';
 			}
-		
+
 		//Menu list for Mobile
 		}else{
-			
+
 			if($row->is_image == 1){
 				$imageOrMegaLiList = '';
 			}else{
 				$imageOrMegaLiList = mega_liList($menu_id, $menu_parent_id, $mega_menu_id, $MenuType);
 			}
-			
+
 			if($is_title_for_mobile>0){
 				$ul_List .= $imageOrMegaLiList;
 			}else{
@@ -281,7 +281,7 @@ function makeMegaMenu($menu_id, $menu_parent_id, $width_type, $width, $MenuType)
 			}
 		}
 	}
-	
+
 	//Menu list for Desktop
 	if($MenuType == 'HeaderMenuListForDesktop'){
 		if($width_type == 'full_width'){
@@ -289,17 +289,17 @@ function makeMegaMenu($menu_id, $menu_parent_id, $width_type, $width, $MenuType)
 		}else{
 			$MenuList = '<div class="mega-menu" style="width:'.$width.'px;">'.$ul_List.'</div>';
 		}
-	
+
 	//Menu list for Mobile
 	}else{
 		$MenuList = '<ul class="dropdown">'.$ul_List.'</ul>';
 	}
-	
-	return $MenuList;	
+
+	return $MenuList;
 }
 
 function mega_liList($menu_id, $menu_parent_id, $mega_menu_id, $MenuType){
-	
+
 	$datalist = Menu_child::where('menu_id', '=', $menu_id)
 			->where('menu_parent_id', '=', $menu_parent_id)
 			->where('mega_menu_id', '=', $mega_menu_id)
@@ -308,16 +308,16 @@ function mega_liList($menu_id, $menu_parent_id, $mega_menu_id, $MenuType){
 	$li_List = '';
 	$target_window = '';
 	foreach($datalist as $row){
-		
+
 		$item_id = $row->item_id;
 		$custom_url = $row->custom_url;
-		
+
 		if($row->target_window == '_blank'){
 			$target_window = ' target="_blank"';
 		}else{
 			$target_window = '';
 		}
-		
+
 		if($row->menu_type == 'page'){
 			$li_List .= '<li><a'.$target_window.' href="'.route('frontend.page', [$item_id, $custom_url]).'">'.$row->item_label.'</a></li>';
 
@@ -326,10 +326,10 @@ function mega_liList($menu_id, $menu_parent_id, $mega_menu_id, $MenuType){
 
 		}elseif($row->menu_type == 'product'){
 			$li_List .= '<li><a'.$target_window.' href="'.route('frontend.room', [$item_id, $custom_url]).'">'.$row->item_label.'</a></li>';
-			
+
 		}elseif($row->menu_type == 'product_category'){
 			$li_List .= '<li><a'.$target_window.' href="'.route('frontend.category', [$item_id, $custom_url]).'">'.$row->item_label.'</a></li>';
-		
+
 		}elseif($row->menu_type == 'blog'){
 			if($item_id == 0){
 				$li_List .= '<li><a'.$target_window.' href="'.route('frontend.blog').'">'.$row->item_label.'</a></li>';
@@ -351,16 +351,16 @@ function makeDropdownMenu($menu_id, $menu_parent_id, $MenuType){
 	$li_List = '';
 	$target_window = '';
 	foreach($datalist as $row){
-		
+
 		$item_id = $row->item_id;
 		$custom_url = $row->custom_url;
-		
+
 		if($row->target_window == '_blank'){
 			$target_window = ' target="_blank"';
 		}else{
 			$target_window = '';
 		}
-		
+
 		if($row->menu_type == 'page'){
 			$li_List .= '<li><a'.$target_window.' href="'.route('frontend.page', [$item_id, $custom_url]).'">'.$row->item_label.'</a></li>';
 
@@ -369,10 +369,10 @@ function makeDropdownMenu($menu_id, $menu_parent_id, $MenuType){
 
 		}elseif($row->menu_type == 'product'){
 			$li_List .= '<li><a'.$target_window.' href="'.route('frontend.room', [$item_id, $custom_url]).'">'.$row->item_label.'</a></li>';
-			
+
 		}elseif($row->menu_type == 'product_category'){
 			$li_List .= '<li><a'.$target_window.' href="'.route('frontend.category', [$item_id, $custom_url]).'">'.$row->item_label.'</a></li>';
-			
+
 		}elseif($row->menu_type == 'blog'){
 			if($item_id == 0){
 				$li_List .= '<li><a'.$target_window.' href="'.route('frontend.blog').'">'.$row->item_label.'</a></li>';
@@ -381,16 +381,16 @@ function makeDropdownMenu($menu_id, $menu_parent_id, $MenuType){
 			}
 		}
 	}
-	
+
 	//Menu list for Desktop
 	if($MenuType == 'HeaderMenuListForDesktop'){
 		$MenuList = '<ul class="submenu">'.$li_List.'</ul>';
-	
+
 	//Menu list for Mobile
 	}else{
 		$MenuList = '<ul class="dropdown">'.$li_List.'</ul>';
 	}
-	
+
 	return $MenuList;
 }
 
@@ -412,13 +412,13 @@ function FooterMenuList($MenuType){
 	foreach($datalist as $row){
 		$item_id = $row->item_id;
 		$custom_url = $row->custom_url;
-		
+
 		if($row->target_window == '_blank'){
 			$target_window = ' target="_blank"';
 		}else{
 			$target_window = '';
 		}
-		
+
 		if($row->menu_type == 'page'){
 			$li_List .= '<li><a'.$target_window.' href="'.route('frontend.page', [$item_id, $custom_url]).'">'.$row->item_label.'</a></li>';
 
@@ -427,10 +427,10 @@ function FooterMenuList($MenuType){
 
 		}elseif($row->menu_type == 'product'){
 			$li_List .= '<li><a'.$target_window.' href="'.route('frontend.room', [$item_id, $custom_url]).'">'.$row->item_label.'</a></li>';
-			
+
 		}elseif($row->menu_type == 'product_category'){
 			$li_List .= '<li><a'.$target_window.' href="'.route('frontend.category', [$item_id, $custom_url]).'">'.$row->item_label.'</a></li>';
-			
+
 		}elseif($row->menu_type == 'blog'){
 			if($item_id == 0){
 				$li_List .= '<li><a'.$target_window.' href="'.route('frontend.blog').'">'.$row->item_label.'</a></li>';
@@ -446,10 +446,10 @@ function FooterMenuList($MenuType){
 function gtext(){
 
 	$data = array();
-	
+
 	//general_settings
 	$general_settings = Tp_option::where('option_name', 'general_settings')->get();
-	
+
 	$general_settings_id = '';
 	foreach ($general_settings as $row){
 		$general_settings_id = $row->id;
@@ -477,7 +477,7 @@ function gtext(){
 
 	//subheader_bg_images
 	$subheader_bg_images = Tp_option::where('option_name', 'subheader_bg_images')->get();
-	
+
 	$subheader_bg_images_id = '';
 	foreach ($subheader_bg_images as $row){
 		$subheader_bg_images_id = $row->id;
@@ -506,11 +506,11 @@ function gtext(){
 		$data['profile_bg'] = '';
 		$data['change_password_bg'] = '';
 		$data['booking_bg'] = '';
-	}	
-	
+	}
+
 	//theme_logo
 	$theme_logo = Tp_option::where('option_name', 'theme_logo')->get();
-	
+
 	$theme_logo_id = '';
 	foreach ($theme_logo as $row){
 		$theme_logo_id = $row->id;
@@ -527,10 +527,10 @@ function gtext(){
 		$data['front_logo'] = '';
 		$data['back_logo'] = '';
 	}
-	
+
 	//currency
  	$currency = Tp_option::where('option_name', 'currency')->get();
-	
+
 	$currency_id = '';
 	foreach ($currency as $row){
 		$currency_id = $row->id;
@@ -547,10 +547,10 @@ function gtext(){
 		$data['currency_icon'] = '';
 		$data['currency_position'] = '';
 	}
-	
+
 	//theme_option_header
  	$theme_option_header = Tp_option::where('option_name', 'theme_option_header')->get();
-	
+
 	$theme_option_header_id = '';
 	foreach ($theme_option_header as $row){
 		$theme_option_header_id = $row->id;
@@ -567,10 +567,10 @@ function gtext(){
 		$data['phone'] = '';
 		$data['is_publish'] = '';
 	}
-	
+
 	//Language Switcher
 	$language_switcher_data = Tp_option::where('option_name', 'language_switcher')->get();
-	
+
 	$language_switcher_id = '';
 	foreach ($language_switcher_data as $row){
 		$language_switcher_id = $row->id;
@@ -583,11 +583,11 @@ function gtext(){
 		$data['is_language_switcher'] = $wsObj->is_language_switcher;
 	}else{
 		$data['is_language_switcher'] = '';
-	}	
-	
+	}
+
 	//theme_option_footer
  	$theme_option_footer = Tp_option::where('option_name', 'theme_option_footer')->get();
-	
+
 	$theme_option_footer_id = '';
 	foreach ($theme_option_footer as $row){
 		$theme_option_footer_id = $row->id;
@@ -596,7 +596,7 @@ function gtext(){
 	if($theme_option_footer_id != ''){
 		$theme_option_footerData = json_decode($theme_option_footer);
 		$theme_option_footerObj = json_decode($theme_option_footerData[0]->option_value);
-		
+
 		$data['about_logo_footer'] = $theme_option_footerObj->about_logo;
 		$data['about_desc_footer'] = $theme_option_footerObj->about_desc;
 		$data['is_publish_about'] = $theme_option_footerObj->is_publish_about;
@@ -621,7 +621,7 @@ function gtext(){
 		$data['payment_gateway_icon'] = '';
 		$data['is_publish_payment'] = '';
 	}
-	
+
 	//isRTL
 	$isRTL = Language::where('language_code', app()->getLocale())->get();
 	$isRTL_id = '';
@@ -630,16 +630,16 @@ function gtext(){
 		$isRTL_id = $row->id;
 		$is_rtl = $row->is_rtl;
 	}
-	
+
 	if($isRTL_id != ''){
 		$data['is_rtl'] = $is_rtl;
 	}else{
 		$data['is_rtl'] = 0;
 	}
-	
+
 	//facebook
  	$facebook = Tp_option::where('option_name', 'facebook')->get();
-	
+
 	$facebook_id = '';
 	foreach ($facebook as $row){
 		$facebook_id = $row->id;
@@ -654,10 +654,10 @@ function gtext(){
 		$data['fb_app_id'] = '';
 		$data['fb_publish'] = '';
 	}
-	
+
 	//twitter
  	$twitter = Tp_option::where('option_name', 'twitter')->get();
-	
+
 	$twitter_id = '';
 	foreach ($twitter as $row){
 		$twitter_id = $row->id;
@@ -672,10 +672,10 @@ function gtext(){
 		$data['twitter_id'] = '';
 		$data['twitter_publish'] = '';
 	}
-	
+
 	//Theme Option SEO
  	$theme_option_seo = Tp_option::where('option_name', 'theme_option_seo')->get();
-	
+
 	$theme_option_seo_id = '';
 	foreach ($theme_option_seo as $row){
 		$theme_option_seo_id = $row->id;
@@ -696,10 +696,10 @@ function gtext(){
 		$data['og_keywords'] = '';
 		$data['seo_publish'] = '';
 	}
-	
+
 	//Theme Option Facebook Pixel
  	$theme_option_facebook_pixel = Tp_option::where('option_name', 'facebook-pixel')->get();
-	
+
 	$theme_option_fb_pixel_id = '';
 	foreach ($theme_option_facebook_pixel as $row){
 		$theme_option_fb_pixel_id = $row->id;
@@ -714,10 +714,10 @@ function gtext(){
 		$data['fb_pixel_id'] = '';
 		$data['fb_pixel_publish'] = '';
 	}
-	
+
 	//Theme Option Google Analytics
  	$theme_option_google_analytics = Tp_option::where('option_name', 'google_analytics')->get();
-	
+
 	$theme_option_ga_id = '';
 	foreach ($theme_option_google_analytics as $row){
 		$theme_option_ga_id = $row->id;
@@ -732,10 +732,10 @@ function gtext(){
 		$data['tracking_id'] = '';
 		$data['ga_publish'] = '';
 	}
-	
+
 	//Theme Option Google Tag Manager
  	$theme_option_google_tag_manager = Tp_option::where('option_name', 'google_tag_manager')->get();
-	
+
 	$theme_option_gtm_id = '';
 	foreach ($theme_option_google_tag_manager as $row){
 		$theme_option_gtm_id = $row->id;
@@ -750,15 +750,15 @@ function gtext(){
 		$data['google_tag_manager_id'] = '';
 		$data['gtm_publish'] = '';
 	}
-	
+
 	//Google Recaptcha
  	$theme_option_google_recaptcha = Tp_option::where('option_name', 'google_recaptcha')->get();
-	
+
 	$google_recaptcha_id = '';
 	foreach ($theme_option_google_recaptcha as $row){
 		$google_recaptcha_id = $row->id;
 	}
-	
+
 	if($google_recaptcha_id != ''){
 		$grData = json_decode($theme_option_google_recaptcha);
 		$grObj = json_decode($grData[0]->option_value);
@@ -770,15 +770,15 @@ function gtext(){
 		$data['secretkey'] = '';
 		$data['is_recaptcha'] = '';
 	}
-	
+
 	//Google Map
  	$theme_option_google_map = Tp_option::where('option_name', 'google_map')->get();
-	
+
 	$google_map_id = '';
 	foreach ($theme_option_google_map as $row){
 		$google_map_id = $row->id;
 	}
-	
+
 	if($google_map_id != ''){
 		$gmData = json_decode($theme_option_google_map);
 		$gmObj = json_decode($gmData[0]->option_value);
@@ -788,15 +788,15 @@ function gtext(){
 		$data['googlemap_apikey'] = '';
 		$data['is_googlemap'] = '';
 	}
-	
+
 	//Theme Color
  	$theme_color = Tp_option::where('option_name', 'theme_color')->get();
-	
+
 	$theme_color_id = '';
 	foreach ($theme_color as $row){
 		$theme_color_id = $row->id;
 	}
-		
+
 	if($theme_color_id != ''){
 		$tcData = json_decode($theme_color);
 		$tcObj = json_decode($tcData[0]->option_value);
@@ -822,10 +822,10 @@ function gtext(){
 		$data['white_color'] = '#ffffff';
 		$data['backend_theme_color'] = '#2d1268';
 	}
-	
+
 	//Mail Settings
  	$theme_option_mail_settings = Tp_option::where('option_name', 'mail_settings')->get();
-	
+
 	$mail_settings_id = '';
 	foreach ($theme_option_mail_settings as $row){
 		$mail_settings_id = $row->id;
@@ -861,7 +861,7 @@ function gtext(){
 
 	//Stripe
 	$stripe_data = Tp_option::where('option_name', 'stripe')->get();
-	
+
 	$stripe_id = '';
 	foreach ($stripe_data as $row){
 		$stripe_id = $row->id;
@@ -883,12 +883,12 @@ function gtext(){
 
 	//Paypal
 	$paypal_data = Tp_option::where('option_name', 'paypal')->get();
-	
+
 	$paypal_id = '';
 	foreach ($paypal_data as $row){
 		$paypal_id = $row->id;
 	}
-	
+
 	if($paypal_id != ''){
 		$paypalData = json_decode($paypal_data);
 		$paypalObj = json_decode($paypalData[0]->option_value);
@@ -903,16 +903,16 @@ function gtext(){
 		$data['paypal_currency'] = 'USD';
 		$data['ismode_paypal'] = '';
 		$data['isenable_paypal'] = '';
-	}	
-	
+	}
+
 	//Razorpay
 	$razorpay_data = Tp_option::where('option_name', 'razorpay')->get();
-	
+
 	$razorpay_id = '';
 	foreach ($razorpay_data as $row){
 		$razorpay_id = $row->id;
 	}
-	
+
 	if($razorpay_id != ''){
 		$razorpayData = json_decode($razorpay_data);
 		$razorpayObj = json_decode($razorpayData[0]->option_value);
@@ -928,10 +928,10 @@ function gtext(){
 		$data['ismode_razorpay'] = '';
 		$data['isenable_razorpay'] = '';
 	}
-	
+
 	//Mollie
 	$mollie_data = Tp_option::where('option_name', 'mollie')->get();
-	
+
 	$mollie_id = '';
 	foreach ($mollie_data as $row){
 		$mollie_id = $row->id;
@@ -950,10 +950,10 @@ function gtext(){
 		$data['ismode_mollie'] = '';
 		$data['isenable_mollie'] = '';
 	}
-	
+
 	//Cash on Delivery (COD)
 	$cod_data = Tp_option::where('option_name', 'cash_on_delivery')->get();
-	
+
 	$cod_id = '';
 	foreach ($cod_data as $row){
 		$cod_id = $row->id;
@@ -968,10 +968,10 @@ function gtext(){
 		$data['cod_description'] = '';
 		$data['cod_isenable'] = '';
 	}
-	
+
 	//Bank Transfer
 	$bank_data = Tp_option::where('option_name', 'bank_transfer')->get();
-	
+
 	$bank_id = '';
 	foreach ($bank_data as $row){
 		$bank_id = $row->id;
@@ -989,7 +989,7 @@ function gtext(){
 
 	//MailChimp
 	$mailchimp_data = Tp_option::where('option_name', 'mailchimp')->get();
-	
+
 	$mailchimp_id = '';
 	foreach ($mailchimp_data as $row){
 		$mailchimp_id = $row->id;
@@ -1009,7 +1009,7 @@ function gtext(){
 
 	//Subscribe Popup
 	$subscribe_popup_data = Tp_option::where('option_name', 'subscribe_popup')->get();
-	
+
 	$subscribe_id = '';
 	foreach ($subscribe_popup_data as $row){
 		$subscribe_id = $row->id;
@@ -1032,10 +1032,10 @@ function gtext(){
 		$data['is_subscribe_popup'] = '';
 		$data['is_subscribe_footer'] = '';
 	}
-	
+
 	//Whatsapp
 	$whatsapp_data = Tp_option::where('option_name', 'whatsapp')->get();
-	
+
 	$whatsapp_id = '';
 	foreach ($whatsapp_data as $row){
 		$whatsapp_id = $row->id;
@@ -1054,7 +1054,7 @@ function gtext(){
 		$data['position'] = '';
 		$data['is_whatsapp_publish'] = '';
 	}
-	
+
 	//custom_css
 	$custom_css_data = Tp_option::where('option_name', 'custom_css')->get();
 	$custom_css = '';
@@ -1073,7 +1073,7 @@ function gtext(){
 
 	//Cookie Consent
  	$theme_cookie_consent = Tp_option::where('option_name', 'cookie_consent')->get();
-	
+
 	$theme_cookie_consent_id = '';
 	foreach ($theme_cookie_consent as $row){
 		$theme_cookie_consent_id = $row->id;
@@ -1082,7 +1082,7 @@ function gtext(){
 	if($theme_cookie_consent_id != ''){
 		$theme_cookie_consentData = json_decode($theme_cookie_consent);
 		$theme_cookie_consentObj = json_decode($theme_cookie_consentData[0]->option_value);
-		
+
 		$data['cookie_title'] = $theme_cookie_consentObj->title;
 		$data['cookie_message'] = $theme_cookie_consentObj->message;
 		$data['button_text'] = $theme_cookie_consentObj->button_text;
@@ -1100,14 +1100,14 @@ function gtext(){
 		$data['cookie_position'] = '';
 		$data['cookie_style'] = '';
 		$data['is_publish_cookie_consent'] = '';
-	}	
-	
+	}
+
 	return $data;
 }
 
 //Social Media List
 function SocialMediaList(){
-	
+
 	$datalist = Social_media::where('is_publish', '=', 1)->orderBy('id','ASC')->get();
 	$li_List = '';
 	foreach($datalist as $row){
@@ -1118,32 +1118,18 @@ function SocialMediaList(){
 
 		$li_List .= '<a href="'.$url.'" '.$target.'><i class="'.$social_icon.'"></i></a>';
 	}
-	
+
 	return $li_List;
 }
 
 function vipc(){
+	$data['bkey'] = true;
 
-	$datalist = Tp_option::where('option_name', 'vipc')->get();
-
-	$id = '';
-	$option_value = '';
-	foreach ($datalist as $row){
-		$id = $row->id;
-		$option_value = json_decode($row->option_value);
-	}
-
-	$data = array();
-	if($id != ''){
-		$data['bkey'] = $option_value->resetkey;
-	}else{
-		$data['bkey'] = 0;
-	}
 	return $data;
 }
 
 function getPurchaseData( $code ) {
-	
+
 	$header   = array();
 	$header[] = 'Content-length: 0';
 	$header[] = 'Content-type: application/json; charset=utf-8';
@@ -1160,7 +1146,7 @@ function getPurchaseData( $code ) {
 	curl_close( $ch_verify );
 
 	if ($cinit_verify_data != ""){
-		return json_decode($cinit_verify_data);  
+		return json_decode($cinit_verify_data);
 	}else{
 		return false;
 	}
@@ -1188,11 +1174,11 @@ function verifyPurchase($code) {
 function language(){
 
 	$locale_language = glan();
-	
+
 	$data = Language::where('status', 1)->orderBy('language_name', 'ASC')->get();
-	
+
 	$base_url = url('/');
-	
+
 	$language = '';
 	$selected_language = '';
 	foreach ($data as $row){
@@ -1216,19 +1202,19 @@ function language(){
 }
 
 function thumbnail($type){
-	
+
 	$datalist = array('width' => '', 'height' => '');
 	$data = Media_setting::where('media_type', $type)->first();
 	$datalist = array(
-		'width' => $data['media_width'], 
+		'width' => $data['media_width'],
 		'height' => $data['media_height']
 	);
-	
+
 	return $datalist;
 }
 
 function getTax() {
-	
+
 	$results = Tax::offset(0)->limit(1)->get();
 
 	$datalist = array('id' => '', 'title' => 'VAT', 'percentage' => 0, 'is_publish' => 2);
@@ -1248,7 +1234,7 @@ function getTax() {
 function str_slug($str) {
 
 	$str_slug = Str::slug($str, "-");
-	
+
 	return $str_slug;
 }
 
@@ -1258,21 +1244,21 @@ function str_url($string) {
 	if ( 0 === strlen($string) ) {
 		return '';
 	}
-	
+
 	$str_slug = Str::slug($string, "+");
-	
+
 	return $str_slug;
 }
 
 function str_limit($str) {
-	
+
 	$str_limit = Str::limit($str, 25, '...');
-	
+
 	return $str_limit;
 }
 
 function sub_str($str, $start=0, $end=1) {
-	
+
 	$string = Str::substr($str, $start, $end);
 
 	return $string;
@@ -1291,9 +1277,9 @@ function esc($string){
 	if ( 0 === strlen($string) ) {
 		return '';
 	}
-	
+
 	$string = htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
-	
+
 	return $string;
 }
 
@@ -1308,31 +1294,31 @@ function RandomString($length = 10) {
 }
 
 function DateDiffInDays($StartDate, $EndDate){
-	
+
 	$diff = strtotime($EndDate) - strtotime($StartDate);
 
 	// 1 day = 24 hours
 	// 24 * 60 * 60 = 86400 seconds
 	return abs(round($diff / 86400))+1;
 }
-	
+
 function NumberFormat($number){
 
  	$currency = Tp_option::where('option_name', 'currency')->get();
-	
+
 	$currency_id = '';
 	foreach ($currency as $row){
 		$currency_id = $row->id;
 	}
-	
+
 	$thousands_separator = ",";
 	$decimal_separator = ".";
 	$decimal_digit = 2;
-	
+
 	if($currency_id != ''){
 		$currencyData = json_decode($currency);
 		$currencyObj = json_decode($currencyData[0]->option_value);
-		
+
 		$ThouSep = $currencyObj->thousands_separator;
 		if($ThouSep == 'comma'){
 			$thousands_separator = ",";
@@ -1341,7 +1327,7 @@ function NumberFormat($number){
 		}else{
 			$thousands_separator = " ";
 		}
-		
+
 		$DecimalSep = $currencyObj->decimal_separator;
 		if($DecimalSep == 'comma'){
 			$decimal_separator = ",";
@@ -1350,12 +1336,12 @@ function NumberFormat($number){
 		}else{
 			$decimal_separator = " ";
 		}
-		
+
 		$decimal_digit = $currencyObj->decimal_digit;
 	}
 
 	$numFormat = number_format($number , $decimal_digit , $decimal_separator , $thousands_separator);
-	
+
 	return $numFormat;
 }
 
@@ -1379,7 +1365,7 @@ function gSellerSettings(){
 		$data['product_auto_publish'] = 0;
 		$data['seller_auto_active'] = 0;
 	}
-	
+
 	return $data;
 }
 
@@ -1389,7 +1375,7 @@ function gMenuUpdate($item_id, $menu_type, $item_label, $slug) {
 		'item_label' => $item_label,
 		'custom_url' => $slug
 	);
-	
+
 	Menu_parent::where('item_id', '=', $item_id)->where('menu_type', '=', $menu_type)->update($data);
 	Menu_child::where('item_id', '=', $item_id)->where('menu_type', '=', $menu_type)->update($data);
 }
@@ -1397,7 +1383,7 @@ function gMenuUpdate($item_id, $menu_type, $item_label, $slug) {
 function RoomDetailsList($str, $type){
 
 	$idsArray = explode("|", $str);
-	
+
 	$li_List = '';
 	if($type == 'amenities'){
 		$datalist = Amenity::whereIn('id', $idsArray)->orderBy('name', 'asc')->get();
@@ -1425,7 +1411,7 @@ function BookingCount($status_id) {
 	}else{
 		$count = Booking_manage::where('booking_status_id', '=', $status_id)->count();
 	}
-	
+
 	return $count;
 }
 
@@ -1438,11 +1424,11 @@ function BookingNotify($booking_id, $type) {
 		->join('payment_method', 'booking_manages.payment_method_id', '=', 'payment_method.id')
 		->join('payment_status', 'booking_manages.payment_status_id', '=', 'payment_status.id')
 		->join('booking_status', 'booking_manages.booking_status_id', '=', 'booking_status.id')
-		->select('booking_manages.*', 'rooms.title', 'rooms.old_price', 'rooms.is_discount', 
+		->select('booking_manages.*', 'rooms.title', 'rooms.old_price', 'rooms.is_discount',
 		 'payment_method.method_name', 'payment_status.pstatus_name', 'booking_status.bstatus_name')
 		->where('booking_manages.id', $booking_id)
 		->get();
-	
+
 	$mdata = array();
 	foreach($datalist as $row){
 		$mdata['title'] = $row->title;
@@ -1479,34 +1465,34 @@ function BookingNotify($booking_id, $type) {
 	if($mdata['total_price'] !=''){
 		$totalPrice = $mdata['total_price'];
 	}
-	
+
 	$oldPrice = 0;
 	if($mdata['old_price'] !=''){
 		$oldPrice = $mdata['old_price'];
 	}
-	
+
 	$sub_total = 0;
 	if($mdata['subtotal'] !=''){
 		$sub_total = $mdata['subtotal'];
 	}
-	
+
 	$totalTax = 0;
 	if($mdata['tax'] !=''){
 		$totalTax = $mdata['tax'];
 	}
-	
+
 	$totalDiscount = 0;
 	if($mdata['discount'] !=''){
 		$totalDiscount = $mdata['discount'];
 	}
-	
+
 	$totalAmount = 0;
 	if($mdata['total_amount'] !=''){
 		$totalAmount = $mdata['total_amount'];
 	}
-	
+
 	$calOldPrice = $oldPrice*$mdata['total_room']*$total_days;
-	
+
 	if($gtext['currency_position'] == 'left'){
 		$oPrice = $gtext['currency_icon'].NumberFormat($oldPrice);
 		$caloPrice = $gtext['currency_icon'].NumberFormat($calOldPrice);
@@ -1515,7 +1501,7 @@ function BookingNotify($booking_id, $type) {
 		$tax = $gtext['currency_icon'].NumberFormat($totalTax);
 		$discount = $gtext['currency_icon'].NumberFormat($totalDiscount);
 		$total_amount = $gtext['currency_icon'].NumberFormat($totalAmount);
-		
+
 	}else{
 		$oPrice = NumberFormat($oldPrice).$gtext['currency_icon'];
 		$caloPrice = NumberFormat($calOldPrice).$gtext['currency_icon'];
@@ -1525,14 +1511,14 @@ function BookingNotify($booking_id, $type) {
 		$discount = NumberFormat($totalDiscount).$gtext['currency_icon'];
 		$total_amount = NumberFormat($totalAmount).$gtext['currency_icon'];
 	}
-	
+
 	$old_price = '';
 	$cal_old_price = '';
 	if($mdata['is_discount'] == 1){
 		$old_price = '<br><span style="text-decoration:line-through;color:#ee0101;">'.$oPrice.'</span>';
 		$cal_old_price = '<br><span style="text-decoration:line-through;color:#ee0101;">'.$caloPrice.'</span>';
 	}
-	
+
 	$item_list = '<tr>
 			<td style="width:35%;text-align:left;border:1px solid #ddd;">'.$mdata['title'].'</td>
 			<td style="width:10%;text-align:center;border:1px solid #ddd;">'.$mdata['total_room'].'</td>
@@ -1541,29 +1527,29 @@ function BookingNotify($booking_id, $type) {
 			<td style="width:10%;text-align:center;border:1px solid #ddd;">'.$total_days.'</td>
 			<td style="width:10%;text-align:right;border:1px solid #ddd;">'.$subtotal.$cal_old_price.'</td>
 		</tr>';
-	
+
 	$RoomDataList = DB::table('room_manages')
 		->join('room_assigns', 'room_manages.id', '=', 'room_assigns.room_id')
 		->select('room_manages.room_no')
 		->where('room_assigns.booking_id', $booking_id)
 		->orderBy('room_manages.room_no', 'asc')
 		->get();
-	
+
 	$room_no = '';
 	$f = 0;
 	foreach($RoomDataList as $row){
 		if($f++){
 			$room_no .= ', ';
 		}
-		
+
 		$room_no .= $row->room_no;
 	}
-	
+
 	$assign_rooms = '';
 	if($room_no !=''){
 		$assign_rooms = __('Your assign  room no').': '.$room_no;
 	}
-	
+
 	if($mdata['payment_status_id'] == 1){
 		$pstatus = '#26c56d'; //Completed = 1
 	}elseif($mdata['payment_status_id'] == 2){
@@ -1573,10 +1559,10 @@ function BookingNotify($booking_id, $type) {
 	}elseif($mdata['payment_status_id'] == 4){
 		$pstatus = '#f25961'; //Incompleted 4
 	}
-	
+
 	$SubjectText = '';
 	$BodyText = '';
-	
+
 	if($mdata['booking_status_id'] == 1){
 		$bstatus = '#fe9e42'; //Pending = 1
 	}elseif($mdata['booking_status_id'] == 2){
@@ -1592,7 +1578,7 @@ function BookingNotify($booking_id, $type) {
 		$SubjectText = __('Your booking has cancelled.');
 		$BodyText = __('Your booking has cancelled. You can find your booking information below.');
 	}
-	
+
 	$subject_text = '';
 	$body_text = '';
 	if($type == 'booking_request'){
@@ -1628,12 +1614,12 @@ function BookingNotify($booking_id, $type) {
 			//Get mail
 			$mail->setFrom($gtext['from_mail'], $gtext['from_name']);
 			$mail->addAddress($mdata['customer_email'], $mdata['customer_name']);
-			
+
 			$mail->isHTML(true);
 			$mail->CharSet = "utf-8";
 			$mail->Subject = $mdata['booking_no'].' - '.$subject_text;
-			
-			$mail->Body = '<table style="background-color:#edf2f7;color:#111111;padding:40px 0px;line-height:24px;font-size:14px;" border="0" cellpadding="0" cellspacing="0" width="100%">	
+
+			$mail->Body = '<table style="background-color:#edf2f7;color:#111111;padding:40px 0px;line-height:24px;font-size:14px;" border="0" cellpadding="0" cellspacing="0" width="100%">
 							<tr>
 								<td>
 									<table style="background-color:#fff;max-width:1000px;margin:0 auto;padding:30px;" border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -1725,7 +1711,7 @@ function BookingNotify($booking_id, $type) {
 						</table>';
 
 			$mail->send();
-			
+
 			return 1;
 		} catch (Exception $e) {
 			return 0;

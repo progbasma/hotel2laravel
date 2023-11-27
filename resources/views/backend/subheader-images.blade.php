@@ -6,10 +6,7 @@
 <!-- main Section -->
 <div class="main-body">
 	<div class="container-fluid">
-		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
-		@include('backend.partials.vipc')
-		@else
+
 		<div class="row mt-25">
 			<div class="col-lg-12">
 				<div class="card">
@@ -39,7 +36,7 @@
 												<a onClick="onMediaImageRemove('blog_bg')" class="media-image-remove" href="javascript:void(0);"><i class="fa fa-remove"></i></a>
 											</div>
 										</div>
-										
+
 										<div class="form-group">
 											<label for="contact_bg">{{ __('Contact Us Subheader Background Image') }}<span class="red">*</span></label>
 											<div class="tp-upload-field">
@@ -52,7 +49,7 @@
 												<a onClick="onMediaImageRemove('contact_bg')" class="media-image-remove" href="javascript:void(0);"><i class="fa fa-remove"></i></a>
 											</div>
 										</div>
-										
+
 										<div class="form-group">
 											<label for="register_bg">{{ __('Register Subheader Background Image') }}<span class="red">*</span></label>
 											<div class="tp-upload-field">
@@ -65,7 +62,7 @@
 												<a onClick="onMediaImageRemove('register_bg')" class="media-image-remove" href="javascript:void(0);"><i class="fa fa-remove"></i></a>
 											</div>
 										</div>
-										
+
 										<div class="form-group">
 											<label for="login_bg">{{ __('Login Subheader Background Image') }}<span class="red">*</span></label>
 											<div class="tp-upload-field">
@@ -78,7 +75,7 @@
 												<a onClick="onMediaImageRemove('login_bg')" class="media-image-remove" href="javascript:void(0);"><i class="fa fa-remove"></i></a>
 											</div>
 										</div>
-										
+
 										<div class="form-group">
 											<label for="reset_password_bg">{{ __('Reset Password Subheader Background Image') }}<span class="red">*</span></label>
 											<div class="tp-upload-field">
@@ -91,7 +88,7 @@
 												<a onClick="onMediaImageRemove('reset_password_bg')" class="media-image-remove" href="javascript:void(0);"><i class="fa fa-remove"></i></a>
 											</div>
 										</div>
-										
+
 										<div class="form-group">
 											<label for="dashboard_bg">{{ __('Dashboard Subheader Background Image') }}<span class="red">*</span></label>
 											<div class="tp-upload-field">
@@ -104,7 +101,7 @@
 												<a onClick="onMediaImageRemove('dashboard_bg')" class="media-image-remove" href="javascript:void(0);"><i class="fa fa-remove"></i></a>
 											</div>
 										</div>
-										
+
 										<div class="form-group">
 											<label for="profile_bg">{{ __('Profile Subheader Background Image') }}<span class="red">*</span></label>
 											<div class="tp-upload-field">
@@ -117,7 +114,7 @@
 												<a onClick="onMediaImageRemove('profile_bg')" class="media-image-remove" href="javascript:void(0);"><i class="fa fa-remove"></i></a>
 											</div>
 										</div>
-										
+
 										<div class="form-group">
 											<label for="change_password_bg">{{ __('Change Password Subheader Background Image') }}<span class="red">*</span></label>
 											<div class="tp-upload-field">
@@ -130,7 +127,7 @@
 												<a onClick="onMediaImageRemove('change_password_bg')" class="media-image-remove" href="javascript:void(0);"><i class="fa fa-remove"></i></a>
 											</div>
 										</div>
-										
+
 										<div class="form-group">
 											<label for="booking_bg">{{ __('Booking Subheader Background Image') }}<span class="red">*</span></label>
 											<div class="tp-upload-field">
@@ -143,11 +140,11 @@
 												<a onClick="onMediaImageRemove('booking_bg')" class="media-image-remove" href="javascript:void(0);"><i class="fa fa-remove"></i></a>
 											</div>
 										</div>
-										
+
 									</div>
 									<div class="col-md-4"></div>
 								</div>
-								
+
 								<div class="row tabs-footer mt-15">
 									<div class="col-lg-12">
 										<a id="submit-form" href="javascript:void(0);" class="btn blue-btn">{{ __('Save') }}</a>
@@ -159,8 +156,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		@endif
+	  </div>
 	</div>
 </div>
 <!-- /main Section -->

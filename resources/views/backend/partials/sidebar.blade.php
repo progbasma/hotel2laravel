@@ -4,7 +4,6 @@
 			<img src="{{ $gtext['back_logo'] ? asset('public/media/'.$gtext['back_logo']) : asset('public/backend/images/backend-logo.png') }}" alt="logo">
 		</a>
 	</div>
-	<div class="version">Theme V 1.0.0</div>
 	<ul class="left-navbar">
 		@if (Auth::user()->role_id == 1)
 		<li><a href="{{ route('backend.dashboard') }}"><i class="fa fa-tachometer"></i>{{ __('Dashboard') }}</a></li>

@@ -6,10 +6,7 @@
 <!-- main Section -->
 <div class="main-body">
 	<div class="container-fluid">
-		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
-		@include('backend.partials.vipc')
-		@else
+
 		<div class="row mt-25">
 			<div class="col-lg-12">
 				<div class="card">
@@ -61,7 +58,7 @@
 													<label for="smtp_port">{{ __('SMTP Port') }}<span class="red">*</span></label>
 													<input type="number" name="smtp_port" id="smtp_port" class="form-control" value="{{ $datalist['smtp_port'] }}" placeholder="587">
 												</div>
-												
+
 												<div class="form-group">
 													<label for="smtp_security">{{ __('SMTP Security') }}<span class="red">*</span></label>
 													<select name="smtp_security" id="smtp_security" class="chosen-select form-control">
@@ -94,10 +91,7 @@
 				</div>
 			</div>
 		</div>
-		@endif
-	</div>
-</div>
-<!-- /main Section -->
+
 @endsection
 
 @push('scripts')

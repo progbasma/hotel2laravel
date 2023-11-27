@@ -6,10 +6,7 @@
 <!-- main Section -->
 <div class="main-body">
 	<div class="container-fluid">
-		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
-		@include('backend.partials.vipc')
-		@else
+
 		<div class="row mt-25">
 			<div class="col-lg-12">
 				<div class="card">
@@ -25,10 +22,10 @@
 						<div class="tabs-body">
 							<!--Data Entry Form-->
 							<form novalidate="" data-validate="parsley" id="DataEntry_formId">
-								
+
 								<div class="row">
 									<div class="col-md-8">
-									
+
 										<div class="form-group">
 											<label for="favicon">{{ __('Favicon') }}<span class="red">*</span></label>
 											<div class="tp-upload-field">
@@ -41,7 +38,7 @@
 												<a onClick="onMediaImageRemove('favicon')" class="media-image-remove" href="javascript:void(0);"><i class="fa fa-remove"></i></a>
 											</div>
 										</div>
-										
+
 										<div class="form-group">
 											<label for="front_logo">{{ __('Front Logo') }}<span class="red">*</span></label>
 											<div class="tp-upload-field">
@@ -54,7 +51,7 @@
 												<a onClick="onMediaImageRemove('front_logo')" class="media-image-remove" href="javascript:void(0);"><i class="fa fa-remove"></i></a>
 											</div>
 										</div>
-										
+
 										<div class="form-group">
 											<label for="back_logo">{{ __('Back Logo') }}<span class="red">*</span></label>
 											<div class="tp-upload-field">
@@ -67,11 +64,11 @@
 												<a onClick="onMediaImageRemove('back_logo')" class="media-image-remove" href="javascript:void(0);"><i class="fa fa-remove"></i></a>
 											</div>
 										</div>
-										
+
 									</div>
 									<div class="col-md-4"></div>
 								</div>
-								
+
 								<div class="row tabs-footer mt-15">
 									<div class="col-lg-12">
 										<a id="submit-form" href="javascript:void(0);" class="btn blue-btn">{{ __('Save') }}</a>
@@ -83,8 +80,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		@endif
+	  </div>
 	</div>
 </div>
 <!-- /main Section -->

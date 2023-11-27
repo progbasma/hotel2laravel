@@ -6,10 +6,7 @@
 <!-- main Section -->
 <div class="main-body">
 	<div class="container-fluid">
-		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
-		@include('backend.partials.vipc')
-		@else
+
 		<div class="row mt-25">
 			<div class="col-lg-4">
 				<div class="card">
@@ -71,7 +68,7 @@
 									</div>
 								</li>
 								<!--/Rooms/-->
-								
+
 								<!--Product Category-->
 								<li id="add_product_category" class="accordion-section">
 									<h3 class="accordion-section-title collapsed" data-toggle="collapse" data-target="#collapse_product_category" aria-expanded="false" aria-controls="collapse_product_category">{{ __('Categories') }}</h3>
@@ -97,7 +94,7 @@
 									</div>
 								</li>
 								<!--/Product Category/-->
-								
+
 								<!--Blog-->
 								<li id="add_blog_category" class="accordion-section">
 									<h3 class="accordion-section-title collapsed" data-toggle="collapse" data-target="#collapse_blog_category" aria-expanded="false" aria-controls="collapse_blog_category">{{ __('Blog') }}</h3>
@@ -123,7 +120,7 @@
 									</div>
 								</li>
 								<!--/Blog/-->
-								
+
 								<!--Custom Links-->
 								<li id="add_custom_links" class="accordion-section">
 									<h3 class="accordion-section-title collapsed" data-toggle="collapse" data-target="#collapse_custom_links" aria-expanded="false" aria-controls="collapse_custom_links">{{ __('Custom Links') }}</h3>
@@ -153,7 +150,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="col-lg-8">
 				<div class="card">
 					<div class="card-header">

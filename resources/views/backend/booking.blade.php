@@ -6,10 +6,7 @@
 <!-- main Section -->
 <div class="main-body">
 	<div class="container-fluid">
-		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
-		@include('backend.partials.vipc')
-		@else
+
 		<div class="row mt-25">
 			<div class="col-lg-12">
 				<div class="card">
@@ -25,7 +22,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="row mt-25">
 			<div class="col-lg-8">
 				<div class="card">
@@ -51,34 +48,34 @@
 										if($mdata->total_price !=''){
 											$totalPrice = $mdata->total_price;
 										}
-										
+
 										$oldPrice = 0;
 										if($mdata->old_price !=''){
 											$oldPrice = $mdata->old_price;
 										}
-										
+
 										$sub_total = 0;
 										if($mdata->subtotal !=''){
 											$sub_total = $mdata->subtotal;
 										}
-										
+
 										$totalTax = 0;
 										if($mdata->tax !=''){
 											$totalTax = $mdata->tax;
 										}
-										
+
 										$totalDiscount = 0;
 										if($mdata->discount !=''){
 											$totalDiscount = $mdata->discount;
 										}
-										
+
 										$totalAmount = 0;
 										if($mdata->total_amount !=''){
 											$totalAmount = $mdata->total_amount;
 										}
-										
+
 										$calOldPrice = $oldPrice*$mdata->total_room*$total_days;
-										
+
 										if($gtext['currency_position'] == 'left'){
 											$oPrice = $gtext['currency_icon'].NumberFormat($oldPrice);
 											$caloPrice = $gtext['currency_icon'].NumberFormat($calOldPrice);
@@ -87,7 +84,7 @@
 											$tax = $gtext['currency_icon'].NumberFormat($totalTax);
 											$discount = $gtext['currency_icon'].NumberFormat($totalDiscount);
 											$total_amount = $gtext['currency_icon'].NumberFormat($totalAmount);
-											
+
 										}else{
 											$oPrice = NumberFormat($oldPrice).$gtext['currency_icon'];
 											$caloPrice = NumberFormat($calOldPrice).$gtext['currency_icon'];
@@ -97,7 +94,7 @@
 											$discount = NumberFormat($totalDiscount).$gtext['currency_icon'];
 											$total_amount = NumberFormat($totalAmount).$gtext['currency_icon'];
 										}
-										
+
 										$old_price = '';
 										$cal_old_price = '';
 										if($mdata->is_discount == 1){
@@ -133,7 +130,7 @@
 								</tbody>
 							</table>
 						</div>
-						
+
 						<div class="row mt-25 mb-30">
 							<div class="col-lg-12">
 								<a onClick="onRoomListModalView()" href="javascript:void(0);" class="btn btn-theme"><i class="fa fa-plus"></i> {{ __('Assign Room') }}</a>
@@ -142,7 +139,7 @@
 								</div>
 							</div>
 						</div>
-						
+
 						<form novalidate="" data-validate="parsley" id="DataEntry_formId">
 							<div class="row mt-25">
 								<div class="col-lg-4">
@@ -209,9 +206,9 @@
 										<label for="checkout_date">{{ __('Check Out') }}<span class="red">*</span></label>
 										<input type="text" name="checkout_date" id="checkout_date" class="form-control parsley-validated" data-required="true" placeholder="yyyy-mm-dd" value="{{ $mdata->out_date }}">
 									</div>
-								</div>	
+								</div>
 							</div>
-						
+
 							<div class="row">
 								<div class="col-lg-6">
 									<div class="form-group">
@@ -219,9 +216,9 @@
 										<input type="number" name="room" id="room" class="form-control parsley-validated" data-required="true" min="1" max="{{ $total_room }}" value="{{ $mdata->total_room }}">
 									</div>
 								</div>
-								<div class="col-lg-6"></div>	
+								<div class="col-lg-6"></div>
 							</div>
-							
+
 							<div class="row">
 								<div class="col-lg-12 mb-10">
 									<div class="r_extra">
@@ -234,7 +231,7 @@
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="row">
 								<div class="col-lg-12">
 									<input class="dnone" id="bookingid" name="bookingid" type="text" value="{{ $mdata->id }}" />
@@ -251,35 +248,35 @@
 						@if ($mdata->name != '')
 						<p><strong>{{ __('Name') }}</strong>: {{ $mdata->name }}</p>
 						@endif
-						
+
 						@if ($mdata->email != '')
 						<p><strong>{{ __('Email') }}</strong>: {{ $mdata->email }}</p>
 						@endif
-						
+
 						@if ($mdata->phone != '')
 						<p><strong>{{ __('Phone') }}</strong>: {{ $mdata->phone }}</p>
 						@endif
-						
+
 						@if ($mdata->country != '')
 						<p><strong>{{ __('Country') }}</strong>: {{ $mdata->country }}</p>
 						@endif
-						
+
 						@if ($mdata->state != '')
 						<p><strong>{{ __('State') }}</strong>: {{ $mdata->state }}</p>
 						@endif
-						
+
 						@if ($mdata->zip_code != '')
 						<p><strong>{{ __('Zip Code') }}</strong>: {{ $mdata->zip_code }}</p>
 						@endif
-						
+
 						@if ($mdata->city != '')
 						<p><strong>{{ __('City') }}</strong>: {{ $mdata->city }}</p>
 						@endif
-						
+
 						@if ($mdata->address != '')
 						<p><strong>{{ __('Address') }}</strong>: {{ $mdata->address }}</p>
 						@endif
-						
+
 						@if ($mdata->comments != '')
 						<p><strong>{{ __('Note') }}</strong>: {{ $mdata->comments }}</p>
 						@endif

@@ -6,10 +6,7 @@
 <!-- main Section -->
 <div class="main-body">
 	<div class="container-fluid">
-		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
-		@include('backend.partials.vipc')
-		@else
+
 		<div class="row">
 			<div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-25">
 				<div class="desh-item-card">
@@ -71,7 +68,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-25">
 				<div class="desh-item-card">
 					<div class="icon-card tp-bg-success">
@@ -86,7 +83,7 @@
 					</span>
 				</div>
 			</div>
-			
+
 			<div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-25">
 				<div class="desh-item-card">
 					<div class="icon-card tp-bg-success">
@@ -101,7 +98,7 @@
 					</span>
 				</div>
 			</div>
-			
+
 			<div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-25">
 				<div class="desh-item-card">
 					<div class="icon-card tp-bg-warning">
@@ -116,7 +113,7 @@
 					</span>
 				</div>
 			</div>
-			
+
 			<div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-25">
 				<div class="desh-item-card">
 					<div class="icon-card tp-bg-danger">
@@ -131,7 +128,7 @@
 					</span>
 				</div>
 			</div>
-			
+
 			<div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-25">
 				<div class="desh-item-card">
 					<div class="icon-card tp-bg-success">
@@ -146,7 +143,7 @@
 					</span>
 				</div>
 			</div>
-			
+
 			<div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-25">
 				<div class="desh-item-card">
 					<div class="icon-card tp-bg-info">
@@ -191,7 +188,7 @@
 					</span>
 				</div>
 			</div>
-			
+
 			<div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-25">
 				<div class="desh-item-card">
 					<div class="icon-card tp-bg-info">
@@ -206,7 +203,7 @@
 					</span>
 				</div>
 			</div>
-			
+
 			<div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-25">
 				<div class="desh-item-card">
 					<div class="icon-card tp-bg-info">
@@ -221,7 +218,7 @@
 					</span>
 				</div>
 			</div>
-			
+
 			<div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-25">
 				<div class="desh-item-card">
 					<div class="icon-card tp-bg-info">
@@ -251,7 +248,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="row">
 			<div class="col-lg-5 mt-25">
 				<div class="card">
@@ -308,7 +305,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="row">
 			<div class="col-lg-12 mt-25">
 				<div class="card">
@@ -325,11 +322,8 @@
 				</div>
 			</div>
 		</div>
-		
-		@endif
-	</div>
-</div>
-<!-- /main Section -->
+
+
 @endsection
 
 @push('scripts')

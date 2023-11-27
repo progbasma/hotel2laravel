@@ -6,10 +6,7 @@
 <!-- main Section -->
 <div class="main-body">
 	<div class="container-fluid">
-		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
-		@include('backend.partials.vipc')
-		@else
+
 		<div class="row mt-25">
 			<div class="col-lg-12">
 				<div class="card">
@@ -36,7 +33,7 @@
 								@include('backend.partials.languages_table')
 							</div>
 						</div><!--/Data grid-->
-						
+
 						<!--/Data Entry Form-->
 						<div id="form-panel" class="dnone">
 							<form novalidate="" data-validate="parsley" id="DataEntry_formId">
@@ -82,7 +79,7 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<input id="old_language_code" name="old_language_code" type="text" class="dnone"/>
 								<input type="text" name="RecordId" id="RecordId" class="dnone">
 
@@ -92,7 +89,7 @@
 									</div>
 								</div>
 							</form>
-							
+
 							<div class="row mt-15">
 								<div class="col-md-12">
 									<p>Note: <span class="text-danger">Please give write permissions in this folder "resources/lang".</span></p>
@@ -104,10 +101,7 @@
 				</div>
 			</div>
 		</div>
-		@endif
-	</div>
-</div>
-<!-- /main Section -->
+
 @endsection
 
 @push('scripts')

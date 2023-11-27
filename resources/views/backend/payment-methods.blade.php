@@ -6,10 +6,7 @@
 <!-- main Section -->
 <div class="main-body">
 	<div class="container-fluid">
-		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
-		@include('backend.partials.vipc')
-		@else
+
 		<div class="row mt-25">
 			<div class="col-lg-12">
 				<div class="card">
@@ -42,7 +39,7 @@
 														@if($stripe_data_list['isenable'] == 1)
 														<span class="enable_btn">{{ __('Active') }}</span>
 														@else
-														<span class="disable_btn">{{ __('Inactive') }}</span>	
+														<span class="disable_btn">{{ __('Inactive') }}</span>
 														@endif
 													</td>
 													<td class="text-center" width="5%">
@@ -60,7 +57,7 @@
 														@if($paypal_data_list['isenable_paypal'] == 1)
 														<span class="enable_btn">{{ __('Active') }}</span>
 														@else
-														<span class="disable_btn">{{ __('Inactive') }}</span>	
+														<span class="disable_btn">{{ __('Inactive') }}</span>
 														@endif
 													</td>
 													<td class="text-center" width="5%">
@@ -78,7 +75,7 @@
 														@if($razorpay_data_list['isenable_razorpay'] == 1)
 														<span class="enable_btn">{{ __('Active') }}</span>
 														@else
-														<span class="disable_btn">{{ __('Inactive') }}</span>	
+														<span class="disable_btn">{{ __('Inactive') }}</span>
 														@endif
 													</td>
 													<td class="text-center" width="5%">
@@ -96,7 +93,7 @@
 														@if($mollie_data_list['isenable_mollie'] == 1)
 														<span class="enable_btn">{{ __('Active') }}</span>
 														@else
-														<span class="disable_btn">{{ __('Inactive') }}</span>	
+														<span class="disable_btn">{{ __('Inactive') }}</span>
 														@endif
 													</td>
 													<td class="text-center" width="5%">
@@ -114,7 +111,7 @@
 														@if($cod_data_list['isenable'] == 1)
 														<span class="enable_btn">{{ __('Active') }}</span>
 														@else
-														<span class="disable_btn">{{ __('Inactive') }}</span>	
+														<span class="disable_btn">{{ __('Inactive') }}</span>
 														@endif
 													</td>
 													<td class="text-center" width="5%">
@@ -132,7 +129,7 @@
 														@if($bank_data_list['isenable'] == 1)
 														<span class="enable_btn">{{ __('Active') }}</span>
 														@else
-														<span class="disable_btn">{{ __('Inactive') }}</span>	
+														<span class="disable_btn">{{ __('Inactive') }}</span>
 														@endif
 													</td>
 													<td class="text-center" width="5%">
@@ -149,7 +146,7 @@
 									</div>
 								</div>
 								<!--/Data grid-->
-								
+
 								<!--/Stripe Form-->
 								<div id="form-panel-1" class="dnone">
 									<form novalidate="" data-validate="parsley" id="stripe_formId">
@@ -190,7 +187,7 @@
 									</form>
 								</div>
 								<!--/Stripe Form-->
-								
+
 								<!--/Paypal Form-->
 								<div id="form-panel-4" class="dnone">
 									<form novalidate="" data-validate="parsley" id="paypal_formId">
@@ -237,7 +234,7 @@
 								</div>
 								<!--/Paypal Form-->
 
-								
+
 								<!--/Razorpay Form-->
 								<div id="form-panel-5" class="dnone">
 									<form novalidate="" data-validate="parsley" id="razorpay_formId">
@@ -324,7 +321,7 @@
 									</form>
 								</div>
 								<!--/Mollie Form-->
-								
+
 								<!--/Cash on Delivery (COD) Form-->
 								<div id="form-panel-2" class="dnone">
 									<form novalidate="" data-validate="parsley" id="cod_formId">
@@ -355,7 +352,7 @@
 									</form>
 								</div>
 								<!--/Cash on Delivery (COD) Form-->
-								
+
 								<!--/Bank Transfer Form-->
 								<div id="form-panel-3" class="dnone">
 									<form novalidate="" data-validate="parsley" id="bank_formId">
@@ -392,10 +389,7 @@
 				</div>
 			</div>
 		</div>
-		@endif
-	</div>
-</div>
-<!-- /main Section -->
+
 @endsection
 
 @push('scripts')

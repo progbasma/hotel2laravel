@@ -6,10 +6,7 @@
 <!-- main Section -->
 <div class="main-body">
 	<div class="container-fluid">
-		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
-		@include('backend.partials.vipc')
-		@else
+
 		<div class="row mt-25">
 			<div class="col-lg-12">
 				<div class="card">
@@ -87,7 +84,7 @@
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="row">
 								<div class="col-md-12">
 									<div class="form-group">
@@ -96,7 +93,7 @@
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
@@ -114,7 +111,7 @@
 								</div>
 								<div class="col-md-6"></div>
 							</div>
-							
+
 							<div class="row">
 								<div class="col-md-4">
 									<div class="form-group">
@@ -139,7 +136,7 @@
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="row">
 								<div class="col-md-4">
 									<div class="form-group">
@@ -155,7 +152,7 @@
 								</div>
 								<div class="col-md-8"></div>
 							</div>
-							
+
 							<input type="text" name="RecordId" id="RecordId" class="dnone">
 							<div class="row tabs-footer mt-15">
 								<div class="col-lg-12">
@@ -167,8 +164,7 @@
 					<!--/Data Entry Form/-->
 				</div>
 			</div>
-		</div>
-		@endif
+	  </div>
 	</div>
 </div>
 <!-- /main Section -->

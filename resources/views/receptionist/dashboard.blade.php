@@ -7,7 +7,7 @@
 <div class="main-body">
 	<div class="container-fluid">
 		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
+		@if($vipc['bkey'] == 0)
 		@include('receptionist.partials.vipc')
 		@else
 		<div class="row">
@@ -124,7 +124,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="divider_heading">{{ __('Todays Booked Rooms') }}</div>
@@ -149,7 +149,7 @@
 			</div>
 			@endif
 		</div>
-		
+
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="divider_heading">{{ __('Available Room for Booking') }}</div>
@@ -173,10 +173,7 @@
 			</div>
 			@endif
 		</div>
-		@endif
-	</div>
-</div>
-<!-- /main Section -->
+
 @endsection
 
 @push('scripts')

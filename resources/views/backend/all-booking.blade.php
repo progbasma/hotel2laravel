@@ -6,10 +6,6 @@
 <!-- main Section -->
 <div class="main-body">
 	<div class="container-fluid">
-		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
-		@include('backend.partials.vipc')
-		@else
 		<div class="row mt-25">
 			<div class="col-lg-12">
 				<div class="card">
@@ -74,7 +70,7 @@
 				</div>
 			</div>
 		</div>
-		@endif
+
 	</div>
 </div>
 

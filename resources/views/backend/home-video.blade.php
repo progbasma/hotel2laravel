@@ -72,7 +72,7 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="target">{{ __('Target Window') }}<span class="red">*</span></label>
-										<select name="target" id="target" class="chosen-select form-control">
+										<select name="target" id="target" class="chosen-rtl form-control">
 											<option {{ $datalist['target'] == '' ? "selected=selected" : '' }} value="">None</option>
 											<option {{ $datalist['target'] == '_self' ? "selected=selected" : '' }} value="_self">Self</option>
 											<option {{ $datalist['target'] == '_blank' ? "selected=selected" : '' }} value="_blank">Blank</option>
@@ -90,7 +90,7 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="is_publish">{{ __('Status') }}<span class="red">*</span></label>
-										<select name="is_publish" id="is_publish" class="chosen-select form-control">
+										<select name="is_publish" id="is_publish" class="chosen-rtl form-control">
 										@foreach($statuslist as $row)
 											<option {{ $row->id == $datalist['is_publish'] ? "selected=selected" : '' }} value="{{ $row->id }}">
 												{{ $row->status }}

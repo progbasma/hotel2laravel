@@ -44,7 +44,7 @@
 									<div class="col-lg-4">
 										<div class="form-group">
 											<label for="is_discount">{{ __('Discount') }}</label>
-											<select name="is_discount" id="is_discount" class="chosen-select form-control">
+											<select name="is_discount" id="is_discount" class="chosen-rtl form-control">
 												<option {{ 1 == $datalist['is_discount'] ? "selected=selected" : '' }} value="1">{{ __('YES') }}</option>
 												<option {{ 0 == $datalist['is_discount'] ? "selected=selected" : '' }} value="0">{{ __('NO') }}</option>
 											</select>

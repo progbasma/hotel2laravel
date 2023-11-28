@@ -91,7 +91,7 @@
 								<div class="col-md-3">
 									<div class="form-group">
 										<label for="is_publish">{{ __('Status') }}<span class="red">*</span></label>
-										<select name="is_publish" id="is_publish" class="chosen-select form-control">
+										<select name="is_publish" id="is_publish" class="chosen-rtl form-control">
 										@foreach($statuslist as $row)
 											<option value="{{ $row->id }}">
 												{{ $row->status }}

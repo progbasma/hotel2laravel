@@ -46,7 +46,7 @@
 											</div>
 											<div class="form-group">
 												<label for="timezone">{{ __('Time Zone') }}<span class="red">*</span></label>
-												<select name="timezone" id="timezone" class="chosen-select form-control parsley-validated" data-required="true">
+												<select name="timezone" id="timezone" class="chosen-rtl form-control parsley-validated" data-required="true">
 												@foreach($timezonelist as $row)
 													<option {{ $row->timezone == $datalist['timezone'] ? "selected=selected" : '' }} value="{{ $row->timezone }}">
 														{{ $row->timezone_name }}

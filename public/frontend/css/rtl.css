@@ -1,5 +1,5 @@
 body.rtl {
-    font-family: var(--arabic-font-family);
+    font-family: 'Cairo';
 }
 body.rtl h1,
 body.rtl h2,
@@ -7,10 +7,10 @@ body.rtl h3,
 body.rtl h4,
 body.rtl h5,
 body.rtl h6 {
-    font-family: var(--arabic-font-family);
+    font-family: 'Cairo';
 }
 body.rtl p {
-    font-family: var(--arabic-font-family);
+    font-family: 'Cairo';
 }
 
 body.rtl ul.top-list-1 {
@@ -61,19 +61,19 @@ body.rtl .tp-menu ul > li > a.tp-updown::before {
     right: auto;
 }
 body.rtl .tp-menu ul li a {
-    font-family: var(--arabic-font-family);
+    font-family: 'Cairo';
 }
 body.rtl .tp-menu ul li .mega-menu ul li a {
-    font-family: var(--arabic-font-family);
+    font-family: 'Cairo';
 }
 body.rtl .tp-menu ul li .mega-menu ul li.mega-title {
-    font-family: var(--arabic-font-family);
+    font-family: 'Cairo';
 }
 body.rtl .icon-bars-card {
     float: left;
 }
 body.rtl .mobile-menu li > a {
-    font-family: var(--arabic-font-family);
+    font-family: 'Cairo';
 }
 body.rtl .mobile-menu li.has-children-menu .menu-expand {
     left: 20px;
@@ -81,16 +81,16 @@ body.rtl .mobile-menu li.has-children-menu .menu-expand {
 }
 body.rtl .mobile-menu li > a {
     padding: 10px 20px 10px 10px;
-    font-family: var(--arabic-font-family);
+    font-family: 'Cairo';
 }
 body.rtl .about-card {
     padding-left: 0;
     padding-right: 24px;
 }
-body.rtl .search-card .form-control, 
-body.rtl .search-card .form-group input, 
-body.rtl .search-card input, 
-body.rtl .search-card input.form-control, 
+body.rtl .search-card .form-control,
+body.rtl .search-card .form-group input,
+body.rtl .search-card input,
+body.rtl .search-card input.form-control,
 body.rtl .search-card .form-select {
 	padding: 10px 10px;
 }
@@ -127,8 +127,8 @@ body.rtl .rating-wrap .stars-inner {
 	left: auto;
 	right: 0;
 }
-body.rtl .blog-card .blog-content .blog-meta-card .blog-date i, 
-body.rtl .blog-card .blog-content .blog-meta-card .blog-meta i, 
+body.rtl .blog-card .blog-content .blog-meta-card .blog-date i,
+body.rtl .blog-card .blog-content .blog-meta-card .blog-meta i,
 body.rtl .blog-card .blog-content .blog-meta-card .blog-comment i {
 	margin-right: 0;
 	margin-left: 6px;
@@ -170,14 +170,14 @@ body.rtl .room-book-card .room-book-content ul.room-meta li:last-child {
 	padding: 0px 10px 0px 0px;
 	border-left: none;
 }
-body.rtl .checkboxlist input[type="checkbox"], 
+body.rtl .checkboxlist input[type="checkbox"],
 body.rtl .checkboxlist input[type="radio"] {
 	margin: -3px 0px 0px 5px;
 }
 body.rtl .r_extra strong {
 	float: right;
 }
-body.rtl .r_extra .instock, 
+body.rtl .r_extra .instock,
 body.rtl .r_extra .stockout {
 	float: right;
 	margin-left: 0;
@@ -193,8 +193,8 @@ body.rtl .widget-body strong {
 	float: right;
 	margin-left: 5px;
 }
-body.rtl .blog-details-card .blog-content .blog-meta-card .blog-date i, 
-body.rtl .blog-details-card .blog-content .blog-meta-card .blog-meta i, 
+body.rtl .blog-details-card .blog-content .blog-meta-card .blog-date i,
+body.rtl .blog-details-card .blog-content .blog-meta-card .blog-meta i,
 body.rtl .blog-details-card .blog-content .blog-meta-card .blog-comment i {
 	margin-right: 0px;
 	margin-left: 6px;

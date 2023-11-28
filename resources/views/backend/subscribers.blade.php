@@ -50,9 +50,9 @@
 									<div class="col-lg-3 mb-10">
 										<div class="form-group">
 											<label for="status">{{ __('Status') }}<span class="red">*</span></label>
-											<select name="status" id="status" class="chosen-select form-control">
-												<option value="subscribed">Subscribed</option>
-												<option value="unsubscribed">Unsubscribed</option>
+											<select name="status" id="status" class="chosen-rtl form-control">
+												<option value="subscribed">{{__('Subscribed')}}</option>
+												<option value="unsubscribed">{{__('Unsubscribed')}}</option>
 											</select>
 										</div>
 									</div>

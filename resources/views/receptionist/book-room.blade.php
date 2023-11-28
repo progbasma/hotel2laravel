@@ -28,7 +28,7 @@
 								<div class="col-lg-3">
 									<div class="form-group">
 										<label for="roomtype">{{ __('Room Type') }}<span class="red">*</span></label>
-										<select name="roomtype" id="roomtype" class="chosen-select form-control">
+										<select name="roomtype" id="roomtype" class="chosen-rtl form-control">
 										@foreach($RoomTypeList as $row)
 											<option value="{{ $row->id }}">
 												{{ $row->title }}
@@ -88,7 +88,7 @@
 								<div class="col-lg-3">
 									<div class="form-group">
 										<label for="country">{{ __('Country') }}<span class="red">*</span></label>
-										<select id="country" name="country" class="chosen-select form-control parsley-validated" data-required="true">
+										<select id="country" name="country" class="chosen-rtl form-control parsley-validated" data-required="true">
 											@foreach($country_list as $row)
 											<option value="{{ $row->country_name }}">
 												{{ $row->country_name }}

@@ -18,14 +18,14 @@
 							</div>
 							<div class="form-group">
 								<label for="menu_position">{{ __('Menu Position') }}<span class="red">*</span></label>
-								<select name="menu_position" id="menu_position" class="chosen-select form-control">
+								<select name="menu_position" id="menu_position" class="chosen-rtl form-control">
 									<option value="header">Header Menu</option>
 									<option value="footer">Footer Menu</option>
 								</select>
 							</div>
 							<div class="form-group">
 								<label for="lan">{{ __('Language') }}<span class="red">*</span></label>
-								<select name="lan" id="lan" class="chosen-select form-control">
+								<select name="lan" id="lan" class="chosen-rtl form-control">
 								@foreach($languagelist as $row)
 									<option value="{{ $row->language_code }}">
 										{{ $row->language_name }}
@@ -35,7 +35,7 @@
 							</div>
 							<div class="form-group">
 								<label for="status_id">{{ __('Menu Status') }}<span class="red">*</span></label>
-								<select name="status_id" id="status_id" class="chosen-select form-control">
+								<select name="status_id" id="status_id" class="chosen-rtl form-control">
 								@foreach($statuslist as $row)
 									<option value="{{ $row->id }}">
 										{{ $row->status }}

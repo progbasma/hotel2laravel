@@ -43,7 +43,7 @@
 											</div>
 											<div class="form-group">
 												<label for="mailer">{{ __('Mailer') }}<span class="red">*</span></label>
-												<select name="mailer" id="mailer" class="chosen-select form-control">
+												<select name="mailer" id="mailer" class="chosen-rtl form-control">
 													<option value="mail" {{ $datalist['mailer'] == 'mail' ? 'selected="selected"' : '' }}>PHP Mail</option>
 													<option value="smtp" {{ $datalist['mailer'] == 'smtp' ? 'selected="selected"' : '' }}>SMTP</option>
 												</select>
@@ -61,7 +61,7 @@
 
 												<div class="form-group">
 													<label for="smtp_security">{{ __('SMTP Security') }}<span class="red">*</span></label>
-													<select name="smtp_security" id="smtp_security" class="chosen-select form-control">
+													<select name="smtp_security" id="smtp_security" class="chosen-rtl form-control">
 														<option value="tls" {{ $datalist['smtp_security'] == 'tls' ? 'selected="selected"' : '' }}>TLS</option>
 														<option value="ssl" {{ $datalist['smtp_security'] == 'ssl' ? 'selected="selected"' : '' }}>SSL</option>
 													</select>

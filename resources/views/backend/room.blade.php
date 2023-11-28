@@ -53,7 +53,7 @@
 									<div class="col-lg-6">
 										<div class="form-group">
 											<label for="cat_id">{{ __('Category') }}<span class="red">*</span></label>
-											<select name="cat_id" id="cat_id" class="chosen-select form-control">
+											<select name="cat_id" id="cat_id" class="chosen-rtl form-control">
 											@foreach($categorylist as $row)
 												<option {{ $row->id == $datalist['cat_id'] ? "selected=selected" : '' }} value="{{ $row->id }}">
 													{{ $row->name }}
@@ -86,7 +86,7 @@
 									<div class="col-lg-6">
 										<div class="form-group">
 											<label for="tax_id">{{ __('Tax') }}<span class="red">*</span></label>
-											<select name="tax_id" id="tax_id" class="chosen-select form-control">
+											<select name="tax_id" id="tax_id" class="chosen-rtl form-control">
 											@foreach($taxlist as $row)
 												<option {{ $row->id == $datalist['tax_id'] ? "selected=selected" : '' }} value="{{ $row->id }}">
 													{{ $row->title }}
@@ -101,7 +101,7 @@
 									<div class="col-lg-6">
 										<div class="form-group">
 											<label for="amenities">{{ __('Amenities') }}</label>
-											<select data-placeholder="{{ __('Select Amenities') }}" name="amenities[]" id="amenities" class="chosen-select form-control" multiple>
+											<select data-placeholder="{{ __('Select Amenities') }}" name="amenities[]" id="amenities" class="chosen-rtl form-control" multiple>
 											@foreach($amenity_list as $row)
 												<option {{ $row->id == $datalist['amenities'] ? "selected=selected" : '' }} value="{{ $row->id }}">
 													{{ $row->name }}
@@ -113,7 +113,7 @@
 									<div class="col-lg-6">
 										<div class="form-group">
 											<label for="complements">{{ __('Complements') }}</label>
-											<select data-placeholder="{{ __('Select Complements') }}" name="complements[]" id="complements" class="chosen-select form-control" multiple>
+											<select data-placeholder="{{ __('Select Complements') }}" name="complements[]" id="complements" class="chosen-rtl form-control" multiple>
 											@foreach($complement_list as $row)
 												<option {{ $row->id == $datalist['complements'] ? "selected=selected" : '' }} value="{{ $row->id }}">
 													{{ $row->name }}
@@ -128,7 +128,7 @@
 									<div class="col-lg-6">
 										<div class="form-group">
 											<label for="beds">{{ __('Beds') }}</label>
-											<select data-placeholder="{{ __('Select beds') }}" name="beds[]" id="beds" class="chosen-select form-control" multiple>
+											<select data-placeholder="{{ __('Select beds') }}" name="beds[]" id="beds" class="chosen-rtl form-control" multiple>
 											@foreach($bedtype_list as $row)
 												<option {{ $row->id == $datalist['beds'] ? "selected=selected" : '' }} value="{{ $row->id }}">
 													{{ $row->name }}
@@ -140,7 +140,7 @@
 									<div class="col-lg-3">
 										<div class="form-group">
 											<label for="is_featured">{{ __('Is Featured') }}</label>
-											<select name="is_featured" id="is_featured" class="chosen-select form-control">
+											<select name="is_featured" id="is_featured" class="chosen-rtl form-control">
 												<option {{ 1 == $datalist['is_featured'] ? "selected=selected" : '' }} value="1">{{ __('YES') }}</option>
 												<option {{ 0 == $datalist['is_featured'] ? "selected=selected" : '' }} value="0">{{ __('NO') }}</option>
 											</select>
@@ -149,7 +149,7 @@
 									<div class="col-lg-3">
 										<div class="form-group">
 											<label for="lan">{{ __('Language') }}<span class="red">*</span></label>
-											<select name="lan" id="lan" class="chosen-select form-control">
+											<select name="lan" id="lan" class="chosen-rtl form-control">
 											@foreach($languageslist as $row)
 												<option {{ $row->language_code == $datalist['lan'] ? "selected=selected" : '' }} value="{{ $row->language_code }}">
 													{{ $row->language_name }}
@@ -194,7 +194,7 @@
 									<div class="col-lg-3">
 										<div class="form-group">
 											<label for="is_publish">{{ __('Status') }}<span class="red">*</span></label>
-											<select name="is_publish" id="is_publish" class="chosen-select form-control">
+											<select name="is_publish" id="is_publish" class="chosen-rtl form-control">
 											@foreach($statuslist as $row)
 												<option {{ $row->id == $datalist['is_publish'] ? "selected=selected" : '' }} value="{{ $row->id }}">
 													{{ $row->status }}

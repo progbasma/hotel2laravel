@@ -44,7 +44,7 @@
 									<div class="col-md-4">
 										<div class="form-group">
 											<label for="position">Position</label>
-											<select name="position" id="position" class="chosen-select form-control">
+											<select name="position" id="position" class="chosen-rtl form-control">
 												<option {{ 'left' == $datalist['position'] ? "selected=selected" : '' }} value="left">Left</option>
 												<option {{ 'right' == $datalist['position'] ? "selected=selected" : '' }} value="right">Right</option>
 											</select>
@@ -56,7 +56,7 @@
 									<div class="col-md-4">
 										<div class="form-group">
 											<label for="is_publish">{{ __('Status') }}</label>
-											<select name="is_publish" id="is_publish" class="chosen-select form-control">
+											<select name="is_publish" id="is_publish" class="chosen-rtl form-control">
 											@foreach($statuslist as $row)
 												<option {{ $row->id == $datalist['is_publish'] ? "selected=selected" : '' }} value="{{ $row->id }}">
 													{{ $row->status }}

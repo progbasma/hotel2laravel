@@ -7,7 +7,7 @@
 <div class="main-body">
 	<div class="container-fluid">
 		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
+		@if($vipc['bkey'] == 0)
 		@include('receptionist.partials.vipc')
 		@else
 		<div class="row mt-25">
@@ -95,7 +95,7 @@
 							<div class="col-lg-6">
 								<div class="form-group">
 									<label for="payment_status_id">{{ __('Payment Status') }}<span class="red">*</span></label>
-									<select name="payment_status_id" id="payment_status_id" class="chosen-select form-control">
+									<select name="payment_status_id" id="payment_status_id" class="chosen-rtl form-control">
 									@foreach($payment_status_list as $row)
 									<option value="{{ $row->id }}">
 										{{ $row->pstatus_name }}
@@ -107,7 +107,7 @@
 							<div class="col-lg-6">
 								<div class="form-group">
 									<label for="booking_status_id">{{ __('Booking Status') }}<span class="red">*</span></label>
-									<select name="booking_status_id" id="booking_status_id" class="chosen-select form-control">
+									<select name="booking_status_id" id="booking_status_id" class="chosen-rtl form-control">
 									@foreach($booking_status_list as $row)
 									<option value="{{ $row->id }}">
 										{{ $row->bstatus_name }}

@@ -26,7 +26,7 @@
 									<div class="col-md-4">
 										<div class="form-group">
 											<label for="is_language_switcher">{{ __('Language Switcher') }}</label>
-											<select name="is_language_switcher" id="is_language_switcher" class="chosen-select form-control">
+											<select name="is_language_switcher" id="is_language_switcher" class="chosen-rtl form-control">
 											@foreach($statuslist as $row)
 												<option {{ $row->id == $datalist['is_language_switcher'] ? "selected=selected" : '' }} value="{{ $row->id }}">
 													{{ $row->status }}

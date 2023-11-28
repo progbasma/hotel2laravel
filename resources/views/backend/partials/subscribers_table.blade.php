@@ -16,11 +16,11 @@
 				<td class="text-center">{{ $key+1 }}</td>
 				<td class="text-left">{{ $row->email_address }}</td>
 				@if ($row->status == 'subscribed')
-				<td class="text-center"><span class="enable_btn">Subscribed</span></td>
+				<td class="text-center"><span class="enable_btn">{{'Subscribed'}}</span></td>
 				@else
-				<td class="text-center"><span class="disable_btn">Unsubscribed</span></td>
+				<td class="text-center"><span class="disable_btn">{{'Unsubscribed'}}</span></td>
 				@endif
-				<td class="text-center">{{ date('d-m-Y', strtotime($row->created_at)) }}</td> 
+				<td class="text-center">{{ date('d-m-Y', strtotime($row->created_at)) }}</td>
 				<td class="text-center">
 					<div class="btn-group action-group">
 						<a class="action-btn" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>

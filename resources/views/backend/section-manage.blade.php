@@ -29,7 +29,7 @@
 							<div class="col-md-3">
 								<div class="form-group">
 									<label for="manage_type_filter">{{ __('Manage Page') }}</label>
-									<select name="manage_type_filter" id="manage_type_filter" class="chosen-select form-control">
+									<select name="manage_type_filter" id="manage_type_filter" class="chosen-rtl form-control">
 										<option value="0" selected="selected">{{ __('All Manage Page') }}</option>
 										<option value="home_1">Home Page 1</option>
 										<!--<option value="home_2">Home Page 2</option>
@@ -72,7 +72,7 @@
 								<div class="col-md-3">
 									<div class="form-group">
 										<label for="manage_type">{{ __('Manage Page') }}<span class="red">*</span></label>
-										<select name="manage_type" id="manage_type" class="chosen-select form-control">
+										<select name="manage_type" id="manage_type" class="chosen-rtl form-control">
 											<option value="home_1">Home Page 1</option>
 											<!--<option value="home_2">Home Page 2</option>
 											<option value="home_3">Home Page 3</option>
@@ -83,7 +83,7 @@
 								<div class="col-md-3">
 									<div class="form-group">
 										<label for="section">{{ __('Section') }}<span class="red">*</span></label>
-										<select name="section" id="section" class="chosen-select form-control">
+										<select name="section" id="section" class="chosen-rtl form-control">
 											<option value="slider_hero">Slider/Hero</option>
 											<option value="about_us">About Us</option>
 											<option value="offer_ads">Offer & Ads</option>
@@ -129,7 +129,7 @@
 								<div class="col-md-3">
 									<div class="form-group">
 										<label for="is_publish">{{ __('Status') }}<span class="red">*</span></label>
-										<select name="is_publish" id="is_publish" class="chosen-select form-control">
+										<select name="is_publish" id="is_publish" class="chosen-rtl form-control">
 										@foreach($statuslist as $row)
 											<option value="{{ $row->id }}">
 												{{ $row->status }}

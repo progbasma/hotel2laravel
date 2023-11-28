@@ -29,7 +29,7 @@
 								<div class="group-button">
 									<button id="orderstatus_0" type="button" onClick="onDataViewByStatus(0)" class="btn btn-theme orderstatus active">{{ __('All') }} (@php echo BookingCount(0); @endphp)</button>
 									@foreach($booking_status_list as $row)
-									<button id="orderstatus_{{ $row->id }}" type="button" onClick="onDataViewByStatus({{ $row->id }})" class="btn btn-theme orderstatus">{{ $row->bstatus_name }} (@php echo BookingCount($row->id); @endphp)</button>
+									<button id="orderstatus_{{ $row->id }}" type="button" onClick="onDataViewByStatus({{ $row->id }})" class="btn btn-theme orderstatus">{{ __($row->bstatus_name) }} (@php echo BookingCount($row->id); @endphp)</button>
 									@endforeach
 								</div>
 								<input type="hidden" id="view_by_status" value="0"/>

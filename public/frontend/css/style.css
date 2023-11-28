@@ -35,6 +35,7 @@
 /* ======================
    Default css
    ====================== */
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
 
 * {
     margin: 0;
@@ -42,7 +43,7 @@
     outline: 0;
 }
 body {
-    font-family: var(--primary-font-family);
+    font-family: 'Cairo';
     font-weight: normal;
     font-style: normal;
     color: var(--color-gray-dark);
@@ -93,7 +94,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: var(--secondary-font-family);
+    font-family: 'Cairo';
     color: var(--color-black);
     margin-top: 0px;
     font-style: normal;
@@ -134,7 +135,7 @@ li {
 }
 p {
     color: var(--color-gray-dark);
-    font-family: var(--secondary-font-family);
+    font-family: 'Cairo';
     font-size: 14px;
     font-weight: normal;
     margin-bottom: 15px;
@@ -222,7 +223,7 @@ textarea:focus,
     color: var(--color-gray-dark);
     text-shadow: none;
 }
-.form-control:disabled, 
+.form-control:disabled,
 .form-control[readonly] {
 	background-color: #e9ecef;
 	opacity: 1;
@@ -481,7 +482,7 @@ a.scroll-to-top:hover {
 	cursor: pointer;
 	display: inline-block;
 	font-size: 14px;
-	font-family: var(--secondary-font-family);
+	font-family: 'Cairo';
 	font-weight: 800;
 	line-height: 1;
 	margin-bottom: 0;
@@ -495,7 +496,7 @@ a.scroll-to-top:hover {
 	-webkit-transition: all ease 400ms;
 	transition: all ease 400ms;
 }
-.btn.focus, 
+.btn.focus,
 .btn:focus {
 	box-shadow: none;
 }
@@ -514,7 +515,7 @@ a.scroll-to-top:hover {
 	z-index: -1;
 	background-color: var(--color-light);
 	overflow: hidden;
-	border-radius: inherit;	
+	border-radius: inherit;
  	-moz-transition: width .5s cubic-bezier(.17,.67,.12,.81) 0s;
 	-webkit-transition: width .5s cubic-bezier(.17,.67,.12,.81) 0s;
 	transition: width .5s cubic-bezier(.17,.67,.12,.81) 0s;
@@ -532,24 +533,24 @@ a.scroll-to-top:hover {
 .pstatus_1 {
 	background-color: rgba(40, 199, 111, 0.1);
 	border: 1px solid #26c56d;
-	color: #26c56d;	
+	color: #26c56d;
 }
 .pstatus_2 {
 	background-color: rgba(255, 159, 67, 0.1);
 	border: 1px solid #fe9e42;
-	color: #fe9e42;	
+	color: #fe9e42;
 }
 .pstatus_3,
 .pstatus_4 {
 	background-color: rgba(242, 89, 97, 0.1);
 	border: 1px solid #f25961;
-	color: #f25961;	
+	color: #f25961;
 }
 
 .ostatus_1{
 	background-color: rgba(255, 159, 67, 0.1);
 	border: 1px solid #fe9e42;
-	color: #fe9e42;	
+	color: #fe9e42;
 }
 .ostatus_2{
 	background-color: rgba(40, 199, 111, 0.1);
@@ -559,17 +560,17 @@ a.scroll-to-top:hover {
 .ostatus_3 {
 	background-color: rgba(145, 147, 149, 0.1);
 	border: 1px solid #919395;
-	color: #919395;	
+	color: #919395;
 }
 .ostatus_4 {
 	background-color: rgba(242, 89, 97, 0.1);
 	border: 1px solid #f25961;
-	color: #f25961;	
+	color: #f25961;
 }
 .ostatus_5 {
 	background-color: rgba(242, 89, 97, 0.1);
 	border: 1px solid #f25961;
-	color: #f25961;	
+	color: #f25961;
 }
 
 .status_card {
@@ -582,16 +583,16 @@ a.scroll-to-top:hover {
 	height: 12px;
 	display: block;
 	border-radius: 100%;
-	margin-right: 5px;	
+	margin-right: 5px;
 }
 .in_running {
 	background: #26c56d;
 }
 .in_checked_out {
-	background: #919395;	
+	background: #919395;
 }
 .my-dashbord .table td p {
-	font-family: var(--primary-font-family);
+	font-family: 'Cairo';
 	color: var(--color-gray-dark);
 	margin: 0;
 	width: 100%;
@@ -749,7 +750,7 @@ ul.top-list-1 li i {
     font-size: 14px;
 }
 .tp-menu ul li a {
-    font-family: var(--secondary-font-family);
+    font-family: 'Cairo';
     color: var(--color-black);
     font-size: 16px;
     font-weight: 700;
@@ -853,7 +854,7 @@ ul.top-list-1 li i {
     color: var(--color-black);
     font-size: 14px;
     font-weight: 700;
-    font-family: var(--secondary-font-family);
+    font-family: 'Cairo';
 }
 
 .tp-menu ul li ul.submenu li:hover > a,
@@ -868,7 +869,7 @@ ul.top-list-1 li i {
     color: var(--theme-color);
     font-weight: 800;
     font-size: 14px;
-    font-family: var(--secondary-font-family);
+    font-family: 'Cairo';
     position: relative;
     margin-bottom: 10px;
 }
@@ -1049,7 +1050,7 @@ ul.top-list-1 li i {
     display: inline-block;
     padding: 10px 10px 10px 20px;
     width: 100%;
-    font-family: var(--secondary-font-family);
+    font-family: 'Cairo';
     font-weight: 700;
 }
 .mobile-menu li > a:hover {
@@ -1184,10 +1185,10 @@ ul.top-list-1 li i {
 	font-size: 14px;
 	font-weight: 800;
 }
-.home_1 .search-card .form-control, 
-.home_1 .search-card .form-group input, 
-.home_1 .search-card input, 
-.home_1 .search-card input.form-control, 
+.home_1 .search-card .form-control,
+.home_1 .search-card .form-group input,
+.home_1 .search-card input,
+.home_1 .search-card input.form-control,
 .home_1 .search-card .form-select {
 	padding: 12px 10px;
 }
@@ -1299,7 +1300,7 @@ ul.top-list-1 li i {
     overflow: hidden;
 }
 .item-card .item-content .item-title a {
-    font-family: var(--secondary-font-family);
+    font-family: 'Cairo';
     color: var(--color-black);
     font-weight: 700;
     font-size: 20px;
@@ -1309,7 +1310,7 @@ ul.top-list-1 li i {
     color: var(--theme-color);
 }
 .item-card .item-content .pric-card {
-    font-family: var(--primary-font-family);
+    font-family: 'Cairo';
     font-size: 16px;
     color: var(--color-black);
     font-weight: 900;
@@ -1359,7 +1360,7 @@ ul.top-list-1 li i {
     width: 100%;
     border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 24px;	
+    margin-bottom: 24px;
 }
 .offer-card::before {
     content: "";
@@ -1874,11 +1875,11 @@ ul.top-list-1 li i {
 }
 .room-details-card .item-title {}
 .room-details-card .item-title h3 {
-    font-family: var(--secondary-font-family);
+    font-family: 'Cairo';
     color: var(--color-black);
     font-weight: 700;
     font-size: 20px;
-    margin-bottom: 10px;	
+    margin-bottom: 10px;
 }
 .room-details-card .item-cat {
 	width: 100%;
@@ -1891,7 +1892,7 @@ ul.top-list-1 li i {
 	color: var(--color-black);
 }
 .room-details-card .pric-card {
-	font-family: var(--primary-font-family);
+	font-family: 'Cairo';
 	font-size: 20px;
 	color: var(--color-black);
 	font-weight: 900;
@@ -1971,13 +1972,13 @@ ul.top-list-1 li i {
 	padding-left: 15px;
 }
 .room-book-card .room-book-content .room-title {
-	font-family: var(--secondary-font-family);
+	font-family: 'Cairo';
 	color: var(--color-black);
 	font-weight: 700;
 	font-size: 18px;
 }
 .room-book-card .room-book-content .room-price {
-	font-family: var(--primary-font-family);
+	font-family: 'Cairo';
 	font-size: 14px;
 	color: var(--color-black);
 	font-weight: 700;
@@ -1985,13 +1986,13 @@ ul.top-list-1 li i {
 }
 .room-book-card .room-book-content .room-price .new-price {
 	float: left;
-	margin-right: 7px;	
+	margin-right: 7px;
 }
 .room-book-card .room-book-content .room-price .old-price {
 	float: left;
 	text-decoration: line-through;
 	color: #ee0101;
-	margin-right: 7px;	
+	margin-right: 7px;
 }
 .room-book-card .room-book-content .room-price .per-day-night {
 	float: left;
@@ -2025,7 +2026,7 @@ ul.top-list-1 li i {
 	margin-left: 5px;
 }
 .r_extra .instock {
-	color: #388e3c;	
+	color: #388e3c;
 }
 .r_extra .stockout {
 	color: #f62459;
@@ -2087,7 +2088,7 @@ ul.errors-list li {
 	margin-bottom: 15px;
 	width: 100%;
 }
-.tw_checkbox span:before, 
+.tw_checkbox span:before,
 .tw_checkbox span:after {
 	content: "";
 	display: inline-block;
@@ -2166,7 +2167,7 @@ ul.errors-list li {
 .checkboxlist label.checkbox-title {
 	font-weight: 400;
 }
-.checkboxlist input[type="checkbox"], 
+.checkboxlist input[type="checkbox"],
 .checkboxlist input[type="radio"] {
 	border: 1px solid #222;
 	border-radius: 4px;
@@ -2196,7 +2197,7 @@ ul.errors-list li {
 	margin-right: 5px;
 	line-height: .71428571;
 }
-.checkboxlist input[type="checkbox"]:checked::before, 
+.checkboxlist input[type="checkbox"]:checked::before,
 .checkboxlist input[type="radio"]:checked::before {
 	float: left;
 	display: inline-block;
@@ -2297,7 +2298,7 @@ ul.errors-list li {
 	margin-bottom: 0px;
 	width: 100%;
 	font-weight: 500;
-	font-family: var(--primary-font-family);
+	font-family: 'Cairo';
 	color: var(--color-black);
 }
 .my_card p.sub-title {
@@ -2310,16 +2311,16 @@ ul.errors-list li {
 	width: 100%;
 	text-align: right;
 	font-weight: 500;
-	font-family: var(--primary-font-family);
-	color: var(--color-black);	
+	font-family: 'Cairo';
+	color: var(--color-black);
 }
 .my_card p.sub-price {
 	font-size: 11px;
 	margin-bottom: 0px;
 	width: 100%;
 	text-align: right;
-	font-family: var(--primary-font-family);
-	color: var(--color-black);	
+	font-family: 'Cairo';
+	color: var(--color-black);
 }
 .my_card span.title,
 .my_card span.price {
@@ -2394,7 +2395,7 @@ ul.errors-list li {
 	font-size: 20px;
 	font-weight: 700;
 	color: var(--color-black);
-	font-family: var(--secondary-font-family);
+	font-family: 'Cairo';
 	border-bottom: 1px solid var(--color-gray-400);
 	padding: 10px 15px;
 }
@@ -2504,7 +2505,7 @@ ul.errors-list li {
 .sidebar .widget-card .widget-body ul.widget-list li a {
 	font-size: 14px;
 	font-weight: 700;
-	font-family: var(--secondary-font-family);
+	font-family: 'Cairo';
 	color: var(--color-black);
 }
 .sidebar .widget-card .widget-body ul.widget-list li a:hover {
@@ -2791,7 +2792,7 @@ ul.errors-list li {
 }
 .entry p {
 	margin: 0 0 10px;
-	font-family: var(--primary-font-family);
+	font-family: 'Cairo';
 	line-height: 2;
 }
 .entry ol,
@@ -2804,19 +2805,19 @@ ul.errors-list li {
 	margin: 0px 0px 15px 20px;
 	padding-left: 0;
 }
-.entry ol li, .entry ol li a, 
+.entry ol li, .entry ol li a,
 .entry ul li, .entry ul li a {
 	line-height: 2;
 }
-.entry ol li i, 
-.entry ol li a i, 
-.entry ul li i, 
+.entry ol li i,
+.entry ol li a i,
+.entry ul li i,
 .entry ul li a i {
 	margin-right: 5px;
 }
 
 .entry h1 {
-	font-size: 40px;	
+	font-size: 40px;
 }
 .entry h2 {
 	font-size: 33px;
@@ -2825,13 +2826,13 @@ ul.errors-list li {
 	font-size: 27px;
 }
 .entry h4 {
-	font-size: 23px; 
+	font-size: 23px;
 }
 .entry h5 {
-	font-size: 20px; 
+	font-size: 20px;
 }
 .entry h6 {
-	font-size: 17px; 
+	font-size: 17px;
 }
 .entry h1,
 .entry h2,
@@ -2871,7 +2872,7 @@ ul.errors-list li {
 }
 .entry table tr th,
 .entry table tr td {
-	font-family: var(--primary-font-family);
+	font-family: 'Cairo';
 	color: var(--color-gray-dark);
 }
 
@@ -2944,7 +2945,7 @@ ul.errors-list li {
 
 .contact-map {}
 .google_map {
-	width: 100%; 
+	width: 100%;
 	height: 500px;
 }
 .map-tooltip {
@@ -3261,7 +3262,7 @@ ul.errors-list li {
 	box-shadow: 0px 17px 42px rgba(93, 93, 93, 0.14);
 	-webkit-transition: all 0.3s ease 0s;
 	-moz-transition: all 0.3s ease 0s;
-	transition: all 0.3s ease 0s;	
+	transition: all 0.3s ease 0s;
 }
 .cookie_consent_card.fullwidth {
 	text-align: left;
@@ -3335,7 +3336,7 @@ ul.errors-list li {
 	z-index: -1;
 	background-color: var(--theme-color);
 	overflow: hidden;
-	border-radius: inherit;	
+	border-radius: inherit;
  	-moz-transition: width .5s cubic-bezier(.17,.67,.12,.81) 0s;
 	-webkit-transition: width .5s cubic-bezier(.17,.67,.12,.81) 0s;
 	transition: width .5s cubic-bezier(.17,.67,.12,.81) 0s;

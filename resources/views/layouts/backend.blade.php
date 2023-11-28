@@ -17,11 +17,17 @@
 	  --backend-theme-color: {{ $gtext['backend_theme_color'] }};
 	}
 	</style>
+
     <link rel="stylesheet" href="{{asset('public/backend/css/bootstrap.min.css')}}">
+    @if($gtext['is_rtl'] == 1)
+    <link href="{{asset('public/frontend/css/bootstrap.rtl.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('public/backend/css/style.rtl.css')}}">
+    @else
+    <link rel="stylesheet" href="{{asset('public/backend/css/style.css')}}">
+    @endif
     <link rel="stylesheet" href="{{asset('public/backend/css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/backend/css/chosen/bootstrap-chosen.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/backend/css/jquery.gritter.min.css')}}">
-    <link rel="stylesheet" href="{{asset('public/backend/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('public/backend/css/responsive.css')}}">
 	@stack('style')
   </head>
@@ -36,7 +42,7 @@
 			@include('backend.partials.topnav')
 			<!--/Top Navbar/-->
 			<!--Main Body-->
-			@yield('content')	
+			@yield('content')
 			<!--/Main Body/-->
 		</div><!-- /Page Content/ -->
 	</div><!--/wrapper-->

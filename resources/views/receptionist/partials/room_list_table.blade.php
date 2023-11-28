@@ -18,7 +18,7 @@
 			@php $i = 1; @endphp
 			@foreach($datalist as $row)
 			<tr>
-				<td class="text-center">{{ $i++; }}</td> 
+				<td class="text-center">{{ $i++; }}</td>
 				<td class="text-left">{{ $row->room_no }}</td>
 				<td class="text-left">{{ $row->title }}</td>
 				@if ($row->book_status == 1)
@@ -31,7 +31,7 @@
 				@else
 				{{ date('d-m-Y', strtotime($row->in_date)) }} <strong>to</strong> {{ date('d-m-Y', strtotime($row->out_date)) }}
 				@endif
-				</td> 
+				</td>
 				<td class="text-left">
 				@if ($row->book_status == 1)
 					{{ $row->booking_no }}
@@ -51,9 +51,9 @@
 				@endif
 				</td>
 				@if ($row->is_publish == 1)
-				<td class="text-center"><span class="enable_btn">{{ $row->status }}</span></td>
+				<td class="text-center"><span class="enable_btn">{{ __($row->status) }}</span></td>
 				@else
-				<td class="text-center"><span class="disable_btn">{{ $row->status }}</span></td>
+				<td class="text-center"><span class="disable_btn">{{ __($row->status) }}</span></td>
 				@endif
 			</tr>
 			@endforeach

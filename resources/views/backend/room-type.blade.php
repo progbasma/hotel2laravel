@@ -28,7 +28,7 @@
 						<div class="row mb-10">
 							<div class="col-lg-3">
 								<div class="form-group mb-10">
-									<select name="language_code" id="language_code" class="chosen-select form-control">
+									<select name="language_code" id="language_code" class="chosen-rtl form-control">
 										<option value="0" selected="selected">{{ __('All Language') }}</option>
 										@foreach($languageslist as $row)
 											<option value="{{ $row->language_code }}">
@@ -40,7 +40,7 @@
 							</div>
 							<div class="col-lg-3">
 								<div class="form-group mb-10">
-									<select name="category_id" id="category_id" class="chosen-select form-control">
+									<select name="category_id" id="category_id" class="chosen-rtl form-control">
 										<option value="0" selected="selected">{{ __('All Category') }}</option>
 										@foreach($categorylist as $row)
 											<option value="{{ $row->id }}">
@@ -99,7 +99,7 @@
 								<div class="col-lg-4">
 									<div class="form-group">
 										<label for="categoryid">{{ __('Category') }}<span class="red">*</span></label>
-										<select name="categoryid" id="categoryid" class="chosen-select form-control">
+										<select name="categoryid" id="categoryid" class="chosen-rtl form-control">
 											@foreach($categorylist as $row)
 												<option value="{{ $row->id }}">
 													{{ $row->name }}
@@ -113,7 +113,7 @@
 								<div class="col-lg-3">
 									<div class="form-group">
 										<label for="lan">{{ __('Language') }}<span class="red">*</span></label>
-										<select name="lan" id="lan" class="chosen-select form-control">
+										<select name="lan" id="lan" class="chosen-rtl form-control">
 										@foreach($languageslist as $row)
 											<option value="{{ $row->language_code }}">
 												{{ $row->language_name }}

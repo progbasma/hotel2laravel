@@ -38,7 +38,7 @@
 								<div class="col-lg-4">
 									<div class="form-group">
 										<label for="currency_position">{{ __('Currency Position') }}<span class="red">*</span></label>
-										<select name="currency_position" id="currency_position" class="chosen-select form-control">
+										<select name="currency_position" id="currency_position" class="chosen-rtl form-control">
 											<option {{ 'left' == $datalist['currency_position'] ? "selected=selected" : '' }} value="left">Left</option>
 											<option {{ 'right' == $datalist['currency_position'] ? "selected=selected" : '' }} value="right">Right</option>
 										</select>
@@ -50,7 +50,7 @@
 								<div class="col-lg-4">
 									<div class="form-group">
 										<label for="thousands_separator">{{ __('Thousands Separator') }}<span class="red">*</span></label>
-										<select name="thousands_separator" id="thousands_separator" class="chosen-select form-control">
+										<select name="thousands_separator" id="thousands_separator" class="chosen-rtl form-control">
 											<option {{ 'comma' == $datalist['thousands_separator'] ? "selected=selected" : '' }} value="comma">Comma (,)</option>
 											<option {{ 'point' == $datalist['thousands_separator'] ? "selected=selected" : '' }} value="point">Point (.)</option>
 											<option {{ 'space' == $datalist['thousands_separator'] ? "selected=selected" : '' }} value="space">Space ( )</option>
@@ -60,7 +60,7 @@
 								<div class="col-lg-4">
 									<div class="form-group">
 										<label for="decimal_separator">{{ __('Decimal Separator') }}<span class="red">*</span></label>
-										<select name="decimal_separator" id="decimal_separator" class="chosen-select form-control">
+										<select name="decimal_separator" id="decimal_separator" class="chosen-rtl form-control">
 											<option {{ 'point' == $datalist['decimal_separator'] ? "selected=selected" : '' }} value="point">Point (.)</option>
 											<option {{ 'comma' == $datalist['decimal_separator'] ? "selected=selected" : '' }} value="comma">Comma (,)</option>
 											<option {{ 'space' == $datalist['decimal_separator'] ? "selected=selected" : '' }} value="space">Space ( )</option>
@@ -70,7 +70,7 @@
 								<div class="col-lg-4">
 									<div class="form-group">
 										<label for="decimal_digit">{{ __('Decimal Digit') }}<span class="red">*</span></label>
-										<select name="decimal_digit" id="decimal_digit" class="chosen-select form-control">
+										<select name="decimal_digit" id="decimal_digit" class="chosen-rtl form-control">
 											<option {{ '0' == $datalist['decimal_digit'] ? "selected=selected" : '' }} value="0">Digit (0)</option>
 											<option {{ '1' == $datalist['decimal_digit'] ? "selected=selected" : '' }} value="1">Digit (1)</option>
 											<option {{ '2' == $datalist['decimal_digit'] ? "selected=selected" : '' }} value="2">Digit (2)</option>

@@ -27,7 +27,7 @@
 						<div class="row mb-10">
 							<div class="col-md-3">
 								<div class="form-group mb-10">
-									<select name="language_code" id="language_code" class="chosen-select form-control">
+									<select name="language_code" id="language_code" class="chosen-rtl form-control">
 										<option value="0" selected="selected">{{ __('All Language') }}</option>
 										@foreach($languageslist as $row)
 											<option value="{{ $row->language_code }}">
@@ -69,7 +69,7 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="is_stock">{{ __('Manage Stock') }}</label>
-										<select name="is_stock" id="is_stock" class="chosen-select form-control">
+										<select name="is_stock" id="is_stock" class="chosen-rtl form-control">
 											<option value="1">{{ __('YES') }}</option>
 											<option value="0">{{ __('NO') }}</option>
 										</select>
@@ -78,7 +78,7 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="stock_status_id">{{ __('Stock Status') }}</label>
-										<select name="stock_status_id" id="stock_status_id" class="chosen-select form-control">
+										<select name="stock_status_id" id="stock_status_id" class="chosen-rtl form-control">
 											<option value="1">{{ __('In Stock') }}</option>
 											<option value="0">{{ __('Out Of Stock') }}</option>
 										</select>

@@ -14,8 +14,8 @@
 			@if (count($datalist)>0)
 			@foreach($datalist as $row)
 			<tr>
-				<td class="checkboxlist text-center"><input name="item_ids[]" value="{{ $row->id }}" class="tp-checkbox selected_item" type="checkbox"></td> 
-				<td class="text-left">{{ $row->title }}</td> 
+				<td class="checkboxlist text-center"><input name="item_ids[]" value="{{ $row->id }}" class="tp-checkbox selected_item" type="checkbox"></td>
+				<td class="text-left">{{ $row->title }}</td>
 				<td class="text-left">
 				<a target="_blank" href="{{ route('frontend.contact', [$row->id, str_slug($row->title)]) }}">
 				{{ route('frontend.contact', [$row->id, str_slug($row->title)]) }}
@@ -23,9 +23,9 @@
 				</td>
 				<td class="text-center">{{ $row->language_name }}</td>
 				@if ($row->is_publish == 1)
-				<td class="text-center"><span class="enable_btn">{{ $row->status }}</span></td>
+				<td class="text-center"><span class="enable_btn">{{ __($row->status) }}</span></td>
 				@else
-				<td class="text-center"><span class="disable_btn">{{ $row->status }}</span></td>
+				<td class="text-center"><span class="disable_btn">{{ __($row->status) }}</span></td>
 				@endif
 				<td class="text-center">
 					<div class="btn-group action-group">

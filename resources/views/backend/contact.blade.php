@@ -36,7 +36,7 @@
 							</div>
 							<div class="col-lg-3 mb-10">
 								<div class="form-group">
-									<select name="language_code" id="language_code" class="chosen-select form-control">
+									<select name="language_code" id="language_code" class="chosen-rtl form-control">
 										<option value="0" selected="selected">{{ __('All Language') }}</option>
 										@foreach($languageslist as $row)
 											<option value="{{ $row->language_code }}">
@@ -86,7 +86,7 @@
 								<div class="col-md-3">
 									<div class="form-group">
 										<label for="lan">{{ __('Language') }}<span class="red">*</span></label>
-										<select name="lan" id="lan" class="chosen-select form-control">
+										<select name="lan" id="lan" class="chosen-rtl form-control">
 											@foreach($languageslist as $row)
 												<option value="{{ $row->language_code }}">
 													{{ $row->language_name }}
@@ -98,7 +98,7 @@
 								<div class="col-md-3">
 									<div class="form-group">
 										<label for="is_publish">{{ __('Status') }}<span class="red">*</span></label>
-										<select name="is_publish" id="is_publish" class="chosen-select form-control">
+										<select name="is_publish" id="is_publish" class="chosen-rtl form-control">
 											@foreach($statuslist as $row)
 												<option value="{{ $row->id }}">
 													{{ $row->status }}
@@ -184,7 +184,7 @@
 								<div class="col-md-3">
 									<div class="form-group">
 										<label for="mail_subject">{{ __('Select Mail Subject Field') }}<span class="red">*</span></label>
-										<select name="mail_subject" id="mail_subject" class="chosen-select form-control">
+										<select name="mail_subject" id="mail_subject" class="chosen-rtl form-control">
 										</select>
 									</div>
 								</div>
@@ -238,7 +238,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="field_type">{{ __('Type') }}<span class="red">*</span></label>
-									<select name="field_type" id="field_type" class="chosen-select form-control">
+									<select name="field_type" id="field_type" class="chosen-rtl form-control">
 										<option value="text">Text</option>
 										<option value="email">Email</option>
 										<option value="textarea">Textarea</option>
@@ -265,7 +265,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="is_label">{{ __('Label Show/Hide') }}<span class="red">*</span></label>
-									<select name="is_label" id="is_label" class="chosen-select form-control">
+									<select name="is_label" id="is_label" class="chosen-rtl form-control">
 										<option value="no">No</option>
 										<option value="yes">Yes</option>
 									</select>
@@ -274,7 +274,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="field_mandatory">{{ __('Mandatory') }}<span class="red">*</span></label>
-									<select name="field_mandatory" id="field_mandatory" class="chosen-select form-control">
+									<select name="field_mandatory" id="field_mandatory" class="chosen-rtl form-control">
 										<option value="no">No</option>
 										<option value="yes">Yes</option>
 									</select>

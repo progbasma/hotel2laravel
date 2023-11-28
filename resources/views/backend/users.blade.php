@@ -98,7 +98,7 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="status_id">{{ __('Active/Inactive') }}<span class="red">*</span></label>
-										<select name="status_id" id="status_id" class="chosen-select form-control">
+										<select name="status_id" id="status_id" class="chosen-rtl form-control">
 										@foreach($statuslist as $row)
 											<option value="{{ $row->id }}">
 												{{ $row->status }}
@@ -110,7 +110,7 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="role_id">{{ __('Role') }}<span class="red">*</span></label>
-										<select name="role_id" id="role_id" class="chosen-select form-control">
+										<select name="role_id" id="role_id" class="chosen-rtl form-control">
 										@foreach($roleslist as $row)
 											<option value="{{ $row->id }}">
 												{{ $row->role }}

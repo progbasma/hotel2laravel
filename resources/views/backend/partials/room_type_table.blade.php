@@ -19,17 +19,17 @@
 				<td class="text-left"><a href="{{ route('backend.room', [$row->id]) }}" title="{{ __('Edit') }}">{{ $row->title }}</a></td>
 				<td class="text-left">{{ $row->category_name }}</td>
 				<td class="text-center">{{ $row->language_name }}</td>
-				
+
 				@if ($row->thumbnail != '')
 				<td class="text-center"><div class="table_col_image"><img src="{{ asset('public') }}/media/{{ $row->thumbnail }}" /></div></td>
 				@else
 				<td class="text-center"><div class="table_col_image"><img src="{{ asset('public') }}/backend/images/album_icon.png" /></div></td>
 				@endif
-				
+
 				@if ($row->is_publish == 1)
-				<td class="text-center"><span class="enable_btn">{{ $row->status }}</span></td>
+				<td class="text-center"><span class="enable_btn">{{ __($row->status) }}</span></td>
 				@else
-				<td class="text-center"><span class="disable_btn">{{ $row->status }}</span></td>
+				<td class="text-center"><span class="disable_btn">{{ __($row->status) }}</span></td>
 				@endif
 				<td class="text-center">
 					<div class="btn-group action-group">

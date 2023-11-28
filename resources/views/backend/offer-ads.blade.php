@@ -58,7 +58,7 @@
 								<div class="col-md-3">
 									<div class="form-group">
 										<label for="offer_ad_type">{{ __('Offer & Ads Position') }}<span class="red">*</span></label>
-										<select name="offer_ad_type" id="offer_ad_type" class="chosen-select form-control">
+										<select name="offer_ad_type" id="offer_ad_type" class="chosen-rtl form-control">
 											<option value="homepage1">Homepage 1</option>
 											<option value="homepage2_small">Homepage 2 (For small size)</option>
 											<option value="homepage2_large">Homepage 2 (For large size)</option>
@@ -110,7 +110,7 @@
 								<div class="col-md-3">
 									<div class="form-group">
 										<label for="target">{{ __('Target Window') }}<span class="red">*</span></label>
-										<select name="target" id="target" class="chosen-select form-control">
+										<select name="target" id="target" class="chosen-rtl form-control">
 											<option value="">None</option>
 											<option value="_self">Self</option>
 											<option value="_blank">Blank</option>
@@ -128,7 +128,7 @@
 								<div class="col-md-3">
 									<div class="form-group">
 										<label for="is_publish">{{ __('Status') }}<span class="red">*</span></label>
-										<select name="is_publish" id="is_publish" class="chosen-select form-control">
+										<select name="is_publish" id="is_publish" class="chosen-rtl form-control">
 										@foreach($statuslist as $row)
 											<option value="{{ $row->id }}">
 												{{ $row->status }}

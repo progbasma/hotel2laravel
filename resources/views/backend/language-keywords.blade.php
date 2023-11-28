@@ -16,7 +16,7 @@
 							<div class="row">
 								<div class="col-md-3">
 									<div class="form-group mb-10 filter">
-										<select name="language_code" id="language_code" class="chosen-select form-control">
+										<select name="language_code" id="language_code" class="chosen-rtl form-control">
 										@foreach($languageslist as $row)
 											<option {{ $row->language_default == 1 ? "selected=selected" : '' }} value="{{ $row->language_code }}">
 												{{ $row->language_name }}
@@ -76,12 +76,6 @@
 									</div>
 								</div>
 							</form>
-
-							<div class="row mt-15">
-								<div class="col-md-12">
-									<p>Note: <span class="text-danger">Please give write permissions in this folder "resources/lang".</span></p>
-								</div>
-							</div>
 						</div>
 						<!--/Data Entry Form-->
 					</div>

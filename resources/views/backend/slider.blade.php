@@ -29,7 +29,7 @@
 							<div class="col-md-3">
 								<div class="form-group">
 									<label for="slider_type_filter">{{ __('Manage Page') }}</label>
-									<select name="slider_type_filter" id="slider_type_filter" class="chosen-select form-control">
+									<select name="slider_type_filter" id="slider_type_filter" class="chosen-rtl form-control">
 										<option value="0" selected="selected">{{ __('All Manage Page') }}</option>
 										<option value="home_1">Home Page 1</option>
 									</select>
@@ -69,7 +69,7 @@
 								<div class="col-md-3">
 									<div class="form-group">
 										<label for="slider_type">{{ __('Manage Page') }}<span class="red">*</span></label>
-										<select name="slider_type" id="slider_type" class="chosen-select form-control">
+										<select name="slider_type" id="slider_type" class="chosen-rtl form-control">
 											<option value="home_1">Home Page 1</option>
 										</select>
 									</div>
@@ -122,7 +122,7 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="target">{{ __('Target Window') }}</label>
-										<select name="target" id="target" class="chosen-select form-control">
+										<select name="target" id="target" class="chosen-rtl form-control">
 											<option value="">None</option>
 											<option value="_self">Self</option>
 											<option value="_blank">Blank</option>
@@ -141,7 +141,7 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="is_publish">{{ __('Status') }}<span class="red">*</span></label>
-										<select name="is_publish" id="is_publish" class="chosen-select form-control">
+										<select name="is_publish" id="is_publish" class="chosen-rtl form-control">
 										@foreach($statuslist as $row)
 											<option value="{{ $row->id }}">
 												{{ $row->status }}

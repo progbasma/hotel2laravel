@@ -52,7 +52,7 @@
 									<div class="col-md-4">
 										<div class="form-group">
 											<label for="is_publish_about">{{ __('Status') }}</label>
-											<select name="is_publish_about" id="is_publish_about" class="chosen-select form-control">
+											<select name="is_publish_about" id="is_publish_about" class="chosen-rtl form-control">
 											@foreach($statuslist as $row)
 												<option {{ $row->id == $datalist['is_publish_about'] ? "selected=selected" : '' }} value="{{ $row->id }}">
 													{{ $row->status }}
@@ -95,7 +95,7 @@
 									<div class="col-md-4">
 										<div class="form-group">
 											<label for="is_publish_contact">{{ __('Status') }}</label>
-											<select name="is_publish_contact" id="is_publish_contact" class="chosen-select form-control">
+											<select name="is_publish_contact" id="is_publish_contact" class="chosen-rtl form-control">
 											@foreach($statuslist as $row)
 												<option {{ $row->id == $datalist['is_publish_contact'] ? "selected=selected" : '' }} value="{{ $row->id }}">
 													{{ $row->status }}
@@ -120,7 +120,7 @@
 									<div class="col-md-4">
 										<div class="form-group">
 											<label for="is_publish_copyright">{{ __('Status') }}</label>
-											<select name="is_publish_copyright" id="is_publish_copyright" class="chosen-select form-control">
+											<select name="is_publish_copyright" id="is_publish_copyright" class="chosen-rtl form-control">
 											@foreach($statuslist as $row)
 												<option {{ $row->id == $datalist['is_publish_copyright'] ? "selected=selected" : '' }} value="{{ $row->id }}">
 													{{ $row->status }}
@@ -154,7 +154,7 @@
 									<div class="col-md-4">
 										<div class="form-group">
 											<label for="is_publish_payment">{{ __('Status') }}</label>
-											<select name="is_publish_payment" id="is_publish_payment" class="chosen-select form-control">
+											<select name="is_publish_payment" id="is_publish_payment" class="chosen-rtl form-control">
 											@foreach($statuslist as $row)
 												<option {{ $row->id == $datalist['is_publish_payment'] ? "selected=selected" : '' }} value="{{ $row->id }}">
 													{{ $row->status }}

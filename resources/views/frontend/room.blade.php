@@ -53,7 +53,7 @@
 		</div>
 	</section>
 	<!-- /Page Breadcrumb/ -->
-	
+
 	<!-- Inner Section -->
 	<section class="inner-section inner-section-bg">
 		<div class="container">
@@ -128,21 +128,21 @@
 						</div>
 					</div>
 					@endif
-					
+
 					@if($data->amenities != '')
 					<div class="room-details-card">
 						<h4 class="details-title">{{ __('Amenities') }}</h4>
 						<ul class="details-list">@php echo $data->amenities; @endphp</ul>
 					</div>
 					@endif
-					
+
 					@if($data->complements != '')
 					<div class="room-details-card">
 						<h4 class="details-title">{{ __('Complements') }}</h4>
 						<ul class="details-list">@php echo $data->complements; @endphp</ul>
 					</div>
 					@endif
-					
+
 					@if($data->beds != '')
 					<div class="room-details-card">
 						<h4 class="details-title">{{ __('Beds') }}</h4>
@@ -150,7 +150,7 @@
 					</div>
 					@endif
 				</div>
-				
+
 				<div class="col-12 col-md-12 col-lg-4">
 					<div class="sidebar">
 						@if($gtext['is_publish_contact'] == 1)
@@ -158,22 +158,22 @@
 							<div class="widget-title">{{ __('Contact') }}</div>
 							<div class="widget-body">
 								<p>{{ __('If you need any help, feel free to contact us.') }}</p>
-								
+
 								@if($gtext['phone_footer'] != '')
 								<p><strong>{{ __('Phone') }}:</strong> {{ $gtext['phone_footer'] }}</p>
 								@endif
-								
+
 								@if($gtext['email_footer'] != '')
 								<p><strong>{{ __('Email') }}:</strong> {{ $gtext['email_footer'] }}</p>
 								@endif
-								
+
 								@if($gtext['address_footer'] != '')
 								<p class="mb0"><strong>{{ __('Address') }}:</strong> {{ $gtext['address_footer'] }}</p>
 								@endif
-							</div>	
+							</div>
 						</div>
 						@endif
-						
+
 						@if(count($room_images)>0)
 						<div class="widget-card">
 							<div class="widget-title">Gallery View</div>
@@ -187,7 +187,7 @@
 									</li>
 								@endforeach
 								</ul>
-							</div>	
+							</div>
 						</div>
 						@endif
 					</div>
@@ -195,7 +195,7 @@
 			</div>
 		</div>
 	</section>
-	<!-- /Inner Section/ -->	
+	<!-- /Inner Section/ -->
 </main>
 @endsection
 

@@ -42,7 +42,7 @@
 										<div class="form-group">
 											<label for="language_code">{{ __('Language Code') }}<span class="red">*</span></label>
 											<input type="text" name="language_code" id="language_code" class="form-control parsley-validated" data-required="true">
-											<small class="form-text text-muted">Example: af, bn, en, fr, pt (<a target="_blank" href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">List of Langauges name and Codes</a>) </small>
+											<small class="form-text text-muted">{{__('Example')}}: af, bn, en, fr, pt (<a target="_blank" href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">{{__('List of Langauges name and Codes')}}</a>) </small>
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -89,12 +89,6 @@
 									</div>
 								</div>
 							</form>
-
-							<div class="row mt-15">
-								<div class="col-md-12">
-									<p>Note: <span class="text-danger">Please give write permissions in this folder "resources/lang".</span></p>
-								</div>
-							</div>
 						</div>
 						<!--/Data Entry Form-->
 					</div>

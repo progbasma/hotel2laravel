@@ -15,21 +15,21 @@
 			@if (count($datalist)>0)
 			@foreach($datalist as $row)
 			<tr>
-				<td class="checkboxlist text-center"><input name="item_ids[]" value="{{ $row->id }}" class="tp-checkbox selected_item" type="checkbox"></td> 
-				<td class="text-left">{{ $row->title }}</td> 
-				<td class="text-left">{{ $row->offer_ad_type }}</td> 
-				<td class="text-left"><a target="_blank" href="{{ $row->url }}">{{ $row->url }}</a></td> 
+				<td class="checkboxlist text-center"><input name="item_ids[]" value="{{ $row->id }}" class="tp-checkbox selected_item" type="checkbox"></td>
+				<td class="text-left">{{ $row->title }}</td>
+				<td class="text-left">{{ $row->offer_ad_type }}</td>
+				<td class="text-left"><a target="_blank" href="{{ $row->url }}">{{ $row->url }}</a></td>
 
 				@if ($row->image != '')
 				<td class="text-center"><div class="table_col_image"><img src="{{ asset('public') }}/media/{{ $row->image }}" /></div></td>
 				@else
 				<td class="text-center"><div class="table_col_image"><img src="{{ asset('public') }}/backend/images/album_icon.png" /></div></td>
 				@endif
-				
+
 				@if ($row->is_publish == 1)
-				<td class="text-center"><span class="enable_btn">{{ $row->status }}</span></td>
+				<td class="text-center"><span class="enable_btn">{{ __($row->status) }}</span></td>
 				@else
-				<td class="text-center"><span class="disable_btn">{{ $row->status }}</span></td>
+				<td class="text-center"><span class="disable_btn">{{ __($row->status) }}</span></td>
 				@endif
 				<td class="text-center">
 					<div class="btn-group action-group">

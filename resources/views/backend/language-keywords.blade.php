@@ -76,6 +76,12 @@
 									</div>
 								</div>
 							</form>
+
+							<div class="row mt-15">
+								<div class="col-md-12">
+									<p>Note: <span class="text-danger">Please give write permissions in this folder "resources/lang".</span></p>
+								</div>
+							</div>
 						</div>
 						<!--/Data Entry Form-->
 					</div>

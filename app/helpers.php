@@ -1201,6 +1201,34 @@ function language(){
 	return $languageList;
 }
 
+function language_select_box(){
+
+	$locale_language = glan();
+
+	$data = Language::where('status', 1)->orderBy('language_name', 'ASC')->get();
+
+	$base_url = url('/');
+
+	$language = '';
+	$selected_language = '';
+
+	foreach ($data as $row){
+		if($locale_language == $row['language_code']){
+			$selected_language = $row['language_name'];
+		}
+
+        $selected = $locale_language == $row['language_code'] ? 'selected' : '';
+
+		$language .= '<option '.$selected.' value="'.$base_url.'/lang/'.$row['language_code'].'">'.$row['language_name'].'</option>';
+	}
+
+    $languageList = '<select class="view_website"
+    onchange="window.location.replace('."this.value".')"
+    >'.$language.'</select>';
+
+	return $languageList;
+}
+
 function thumbnail($type){
 
 	$datalist = array('width' => '', 'height' => '');

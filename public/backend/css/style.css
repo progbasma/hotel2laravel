@@ -744,7 +744,6 @@ a.my-profile-info {
 	left: 0;
 	height: 100%;
 	width: 220px;
-	margin-left: -220px;
 	z-index: 433;
 	background-color: #ffffff;
 	-webkit-box-shadow: 0px 5px 10px rgba(0,0,0,0.04);
@@ -758,6 +757,7 @@ a.my-profile-info {
 }
 #wrapper.toggled .sidebar-wrapper{
 	margin-left: 0;
+    display: none;
 }
 .sidebar-wrapper ul.left-navbar {
 	margin-top: 20px;

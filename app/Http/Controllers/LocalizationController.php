@@ -11,7 +11,7 @@ class LocalizationController extends Controller
         App::setLocale($locale);
         //store the locale in session so that the middleware can register it
         session()->put('locale', $locale);
-        return redirect('/');
-		//return redirect()->back();
+        //return redirect('/');
+		return redirect()->back();
     }
 }

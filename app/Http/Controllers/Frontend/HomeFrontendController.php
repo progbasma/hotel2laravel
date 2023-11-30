@@ -17,12 +17,12 @@ class HomeFrontendController extends Controller
     public function homePageLoad(Request $request)
 	{
 		$lan = glan();
-		
+
 		$PageVariation = PageVariation();
-		
+
 		//Home Page 1
 		if($PageVariation['home_variation'] == 'home_1'){
-			
+
 			//slider_hero Section
 			$slider_hero_section = Section_manage::where('manage_type', '=', 'home_1')->where('section', '=', 'slider_hero')->where('is_publish', '=', 1)->first();
 			if($slider_hero_section ==''){
@@ -31,7 +31,7 @@ class HomeFrontendController extends Controller
 				$slider_hero_array['is_publish'] = 2;
 				$slider_hero_section = json_decode(json_encode($slider_hero_array));
 			}
-			
+
 			//About Us Section
 			$about_us_section = Section_manage::where('manage_type', '=', 'home_1')->where('section', '=', 'about_us')->where('is_publish', '=', 1)->first();
 			if($about_us_section ==''){
@@ -40,7 +40,7 @@ class HomeFrontendController extends Controller
 				$about_us_array['is_publish'] = 2;
 				$about_us_section = json_decode(json_encode($about_us_array));
 			}
-			
+
 			//Offer & Ads Section
 			$offer_ads_section = Section_manage::where('manage_type', '=', 'home_1')->where('section', '=', 'offer_ads')->where('is_publish', '=', 1)->first();
 			if($offer_ads_section ==''){
@@ -49,7 +49,7 @@ class HomeFrontendController extends Controller
 				$offer_ads_array['is_publish'] = 2;
 				$offer_ads_section = json_decode(json_encode($offer_ads_array));
 			}
-			
+
 			//Featured Rooms Section
 			$featured_rooms_section = Section_manage::where('manage_type', '=', 'home_1')->where('section', '=', 'featured_rooms')->where('is_publish', '=', 1)->first();
 			if($featured_rooms_section ==''){
@@ -58,7 +58,7 @@ class HomeFrontendController extends Controller
 				$featured_rooms_array['is_publish'] = 2;
 				$featured_rooms_section = json_decode(json_encode($featured_rooms_array));
 			}
-			
+
 			//Our Services Section
 			$our_services_section = Section_manage::where('manage_type', '=', 'home_1')->where('section', '=', 'our_services')->where('is_publish', '=', 1)->first();
 			if($our_services_section ==''){
@@ -67,7 +67,7 @@ class HomeFrontendController extends Controller
 				$our_services_array['is_publish'] = 2;
 				$our_services_section = json_decode(json_encode($our_services_array));
 			}
-			
+
 			//Testimonial Section
 			$testimonial_section = Section_manage::where('manage_type', '=', 'home_1')->where('section', '=', 'testimonial')->where('is_publish', '=', 1)->first();
 			if($testimonial_section ==''){
@@ -76,7 +76,7 @@ class HomeFrontendController extends Controller
 				$testimonial_array['is_publish'] = 2;
 				$testimonial_section = json_decode(json_encode($testimonial_array));
 			}
-			
+
 			//Our Blogs Section
 			$our_blogs_section = Section_manage::where('manage_type', '=', 'home_1')->where('section', '=', 'our_blogs')->where('is_publish', '=', 1)->first();
 			if($our_blogs_section ==''){
@@ -85,13 +85,13 @@ class HomeFrontendController extends Controller
 				$our_blogs_array['is_publish'] = 2;
 				$our_blogs_section = json_decode(json_encode($our_blogs_array));
 			}
-			
+
 			//Slider
-			$slider = Slider::where('slider_type', '=', 'home_1')->where('is_publish', '=', 1)->orderBy('id', 'desc')->limit(1)->get();
-			
+			$slider = Slider::where('lan', $lan)->where('slider_type', '=', 'home_1')->where('is_publish', '=', 1)->orderBy('id', 'desc')->limit(1)->get();
+
 			//About Us
 			$about_us = Section_content::where('page_type', '=', 'home_1')->where('section_type', '=', 'about_us')->where('is_publish', '=', 1)->orderBy('id', 'desc')->limit(1)->get();
-			
+
 			//Offer & Ads
 			$OfferAds = Offer_ad::where('offer_ad_type', '=', 'homepage1')->where('is_publish', '=', 1)->orderBy('id', 'asc')->get();
 
@@ -105,10 +105,10 @@ class HomeFrontendController extends Controller
 				->orderBy('rooms.id','desc')
 				->limit(6)
 				->get();
-				
+
 			//Our Services
 			$our_services = Section_content::where('section_type', '=', 'our_services')->where('is_publish', '=', 1)->get();
-			
+
 			//Home Video Section
 			$hv_data = Tp_option::where('option_name', 'home-video')->get();
 			$id_home_video = '';
@@ -120,7 +120,7 @@ class HomeFrontendController extends Controller
 			if($id_home_video != ''){
 				$hvData = json_decode($hv_data);
 				$dataObj = json_decode($hvData[0]->option_value);
-				
+
 				$home_video['title'] = $dataObj->title;
 				$home_video['short_desc'] = $dataObj->short_desc;
 				$home_video['url'] = $dataObj->url;
@@ -139,10 +139,10 @@ class HomeFrontendController extends Controller
 				$home_video['image'] = '';
 				$home_video['is_publish'] = '2';
 			}
-			
+
 			//Testimonial
 			$testimonial = Section_content::where('section_type', '=', 'testimonial')->where('is_publish', '=', 1)->get();
-			
+
 			//Blogs
 			$blogs = DB::table('blogs')
 				->join('users', 'blogs.user_id', '=', 'users.id')
@@ -151,18 +151,18 @@ class HomeFrontendController extends Controller
 				->orderBy('id','desc')
 				->limit(3)
 				->get();
-			
+
 		//Home Page 2
 		}elseif($PageVariation['home_variation'] == 'home_2'){
-			
+
 		//Home Page 3
 		}elseif($PageVariation['home_variation'] == 'home_3'){
-			
+
 		//Home Page 4
 		}elseif($PageVariation['home_variation'] == 'home_4'){
-			
+
 		}
-		
+
         return view('frontend.home', compact(
 			'slider_hero_section',
 			'about_us_section',

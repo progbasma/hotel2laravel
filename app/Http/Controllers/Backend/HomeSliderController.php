@@ -13,18 +13,20 @@ class HomeSliderController extends Controller
 {
     //Slider page load
     public function getSliderPageLoad() {
-		
+
 		$media_datalist = Media_option::orderBy('id','desc')->paginate(28);
-		
+
 		$statuslist = DB::table('tp_status')->orderBy('id', 'asc')->get();
-		
+		$languageslist = DB::table('languages')->where('status', 1)->orderBy('language_name', 'asc')->get();
+
 		$datalist = DB::table('sliders')
+            ->where('lan', glan())
 			->join('tp_status', 'sliders.is_publish', '=', 'tp_status.id')
 			->select('sliders.*', 'tp_status.status')
 			->orderBy('sliders.id','desc')
 			->paginate(10);
 
-        return view('backend.slider', compact('media_datalist', 'statuslist', 'datalist'));
+        return view('backend.slider', compact('media_datalist', 'statuslist', 'languageslist', 'datalist'));
     }
 
 	//Get data for Slider Pagination
@@ -32,7 +34,7 @@ class HomeSliderController extends Controller
 
 		$search = $request->search;
 		$slider_type = $request->slider_type;
-		
+
 		if($request->ajax()){
 
 			if($search != ''){
@@ -47,7 +49,7 @@ class HomeSliderController extends Controller
 					->orderBy('sliders.id','desc')
 					->paginate(10);
 			}else{
-				
+
 				$datalist = DB::table('sliders')
 					->join('tp_status', 'sliders.is_publish', '=', 'tp_status.id')
 					->select('sliders.*', 'tp_status.status')
@@ -61,32 +63,34 @@ class HomeSliderController extends Controller
 			return view('backend.partials.slider_table', compact('datalist'))->render();
 		}
 	}
-	
+
 	//Save data for Slider
     public function saveSliderData(Request $request){
 		$res = array();
-		
+
 		$id = $request->input('RecordId');
 		$slider_type = $request->input('slider_type');
 		$title = $request->input('slider_title');
+		$lan = $request->input('lan');
 		$sub_title = $request->input('sub_title');
 		$image = $request->input('image');
 		$button_text = $request->input('button_text');
 		$target = $request->input('target');
 		$url = $request->input('image_url');
 		$is_publish = $request->input('is_publish');
-		
+
 		$validator_array = array(
 			'slider_type' => $request->input('slider_type'),
 			'image' => $request->input('image'),
 			'title' => $request->input('slider_title'),
 			'is_publish' => $request->input('is_publish')
 		);
-		
+
 		$validator = Validator::make($validator_array, [
 			'slider_type' => 'required',
 			'image' => 'required',
 			'title' => 'required',
+			'lan' => 'required',
 			'is_publish' => 'required'
 		]);
 
@@ -97,22 +101,28 @@ class HomeSliderController extends Controller
 			$res['msg'] = $errors->first('slider_type');
 			return response()->json($res);
 		}
-		
+
 		if($errors->has('image')){
 			$res['msgType'] = 'error';
 			$res['msg'] = $errors->first('image');
 			return response()->json($res);
 		}
-		
+
 		if($errors->has('title')){
 			$res['msgType'] = 'error';
 			$res['msg'] = $errors->first('title');
 			return response()->json($res);
 		}
-		
+
 		if($errors->has('is_publish')){
 			$res['msgType'] = 'error';
 			$res['msg'] = $errors->first('is_publish');
+			return response()->json($res);
+		}
+
+        if($errors->has('slider_lan')){
+			$res['msgType'] = 'error';
+			$res['msg'] = $errors->first('slider_lan');
 			return response()->json($res);
 		}
 
@@ -120,13 +130,14 @@ class HomeSliderController extends Controller
 			'sub_title' => $sub_title,
 			'button_text' => $button_text,
 			'target' => $target
-		);		
-		
+		);
+
 		$data = array(
 			'slider_type' => $slider_type,
 			'image' => $image,
 			'url' => $url,
 			'title' => $title,
+			'lan' => $lan,
 			'desc' => json_encode($option),
 			'is_publish' => $is_publish
 		);
@@ -150,24 +161,24 @@ class HomeSliderController extends Controller
 				$res['msg'] = __('Data update failed');
 			}
 		}
-		
+
 		return response()->json($res);
     }
-	
+
 	//Get data for Slider by id
     public function getSliderById(Request $request){
 
 		$id = $request->id;
-		
+
 		$data = Slider::where('id', $id)->first();
 		$data->desc = json_decode($data->desc);
-		
+
 		return response()->json($data);
 	}
-	
+
 	//Delete data for Slider
 	public function deleteSlider(Request $request){
-		
+
 		$res = array();
 
 		$id = $request->id;
@@ -182,18 +193,18 @@ class HomeSliderController extends Controller
 				$res['msg'] = __('Data remove failed');
 			}
 		}
-		
+
 		return response()->json($res);
 	}
-	
+
 	//Bulk Action for Slider
 	public function bulkActionSlider(Request $request){
-		
+
 		$res = array();
 
 		$idsStr = $request->ids;
 		$idsArray = explode(',', $idsStr);
-		
+
 		$BulkAction = $request->BulkAction;
 
 		if($BulkAction == 'publish'){
@@ -205,9 +216,9 @@ class HomeSliderController extends Controller
 				$res['msgType'] = 'error';
 				$res['msg'] = __('Data update failed');
 			}
-			
+
 		}elseif($BulkAction == 'draft'){
-			
+
 			$response = Slider::whereIn('id', $idsArray)->update(['is_publish' => 2]);
 			if($response){
 				$res['msgType'] = 'success';
@@ -216,7 +227,7 @@ class HomeSliderController extends Controller
 				$res['msgType'] = 'error';
 				$res['msg'] = __('Data update failed');
 			}
-			
+
 		}elseif($BulkAction == 'delete'){
 			$response = Slider::whereIn('id', $idsArray)->delete();
 			if($response){
@@ -227,7 +238,7 @@ class HomeSliderController extends Controller
 				$res['msg'] = __('Data remove failed');
 			}
 		}
-		
+
 		return response()->json($res);
-	}	
+	}
 }

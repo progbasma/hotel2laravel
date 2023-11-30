@@ -2,8 +2,12 @@
 	<span class="menu-toggler" id="menu-toggle">
 		<span class="line"></span>
 	</span>
+
+
 	<a href="{{ url('/') }}" target="_blank" class="view_website">{{ __('View Website') }}</a>
-	
+
+    <div> @php echo language_select_box(); @endphp </div>
+
 	<div class="dropdown ml-auto mt-0 mt-lg-0">
 		<a href="javascript:void(0);" class="my-profile-info" data-toggle="dropdown">
 			<div class="avatar">
@@ -20,7 +24,7 @@
 			@elseif (Auth::user()->role_id == 3)
 			<a class="dropdown-item" href="{{ route('receptionist.profile') }}">{{ __('Profile') }}</a>
 			@endif
-			
+
 			<a class="dropdown-item" href="{{ route('logout') }}"
 				onclick="event.preventDefault();
 				document.getElementById('logout-form').submit();">

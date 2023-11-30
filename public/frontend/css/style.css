@@ -35,7 +35,7 @@
 /* ======================
    Default css
    ====================== */
-@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal&display=swap');
 
 * {
     margin: 0;
@@ -43,7 +43,7 @@
     outline: 0;
 }
 body {
-    font-family: 'Cairo';
+    font-family: 'Tajawal';
     font-weight: normal;
     font-style: normal;
     color: var(--color-gray-dark);
@@ -94,7 +94,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Cairo';
+    font-family: 'Tajawal';
     color: var(--color-black);
     margin-top: 0px;
     font-style: normal;
@@ -135,7 +135,7 @@ li {
 }
 p {
     color: var(--color-gray-dark);
-    font-family: 'Cairo';
+    font-family: 'Tajawal';
     font-size: 14px;
     font-weight: normal;
     margin-bottom: 15px;
@@ -482,7 +482,7 @@ a.scroll-to-top:hover {
 	cursor: pointer;
 	display: inline-block;
 	font-size: 14px;
-	font-family: 'Cairo';
+	font-family: 'Tajawal';
 	font-weight: 800;
 	line-height: 1;
 	margin-bottom: 0;
@@ -592,7 +592,7 @@ a.scroll-to-top:hover {
 	background: #919395;
 }
 .my-dashbord .table td p {
-	font-family: 'Cairo';
+	font-family: 'Tajawal';
 	color: var(--color-gray-dark);
 	margin: 0;
 	width: 100%;
@@ -750,7 +750,7 @@ ul.top-list-1 li i {
     font-size: 14px;
 }
 .tp-menu ul li a {
-    font-family: 'Cairo';
+    font-family: 'Tajawal';
     color: var(--color-black);
     font-size: 16px;
     font-weight: 700;
@@ -854,7 +854,7 @@ ul.top-list-1 li i {
     color: var(--color-black);
     font-size: 14px;
     font-weight: 700;
-    font-family: 'Cairo';
+    font-family: 'Tajawal';
 }
 
 .tp-menu ul li ul.submenu li:hover > a,
@@ -869,7 +869,7 @@ ul.top-list-1 li i {
     color: var(--theme-color);
     font-weight: 800;
     font-size: 14px;
-    font-family: 'Cairo';
+    font-family: 'Tajawal';
     position: relative;
     margin-bottom: 10px;
 }
@@ -1050,7 +1050,7 @@ ul.top-list-1 li i {
     display: inline-block;
     padding: 10px 10px 10px 20px;
     width: 100%;
-    font-family: 'Cairo';
+    font-family: 'Tajawal';
     font-weight: 700;
 }
 .mobile-menu li > a:hover {
@@ -1300,7 +1300,7 @@ ul.top-list-1 li i {
     overflow: hidden;
 }
 .item-card .item-content .item-title a {
-    font-family: 'Cairo';
+    font-family: 'Tajawal';
     color: var(--color-black);
     font-weight: 700;
     font-size: 20px;
@@ -1310,7 +1310,7 @@ ul.top-list-1 li i {
     color: var(--theme-color);
 }
 .item-card .item-content .pric-card {
-    font-family: 'Cairo';
+    font-family: 'Tajawal';
     font-size: 16px;
     color: var(--color-black);
     font-weight: 900;
@@ -1875,7 +1875,7 @@ ul.top-list-1 li i {
 }
 .room-details-card .item-title {}
 .room-details-card .item-title h3 {
-    font-family: 'Cairo';
+    font-family: 'Tajawal';
     color: var(--color-black);
     font-weight: 700;
     font-size: 20px;
@@ -1892,7 +1892,7 @@ ul.top-list-1 li i {
 	color: var(--color-black);
 }
 .room-details-card .pric-card {
-	font-family: 'Cairo';
+	font-family: 'Tajawal';
 	font-size: 20px;
 	color: var(--color-black);
 	font-weight: 900;
@@ -1972,13 +1972,13 @@ ul.top-list-1 li i {
 	padding-left: 15px;
 }
 .room-book-card .room-book-content .room-title {
-	font-family: 'Cairo';
+	font-family: 'Tajawal';
 	color: var(--color-black);
 	font-weight: 700;
 	font-size: 18px;
 }
 .room-book-card .room-book-content .room-price {
-	font-family: 'Cairo';
+	font-family: 'Tajawal';
 	font-size: 14px;
 	color: var(--color-black);
 	font-weight: 700;
@@ -2298,7 +2298,7 @@ ul.errors-list li {
 	margin-bottom: 0px;
 	width: 100%;
 	font-weight: 500;
-	font-family: 'Cairo';
+	font-family: 'Tajawal';
 	color: var(--color-black);
 }
 .my_card p.sub-title {
@@ -2311,7 +2311,7 @@ ul.errors-list li {
 	width: 100%;
 	text-align: right;
 	font-weight: 500;
-	font-family: 'Cairo';
+	font-family: 'Tajawal';
 	color: var(--color-black);
 }
 .my_card p.sub-price {
@@ -2319,7 +2319,7 @@ ul.errors-list li {
 	margin-bottom: 0px;
 	width: 100%;
 	text-align: right;
-	font-family: 'Cairo';
+	font-family: 'Tajawal';
 	color: var(--color-black);
 }
 .my_card span.title,
@@ -2395,7 +2395,7 @@ ul.errors-list li {
 	font-size: 20px;
 	font-weight: 700;
 	color: var(--color-black);
-	font-family: 'Cairo';
+	font-family: 'Tajawal';
 	border-bottom: 1px solid var(--color-gray-400);
 	padding: 10px 15px;
 }
@@ -2505,7 +2505,7 @@ ul.errors-list li {
 .sidebar .widget-card .widget-body ul.widget-list li a {
 	font-size: 14px;
 	font-weight: 700;
-	font-family: 'Cairo';
+	font-family: 'Tajawal';
 	color: var(--color-black);
 }
 .sidebar .widget-card .widget-body ul.widget-list li a:hover {
@@ -2792,7 +2792,7 @@ ul.errors-list li {
 }
 .entry p {
 	margin: 0 0 10px;
-	font-family: 'Cairo';
+	font-family: 'Tajawal';
 	line-height: 2;
 }
 .entry ol,
@@ -2872,7 +2872,7 @@ ul.errors-list li {
 }
 .entry table tr th,
 .entry table tr td {
-	font-family: 'Cairo';
+	font-family: 'Tajawal';
 	color: var(--color-gray-dark);
 }
 

@@ -1,5 +1,5 @@
 body.rtl {
-    font-family: 'Cairo';
+    font-family: 'Tajawal';
 }
 body.rtl h1,
 body.rtl h2,
@@ -7,10 +7,10 @@ body.rtl h3,
 body.rtl h4,
 body.rtl h5,
 body.rtl h6 {
-    font-family: 'Cairo';
+    font-family: 'Tajawal';
 }
 body.rtl p {
-    font-family: 'Cairo';
+    font-family: 'Tajawal';
 }
 
 body.rtl ul.top-list-1 {
@@ -61,19 +61,19 @@ body.rtl .tp-menu ul > li > a.tp-updown::before {
     right: auto;
 }
 body.rtl .tp-menu ul li a {
-    font-family: 'Cairo';
+    font-family: 'Tajawal';
 }
 body.rtl .tp-menu ul li .mega-menu ul li a {
-    font-family: 'Cairo';
+    font-family: 'Tajawal';
 }
 body.rtl .tp-menu ul li .mega-menu ul li.mega-title {
-    font-family: 'Cairo';
+    font-family: 'Tajawal';
 }
 body.rtl .icon-bars-card {
     float: left;
 }
 body.rtl .mobile-menu li > a {
-    font-family: 'Cairo';
+    font-family: 'Tajawal';
 }
 body.rtl .mobile-menu li.has-children-menu .menu-expand {
     left: 20px;
@@ -81,7 +81,7 @@ body.rtl .mobile-menu li.has-children-menu .menu-expand {
 }
 body.rtl .mobile-menu li > a {
     padding: 10px 20px 10px 10px;
-    font-family: 'Cairo';
+    font-family: 'Tajawal';
 }
 body.rtl .about-card {
     padding-left: 0;

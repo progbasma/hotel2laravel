@@ -19,13 +19,13 @@
 /* ======================
    Google Font
    ====================== */
-   @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Tajawal&display=swap');
 
    /* ======================
    Default css
    ====================== */
  body {
-	font-family: 'Cairo', sans-serif;
+	font-family: 'Tajawal', sans-serif;
 	font-weight: normal;
 	font-style: normal;
 	background: #f1f5f9;
@@ -86,7 +86,7 @@ table, .table{
 	color: #686868;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Cairo', sans-serif;
+	font-family: 'Tajawal', sans-serif;
 	font-weight: normal;
 	color: #444444;
 	margin-top: 0px;
@@ -125,7 +125,7 @@ li {
 }
 p {
 	color: #686868;
-	font-family: 'Cairo', sans-serif;
+	font-family: 'Tajawal', sans-serif;
 	font-size: 14px;
 	font-weight: normal;
 	line-height: 26px;

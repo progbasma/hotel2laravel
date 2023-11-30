@@ -7,7 +7,7 @@
 	}
 	.tp-media-view .tp-modal-lg {
 		margin: 10px 10px 10px 10px;
-	}	
+	}
 }
 @media only screen and (min-width: 900px) and (max-width: 1159px) {
 	.media-content ul.media-view li {
@@ -16,7 +16,7 @@
 	}
 	.tp-media-view .tp-modal-lg {
 		margin: 10px 10px 10px 10px;
-	}	
+	}
 }
 @media only screen and (min-width: 768px) and (max-width: 899px) {
 	.media-content ul.media-view li {
@@ -25,7 +25,7 @@
 	}
 	.tp-media-view .tp-modal-lg {
 		margin: 10px 10px 10px 10px;
-	}	
+	}
 }
 @media only screen and (min-width: 540px) and (max-width: 767px) {
 	.media-content ul.media-view li {
@@ -34,7 +34,7 @@
 	}
 	.tp-media-view .tp-modal-lg {
 		margin: 10px 10px 10px 10px;
-	}	
+	}
 }
 @media only screen and (min-width: 350px) and (max-width: 539px) {
 	.media-content ul.media-view li {
@@ -47,7 +47,7 @@
 	}
 	.tp-media-view .tp-modal-lg {
 		margin: 10px 10px 10px 10px;
-	}	
+	}
 }
 @media (max-width: 349px) {
 	.media-content ul.media-view li {
@@ -60,27 +60,30 @@
 	}
 	.tp-media-view .tp-modal-lg {
 		margin: 10px 10px 10px 10px;
-	}	
+	}
 }
 /*end of media-content*/
 
 @media (min-width: 768px) {
 	.sidebar-wrapper {
-		margin-left: 0;
+		margin-right: 0;
 	}
 	#page-content-wrapper {
 		min-width: 0;
 		width: 100%;
 	}
 	#wrapper.toggled  .sidebar-wrapper {
-		margin-left: -220px;
-	}	
+		margin-right: -220px;
+	}
 }
 
 @media (max-width: 767px) {
+    .sidebar-wrapper {
+		display: none;
+	}
 	#wrapper.toggled .tp-header {
-		padding: 10px 20px 10px 240px;
-	}	
+		padding: 10px 240px 10px 10px;
+	}
 	#wrapper.toggled  .main-body {
 		width: 100%;
 	}
@@ -104,7 +107,7 @@
 	}
 	ul.tabs-nav li a:hover, ul.tabs-nav li a.active {
 		width: auto;
-	}	
+	}
 	.tabs-body {
 		width: 100%;
 	}
@@ -116,32 +119,35 @@
 	}
 	.tp-media-view .tp-modal-lg {
 		margin: 10px 10px 10px 10px;
-	}	
+	}
+    #wrapper.toggled  .sidebar-wrapper {
+		display: block;
+	}
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 	#wrapper.toggled .tp-header {
-		padding: 10px 20px 10px 240px;
-	}	
+		padding: 10px 240px 10px 240px;
+	}
 	#wrapper.toggled  .main-body {
 		width: 100%;
-	}	
+	}
 	.tp-header {
 		padding: 10px 20px 10px 20px;
 	}
 	.my-profile-info .my-profile {
 		display: none;
-	}	
+	}
 	.main-body {
 		width: 100%;
-		padding: 75px 5px 40px 5px;
-	}	
+		padding: 75px 0px 40px 0px;
+	}
 	.tp-media-view .tp-modal-lg {
 		margin: 10px 10px 10px 10px;
 	}
 	.filter-form-group .form-control {
 		width: 100%;
 		margin: 5px 0px;
-	}	
+	}
 }
 

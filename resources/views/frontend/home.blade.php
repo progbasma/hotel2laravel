@@ -78,6 +78,7 @@ $gtext = gtext();
 @if(Session::has('subscribePopupOff'))
 @else
 	@if($gtext['is_subscribe_popup'] == 1)
+    <!--
 	<script type="text/javascript">
 	(function ($) {
 		'use strict';
@@ -139,6 +140,7 @@ $gtext = gtext();
 		});
 	}
 	</script>
+    -->
 	@endif
 @endif
 

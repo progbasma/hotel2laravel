@@ -21,6 +21,7 @@ return new class extends Migration
 			$table->text('image')->nullable();
 			$table->string('title')->nullable();
 			$table->text('desc')->nullable();
+			$table->string('lan')->default('en');
 			$table->integer('is_publish')->nullable();
             $table->timestamps();
         });

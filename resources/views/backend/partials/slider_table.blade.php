@@ -7,6 +7,7 @@
 				<th class="text-left" style="width:15%">{{ __('Manage Page') }} </th>
 				<th class="text-left" style="width:20%">{{ __('URL') }} </th>
 				<th class="text-center" style="width:15%">{{ __('Image') }} </th>
+				<th class="text-center" style="width:10%">{{ __('Language') }}</th>
 				<th class="text-center" style="width:15%">{{ __('Status') }}</th>
 				<th class="text-center" style="width:10%">{{ __('Action') }}</th>
 			</tr>
@@ -24,7 +25,7 @@
 				@else
 				<td class="text-center"><div class="table_col_image"><img src="{{ asset('public') }}/backend/images/album_icon.png" /></div></td>
 				@endif
-
+				<td class="text-center">{{ $row->lan }}</td>
 				@if ($row->is_publish == 1)
 				<td class="text-center"><span class="enable_btn">{{ __($row->status) }}</span></td>
 				@else

@@ -212,6 +212,20 @@
 								</div>
 							</div>
 
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="lan">{{ __('Language') }}<span class="red">*</span></label>
+                                        <select name="lan" id="lan" class="chosen-rtl form-control">
+                                        @foreach($languageslist as $row)
+                                            <option value="{{ $row->language_code }}">
+                                                {{ $row->language_name }}
+                                            </option>
+                                        @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                
 							<div class="row">
 								<div class="col-md-3">
 									<div class="form-group">

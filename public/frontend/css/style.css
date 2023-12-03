@@ -1451,6 +1451,7 @@ ul.top-list-1 li i {
     position: relative;
     display: inline-block;
     text-align: center;
+    min-width: -webkit-fill-available;
 }
 .service-card::before {
     position: absolute;

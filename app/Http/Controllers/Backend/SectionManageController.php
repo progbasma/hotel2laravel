@@ -11,21 +11,23 @@ use App\Models\Media_option;
 
 class SectionManageController extends Controller
 {
-	
+
  //Section manage page load
     public function getSectionManagePageLoad() {
-		
+
 		$media_datalist = Media_option::orderBy('id','desc')->paginate(28);
-		
+        $languageslist = DB::table('languages')->where('status', 1)->orderBy('language_name', 'asc')->get();
+
+
 		$statuslist = DB::table('tp_status')->orderBy('id', 'asc')->get();
-		
+
 		$datalist = DB::table('section_manages')
 			->join('tp_status', 'section_manages.is_publish', '=', 'tp_status.id')
 			->select('section_manages.*', 'tp_status.status')
 			->orderBy('section_manages.id','asc')
 			->paginate(20);
 
-        return view('backend.section-manage', compact('media_datalist', 'statuslist', 'datalist'));
+        return view('backend.section-manage', compact('media_datalist', 'statuslist', 'datalist','languageslist'));
     }
 
 	//Get data for Section Manage Pagination
@@ -33,7 +35,7 @@ class SectionManageController extends Controller
 
 		$search = $request->search;
 		$manage_type = $request->manage_type;
-		
+
 		if($request->ajax()){
 
 			if($search != ''){
@@ -48,7 +50,7 @@ class SectionManageController extends Controller
 					->orderBy('section_manages.id','asc')
 					->paginate(20);
 			}else{
-				
+
 				$datalist = DB::table('section_manages')
 					->join('tp_status', 'section_manages.is_publish', '=', 'tp_status.id')
 					->select('section_manages.*', 'tp_status.status')
@@ -62,25 +64,26 @@ class SectionManageController extends Controller
 			return view('backend.partials.section_manage_table', compact('datalist'))->render();
 		}
 	}
-	
+
 	//Save data for Section Manage
     public function saveSectionManageData(Request $request){
 		$res = array();
-		
+
 		$id = $request->input('RecordId');
 		$manage_type = $request->input('manage_type');
 		$section = $request->input('section');
 		$title = $request->input('title');
 		$desc = $request->input('desc');
 		$image = $request->input('image');
+		$lan = $request->input('lan');
 		$is_publish = $request->input('is_publish');
-		
+
 		$validator_array = array(
 			'manage_type' => $request->input('manage_type'),
 			'section' => $request->input('section'),
 			'title' => $request->input('title')
 		);
-		
+
 		$validator = Validator::make($validator_array, [
 			'manage_type' => 'required|max:191',
 			'section' => 'required|max:191',
@@ -94,13 +97,13 @@ class SectionManageController extends Controller
 			$res['msg'] = $errors->first('manage_type');
 			return response()->json($res);
 		}
-		
+
 		if($errors->has('section')){
 			$res['msgType'] = 'error';
 			$res['msg'] = $errors->first('section');
 			return response()->json($res);
 		}
-		
+
 		if($errors->has('title')){
 			$res['msgType'] = 'error';
 			$res['msg'] = $errors->first('title');
@@ -113,6 +116,7 @@ class SectionManageController extends Controller
 			'title' => $title,
 			'desc' => $desc,
 			'image' => $image,
+            'lan' => $lan,
 			'is_publish' => $is_publish
 		);
 
@@ -135,23 +139,23 @@ class SectionManageController extends Controller
 				$res['msg'] = __('Data update failed');
 			}
 		}
-		
+
 		return response()->json($res);
     }
-	
+
 	//Get data for Section Manage by id
     public function getSectionManageById(Request $request){
 
 		$id = $request->id;
-		
+
 		$data = Section_manage::where('id', $id)->first();
-		
+
 		return response()->json($data);
 	}
-	
+
 	//Delete data for Section Manage
 	public function deleteSectionManage(Request $request){
-		
+
 		$res = array();
 
 		$id = $request->id;
@@ -166,18 +170,18 @@ class SectionManageController extends Controller
 				$res['msg'] = __('Data remove failed');
 			}
 		}
-		
+
 		return response()->json($res);
 	}
-	
+
 	//Bulk Action for Section Manage
 	public function bulkActionSectionManage(Request $request){
-		
+
 		$res = array();
 
 		$idsStr = $request->ids;
 		$idsArray = explode(',', $idsStr);
-		
+
 		$BulkAction = $request->BulkAction;
 
 		if($BulkAction == 'publish'){
@@ -189,9 +193,9 @@ class SectionManageController extends Controller
 				$res['msgType'] = 'error';
 				$res['msg'] = __('Data update failed');
 			}
-			
+
 		}elseif($BulkAction == 'draft'){
-			
+
 			$response = Section_manage::whereIn('id', $idsArray)->update(['is_publish' => 2]);
 			if($response){
 				$res['msgType'] = 'success';
@@ -200,7 +204,7 @@ class SectionManageController extends Controller
 				$res['msgType'] = 'error';
 				$res['msg'] = __('Data update failed');
 			}
-			
+
 		}elseif($BulkAction == 'delete'){
 			$response = Section_manage::whereIn('id', $idsArray)->delete();
 			if($response){
@@ -211,7 +215,7 @@ class SectionManageController extends Controller
 				$res['msg'] = __('Data remove failed');
 			}
 		}
-		
+
 		return response()->json($res);
 	}
 }

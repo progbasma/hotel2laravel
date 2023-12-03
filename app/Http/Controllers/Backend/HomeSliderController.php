@@ -20,7 +20,6 @@ class HomeSliderController extends Controller
 		$languageslist = DB::table('languages')->where('status', 1)->orderBy('language_name', 'asc')->get();
 
 		$datalist = DB::table('sliders')
-            ->where('lan', glan())
 			->join('tp_status', 'sliders.is_publish', '=', 'tp_status.id')
 			->select('sliders.*', 'tp_status.status')
 			->orderBy('sliders.id','desc')

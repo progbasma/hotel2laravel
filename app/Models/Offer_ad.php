@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Offer_ad extends Model
 {
     use HasFactory;
-	
+
     protected $fillable = [
         'offer_ad_type',
         'title',
@@ -16,5 +16,6 @@ class Offer_ad extends Model
         'image',
         'desc',
         'is_publish',
+        'lan',
     ];
 }

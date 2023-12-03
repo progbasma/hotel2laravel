@@ -21,6 +21,7 @@ class CreateSectionManagesTable extends Migration
 			$table->text('url')->nullable();
 			$table->text('image')->nullable();
 			$table->text('desc')->nullable();
+			$table->string('lan')->default('en');
 			$table->integer('is_publish')->nullable();
             $table->timestamps();
         });

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Section_manage extends Model
 {
     use HasFactory;
-	
+
     protected $fillable = [
         'manage_type',
         'section',
@@ -17,5 +17,6 @@ class Section_manage extends Model
         'image',
         'desc',
         'is_publish',
-    ];		
+        'lan',
+    ];
 }
